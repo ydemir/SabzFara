@@ -75,6 +75,9 @@
             this.colMinStokMiktari = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMaxStokMiktari = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAciklama = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
@@ -305,7 +308,10 @@
             this.colSatisFiyati3,
             this.colMinStokMiktari,
             this.colMaxStokMiktari,
-            this.colAciklama});
+            this.colAciklama,
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn3});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             // 
@@ -537,6 +543,33 @@
             this.colAciklama.VisibleIndex = 12;
             this.colAciklama.Width = 170;
             // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Stok Giriş";
+            this.gridColumn1.FieldName = "StokGiris";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowEdit = false;
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 13;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Stok Çıkış";
+            this.gridColumn2.FieldName = "StokCikis";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowEdit = false;
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 14;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Mevcut Stok";
+            this.gridColumn3.FieldName = "MevcutStok";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsColumn.AllowEdit = false;
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 15;
+            // 
             // FrmStok
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -605,5 +638,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn colMinStokMiktari;
         private DevExpress.XtraGrid.Columns.GridColumn colMaxStokMiktari;
         private DevExpress.XtraGrid.Columns.GridColumn colAciklama;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
     }
 }

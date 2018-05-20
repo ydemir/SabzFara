@@ -22,7 +22,7 @@ namespace SabzFara.BackOffice.Stok
 
         private void FrmStok_Load(object sender, EventArgs e)
         {
-
+            GetAll();
         }
 
         public void GetAll()
@@ -57,9 +57,9 @@ namespace SabzFara.BackOffice.Stok
                 Stoklar.MinStokMiktari,
                 Stoklar.MaxStokMiktari,
                 Stoklar.Aciklama,
-                StokGiris = StokHarekeleri.Where(s => s.Hareket == "Stok Giriş").Sum(sh => sh.ToplamTutar),
-                StokCikis = StokHarekeleri.Where(s => s.Hareket == "Stok Çıkış").Sum(sh => sh.ToplamTutar),
-                MevcutStok = StokHarekeleri.Where(s => s.Hareket == "Stok Giriş").Sum(sh => sh.ToplamTutar) - StokHarekeleri.Where(s => s.Hareket == "Stok Çıkış").Sum(sh => sh.ToplamTutar)
+                StokGiris = StokHarekeleri.Where(s => s.Hareket == "Stok Giriş").Sum(sh => sh.Miktar)??0,
+                StokCikis = StokHarekeleri.Where(s => s.Hareket == "Stok Çıkış").Sum(sh => sh.Miktar)??0,
+                MevcutStok = StokHarekeleri.Where(s => s.Hareket == "Stok Giriş").Sum(sh => sh.Miktar) - StokHarekeleri.Where(s => s.Hareket == "Stok Çıkış").Sum(sh => sh.Miktar)??0
             }).ToList();
 
             gridControl1.DataSource = tablo;
