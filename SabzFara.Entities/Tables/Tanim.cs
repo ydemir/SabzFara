@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SabzFara.Entities.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SabzFara.Entities.Tables
 {
-   public class Tanim
+   public class Tanim :IEntity
     {
         public int Id { get; set; }
         public string Turu { get; set; }

@@ -1,4 +1,6 @@
 ﻿using SabzFara.Entities.Context;
+using SabzFara.Entities.DataAccess;
+using SabzFara.Entities.Tables;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +22,22 @@ namespace SabzFara.BackOffice
             {
                 context.Database.CreateIfNotExists();
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            SabzFaraContext context = new SabzFaraContext();
+            CariDAL cariDAL = new CariDAL();
+            Cari entity = new Cari
+            {
+                CariKodu="12345678",
+                CariAdi="Yusuf Demir",
+                YetkiliKisi="Yusuf",
+                FaturaUnvani="Demir"
+            };
+
+            cariDAL.AddOrUpdate(context, entity);
+            cariDAL.Save(context);
         }
     }
 }
