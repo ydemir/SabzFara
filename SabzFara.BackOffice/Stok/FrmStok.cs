@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using SabzFara.Entities.Context;
+using SabzFara.Entities.DataAccess;
 
 namespace SabzFara.BackOffice.Stok
 {
     public partial class FrmStok : DevExpress.XtraEditors.XtraForm
     {
         SabzFaraContext context = new SabzFaraContext();
+        StokDAL _stokDAL = new StokDAL();
         public FrmStok()
         {
             InitializeComponent();
@@ -27,42 +29,51 @@ namespace SabzFara.BackOffice.Stok
 
         public void GetAll()
         {
-            var tablo = context.Stoklar.GroupJoin(context.StokHareketleri, s => s.StokKodu, sh => sh.StokKodu, (Stoklar, StokHarekeleri) => new
-            {
-                Stoklar.Id,
-                Stoklar.Durumu,
-                Stoklar.StokKodu,
-                Stoklar.StokAdi,
-                Stoklar.Barkod,
-                Stoklar.BarkodTuru,
-                Stoklar.Birimi,
-                Stoklar.StokGrubu,
-                Stoklar.StokAltGrubu,
-                Stoklar.Marka,
-                Stoklar.Modeli,
-                Stoklar.OzelKod1,
-                Stoklar.OzelKod2,
-                Stoklar.OzelKod3,
-                Stoklar.OzelKod4,
-                Stoklar.GarantiSuresi,
-                Stoklar.UreticiKodu,
-                Stoklar.AlisKdv,
-                Stoklar.SatisKdv,
-                Stoklar.AlisFiyati1,
-                Stoklar.AlisFiyati2,
-                Stoklar.AlisFiyati3,
-                Stoklar.SatisFiyati1,
-                Stoklar.SatisFiyati2,
-                Stoklar.SatisFiyati3,
-                Stoklar.MinStokMiktari,
-                Stoklar.MaxStokMiktari,
-                Stoklar.Aciklama,
-                StokGiris = StokHarekeleri.Where(s => s.Hareket == "Stok Giriş").Sum(sh => sh.Miktar)??0,
-                StokCikis = StokHarekeleri.Where(s => s.Hareket == "Stok Çıkış").Sum(sh => sh.Miktar)??0,
-                MevcutStok = StokHarekeleri.Where(s => s.Hareket == "Stok Giriş").Sum(sh => sh.Miktar) - StokHarekeleri.Where(s => s.Hareket == "Stok Çıkış").Sum(sh => sh.Miktar)??0
-            }).ToList();
 
-            gridControl1.DataSource = tablo;
+           gridControl1.DataSource= _stokDAL.GetAllJoin(context);
+            
+        }
+
+        private void btnKapat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnFiltrele_Click(object sender, EventArgs e)
+        {
+            filterControl1.ApplyFilter();
+        }
+
+        private void btnFiltreIptal_Click(object sender, EventArgs e)
+        {
+            filterControl1.FilterString = null;
+            filterControl1.ApplyFilter();
+        }
+
+        private void btnFiltreKapat_Click(object sender, EventArgs e)
+        {
+            splitContainerControl1.PanelVisibility = SplitPanelVisibility.Panel2;
+        }
+
+        private void btnAra_Click(object sender, EventArgs e)
+        {
+            splitContainerControl1.PanelVisibility = SplitPanelVisibility.Both;
+        }
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+            GetAll();
+        }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Seçili olan veriyi silmek istediğinize emin misiniz?", "Uyarı", MessageBoxButtons.YesNo)==DialogResult.Yes)
+            {
+                string secilen = gridView1.GetFocusedRowCellValue(colStokKodu).ToString();
+                _stokDAL.Delete(context, s => s.StokKodu == secilen);
+                _stokDAL.Save(context);
+                GetAll();
+            }
         }
     }
 }

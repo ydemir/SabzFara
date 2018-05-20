@@ -41,9 +41,9 @@
             this.btnDuzenle = new DevExpress.XtraEditors.SimpleButton();
             this.btnEkle = new DevExpress.XtraEditors.SimpleButton();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnFiltreKapat = new DevExpress.XtraEditors.SimpleButton();
+            this.btnFiltreIptal = new DevExpress.XtraEditors.SimpleButton();
+            this.btnFiltrele = new DevExpress.XtraEditors.SimpleButton();
             this.filterControl1 = new DevExpress.XtraEditors.FilterControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -131,6 +131,7 @@
             this.btnKapat.Size = new System.Drawing.Size(83, 52);
             this.btnKapat.TabIndex = 0;
             this.btnKapat.Text = "Kapat";
+            this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
             // 
             // imgMenu
             // 
@@ -155,6 +156,7 @@
             this.btnAra.Size = new System.Drawing.Size(83, 44);
             this.btnAra.TabIndex = 0;
             this.btnAra.Text = "Ara";
+            this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
             // 
             // btnGuncelle
             // 
@@ -165,6 +167,7 @@
             this.btnGuncelle.Size = new System.Drawing.Size(83, 44);
             this.btnGuncelle.TabIndex = 0;
             this.btnGuncelle.Text = "Güncelle";
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // btnKopyala
             // 
@@ -185,6 +188,7 @@
             this.btnSil.Size = new System.Drawing.Size(83, 44);
             this.btnSil.TabIndex = 0;
             this.btnSil.Text = "Sil";
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnDuzenle
             // 
@@ -212,9 +216,9 @@
             this.splitContainerControl1.Horizontal = false;
             this.splitContainerControl1.Location = new System.Drawing.Point(0, 47);
             this.splitContainerControl1.Name = "splitContainerControl1";
-            this.splitContainerControl1.Panel1.Controls.Add(this.simpleButton3);
-            this.splitContainerControl1.Panel1.Controls.Add(this.simpleButton2);
-            this.splitContainerControl1.Panel1.Controls.Add(this.simpleButton1);
+            this.splitContainerControl1.Panel1.Controls.Add(this.btnFiltreKapat);
+            this.splitContainerControl1.Panel1.Controls.Add(this.btnFiltreIptal);
+            this.splitContainerControl1.Panel1.Controls.Add(this.btnFiltrele);
             this.splitContainerControl1.Panel1.Controls.Add(this.filterControl1);
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.gridControl1);
@@ -224,38 +228,41 @@
             this.splitContainerControl1.TabIndex = 2;
             this.splitContainerControl1.Text = "splitContainerControl1";
             // 
-            // simpleButton3
+            // btnFiltreKapat
             // 
-            this.simpleButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton3.ImageOptions.ImageIndex = 6;
-            this.simpleButton3.ImageOptions.ImageList = this.imgMenu;
-            this.simpleButton3.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.simpleButton3.Location = new System.Drawing.Point(1197, 81);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(55, 38);
-            this.simpleButton3.TabIndex = 0;
+            this.btnFiltreKapat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFiltreKapat.ImageOptions.ImageIndex = 6;
+            this.btnFiltreKapat.ImageOptions.ImageList = this.imgMenu;
+            this.btnFiltreKapat.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnFiltreKapat.Location = new System.Drawing.Point(1197, 81);
+            this.btnFiltreKapat.Name = "btnFiltreKapat";
+            this.btnFiltreKapat.Size = new System.Drawing.Size(55, 38);
+            this.btnFiltreKapat.TabIndex = 0;
+            this.btnFiltreKapat.Click += new System.EventHandler(this.btnFiltreKapat_Click);
             // 
-            // simpleButton2
+            // btnFiltreIptal
             // 
-            this.simpleButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton2.ImageOptions.ImageIndex = 8;
-            this.simpleButton2.ImageOptions.ImageList = this.imgMenu;
-            this.simpleButton2.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.simpleButton2.Location = new System.Drawing.Point(1137, 81);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(55, 38);
-            this.simpleButton2.TabIndex = 0;
+            this.btnFiltreIptal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFiltreIptal.ImageOptions.ImageIndex = 8;
+            this.btnFiltreIptal.ImageOptions.ImageList = this.imgMenu;
+            this.btnFiltreIptal.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnFiltreIptal.Location = new System.Drawing.Point(1137, 81);
+            this.btnFiltreIptal.Name = "btnFiltreIptal";
+            this.btnFiltreIptal.Size = new System.Drawing.Size(55, 38);
+            this.btnFiltreIptal.TabIndex = 0;
+            this.btnFiltreIptal.Click += new System.EventHandler(this.btnFiltreIptal_Click);
             // 
-            // simpleButton1
+            // btnFiltrele
             // 
-            this.simpleButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.simpleButton1.ImageOptions.ImageIndex = 7;
-            this.simpleButton1.ImageOptions.ImageList = this.imgMenu;
-            this.simpleButton1.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.simpleButton1.Location = new System.Drawing.Point(1076, 81);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(55, 38);
-            this.simpleButton1.TabIndex = 0;
+            this.btnFiltrele.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFiltrele.ImageOptions.ImageIndex = 7;
+            this.btnFiltrele.ImageOptions.ImageList = this.imgMenu;
+            this.btnFiltrele.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btnFiltrele.Location = new System.Drawing.Point(1076, 81);
+            this.btnFiltrele.Name = "btnFiltrele";
+            this.btnFiltrele.Size = new System.Drawing.Size(55, 38);
+            this.btnFiltrele.TabIndex = 0;
+            this.btnFiltrele.Click += new System.EventHandler(this.btnFiltrele_Click);
             // 
             // filterControl1
             // 
@@ -264,6 +271,7 @@
             this.filterControl1.Location = new System.Drawing.Point(0, 0);
             this.filterControl1.Name = "filterControl1";
             this.filterControl1.Size = new System.Drawing.Size(1264, 130);
+            this.filterControl1.SourceControl = this.gridControl1;
             this.filterControl1.TabIndex = 0;
             this.filterControl1.Text = "filterControl1";
             // 
@@ -604,9 +612,9 @@
         private DevExpress.XtraEditors.SimpleButton btnDuzenle;
         private DevExpress.XtraEditors.SimpleButton btnEkle;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btnFiltreKapat;
+        private DevExpress.XtraEditors.SimpleButton btnFiltreIptal;
+        private DevExpress.XtraEditors.SimpleButton btnFiltrele;
         private DevExpress.XtraEditors.FilterControl filterControl1;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
