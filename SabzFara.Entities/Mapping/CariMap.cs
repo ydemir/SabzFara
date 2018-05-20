@@ -26,6 +26,7 @@ namespace SabzFara.Entities.Mapping
             this.Property(p => p.Telefon).HasMaxLength(20);
             this.Property(p => p.Fax).HasMaxLength(20);
             this.Property(p => p.EMail).HasMaxLength(50);
+            this.Property(p => p.Web).HasMaxLength(50);
             this.Property(p => p.Il).HasMaxLength(20);
             this.Property(p => p.Ilce).HasMaxLength(20);
             this.Property(p => p.Semt).HasMaxLength(20);
