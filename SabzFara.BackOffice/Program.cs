@@ -4,6 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using DevExpress.UserSkins;
 using DevExpress.Skins;
+using SabzFara.BackOffice.AnaMenu;
 
 namespace SabzFara.BackOffice
 {
@@ -20,7 +21,7 @@ namespace SabzFara.BackOffice
 
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
-            Application.Run(new Form1());
+            Application.Run(new FrmAna());
         }
     }
 }
