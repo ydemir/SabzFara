@@ -37,5 +37,14 @@ namespace SabzFara.Entities.Repositories
         {
             context.SaveChanges();
         }
+
+        public List<TEntity> GetAll(TContext context, Expression<Func<TEntity, bool>> filter = null)
+        {
+            return filter == null ? context.Set<TEntity>().ToList() : context.Set<TEntity>().Where(filter).ToList();
+        }
+        public TEntity GetByFilter(TContext context, Expression<Func<TEntity, bool>> filter)
+        {
+            return context.Set<TEntity>().SingleOrDefault(filter);
+        }
     }
 }

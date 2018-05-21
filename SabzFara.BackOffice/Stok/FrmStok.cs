@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using SabzFara.Entities.Context;
 using SabzFara.Entities.DataAccess;
 
+
 namespace SabzFara.BackOffice.Stok
 {
     public partial class FrmStok : DevExpress.XtraEditors.XtraForm
@@ -74,6 +75,32 @@ namespace SabzFara.BackOffice.Stok
                 _stokDAL.Save(context);
                 GetAll();
             }
+        }
+
+        private void btnEkle_Click(object sender, EventArgs e)
+        {
+            FrmStokIslem frm = new FrmStokIslem(new Entities.Tables.Stok());
+            frm.ShowDialog();
+        }
+
+        private void btnDuzenle_Click(object sender, EventArgs e)
+        {
+            string secilen = gridView1.GetFocusedRowCellValue(colStokKodu).ToString();
+            FrmStokIslem frm = new FrmStokIslem(_stokDAL.GetByFilter(context, s => s.StokKodu == secilen));
+            frm.ShowDialog();
+        }
+
+        private void btnKopyala_Click(object sender, EventArgs e)
+        {
+            string secilen = gridView1.GetFocusedRowCellValue(colStokKodu).ToString();
+            Entities.Tables.Stok _stokEntity = new Entities.Tables.Stok();
+            
+            _stokEntity = _stokDAL.GetByFilter(context, s => s.StokKodu == secilen);
+            _stokEntity.Id = -1;
+
+            _stokEntity.StokKodu = null;
+            FrmStokIslem frm = new FrmStokIslem(_stokEntity);
+            frm.ShowDialog();
         }
     }
 }
