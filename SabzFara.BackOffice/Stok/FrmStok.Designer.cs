@@ -78,6 +78,7 @@
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
@@ -109,6 +110,7 @@
             // 
             this.grpMenu.Controls.Add(this.btnKapat);
             this.grpMenu.Controls.Add(this.btnAra);
+            this.grpMenu.Controls.Add(this.simpleButton1);
             this.grpMenu.Controls.Add(this.btnGuncelle);
             this.grpMenu.Controls.Add(this.btnKopyala);
             this.grpMenu.Controls.Add(this.btnSil);
@@ -146,12 +148,13 @@
             this.imgMenu.Images.SetKeyName(6, "folder_out.png");
             this.imgMenu.Images.SetKeyName(7, "funnel.png");
             this.imgMenu.Images.SetKeyName(8, "funnel_delete.png");
+            this.imgMenu.Images.SetKeyName(9, "StokHareket.png");
             // 
             // btnAra
             // 
             this.btnAra.ImageOptions.ImageIndex = 5;
             this.btnAra.ImageOptions.ImageList = this.imgMenu;
-            this.btnAra.Location = new System.Drawing.Point(457, 26);
+            this.btnAra.Location = new System.Drawing.Point(546, 25);
             this.btnAra.Name = "btnAra";
             this.btnAra.Size = new System.Drawing.Size(83, 44);
             this.btnAra.TabIndex = 0;
@@ -162,7 +165,7 @@
             // 
             this.btnGuncelle.ImageOptions.ImageIndex = 0;
             this.btnGuncelle.ImageOptions.ImageList = this.imgMenu;
-            this.btnGuncelle.Location = new System.Drawing.Point(368, 26);
+            this.btnGuncelle.Location = new System.Drawing.Point(457, 24);
             this.btnGuncelle.Name = "btnGuncelle";
             this.btnGuncelle.Size = new System.Drawing.Size(83, 44);
             this.btnGuncelle.TabIndex = 0;
@@ -581,6 +584,17 @@
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 15;
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.ImageOptions.ImageIndex = 9;
+            this.simpleButton1.ImageOptions.ImageList = this.imgMenu;
+            this.simpleButton1.Location = new System.Drawing.Point(368, 25);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(83, 44);
+            this.simpleButton1.TabIndex = 0;
+            this.simpleButton1.Text = "Stok\r\nHareket";
+            this.simpleButton1.Click += new System.EventHandler(this.btnGuncelle_Click);
+            // 
             // FrmStok
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -652,5 +666,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }
