@@ -35,6 +35,7 @@
             this.btnKapat = new DevExpress.XtraEditors.SimpleButton();
             this.imgMenu = new System.Windows.Forms.ImageList(this.components);
             this.btnAra = new DevExpress.XtraEditors.SimpleButton();
+            this.btnStokHareket = new DevExpress.XtraEditors.SimpleButton();
             this.btnGuncelle = new DevExpress.XtraEditors.SimpleButton();
             this.btnKopyala = new DevExpress.XtraEditors.SimpleButton();
             this.btnSil = new DevExpress.XtraEditors.SimpleButton();
@@ -78,7 +79,6 @@
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
@@ -110,7 +110,7 @@
             // 
             this.grpMenu.Controls.Add(this.btnKapat);
             this.grpMenu.Controls.Add(this.btnAra);
-            this.grpMenu.Controls.Add(this.simpleButton1);
+            this.grpMenu.Controls.Add(this.btnStokHareket);
             this.grpMenu.Controls.Add(this.btnGuncelle);
             this.grpMenu.Controls.Add(this.btnKopyala);
             this.grpMenu.Controls.Add(this.btnSil);
@@ -160,6 +160,17 @@
             this.btnAra.TabIndex = 0;
             this.btnAra.Text = "Ara";
             this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
+            // 
+            // btnStokHareket
+            // 
+            this.btnStokHareket.ImageOptions.ImageIndex = 9;
+            this.btnStokHareket.ImageOptions.ImageList = this.imgMenu;
+            this.btnStokHareket.Location = new System.Drawing.Point(368, 25);
+            this.btnStokHareket.Name = "btnStokHareket";
+            this.btnStokHareket.Size = new System.Drawing.Size(83, 44);
+            this.btnStokHareket.TabIndex = 0;
+            this.btnStokHareket.Text = "Stok\r\nHareket";
+            this.btnStokHareket.Click += new System.EventHandler(this.btnStokHareket_Click);
             // 
             // btnGuncelle
             // 
@@ -584,17 +595,6 @@
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 15;
             // 
-            // simpleButton1
-            // 
-            this.simpleButton1.ImageOptions.ImageIndex = 9;
-            this.simpleButton1.ImageOptions.ImageList = this.imgMenu;
-            this.simpleButton1.Location = new System.Drawing.Point(368, 25);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(83, 44);
-            this.simpleButton1.TabIndex = 0;
-            this.simpleButton1.Text = "Stok\r\nHareket";
-            this.simpleButton1.Click += new System.EventHandler(this.btnGuncelle_Click);
-            // 
             // FrmStok
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -666,6 +666,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btnStokHareket;
     }
 }

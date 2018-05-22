@@ -33,19 +33,12 @@
             this.lblBaslik = new DevExpress.XtraEditors.LabelControl();
             this.grpMenu = new DevExpress.XtraEditors.GroupControl();
             this.btnKapat = new DevExpress.XtraEditors.SimpleButton();
+            this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btnAra = new DevExpress.XtraEditors.SimpleButton();
             this.btnGuncelle = new DevExpress.XtraEditors.SimpleButton();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.splitContainerControl2 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gridControl3 = new DevExpress.XtraGrid.GridControl();
-            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.stokHareketBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridContStokHareket = new DevExpress.XtraGrid.GridControl();
+            this.gridStokHareket = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFisKodu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colHareket = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -64,34 +57,39 @@
             this.colDepoAdi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSeriNo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTarih = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colAciklama = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSaat = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colAciklama = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.splitContainerControl2 = new DevExpress.XtraEditors.SplitContainerControl();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.gridContDepoStok = new DevExpress.XtraGrid.GridControl();
+            this.gridDepoStok = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colDepolarDepoKodu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDepolarDepoAdi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDepolarStokGiris = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDepolarStokCikis = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDepolarMevcutStok = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.gridContGenelStok = new DevExpress.XtraGrid.GridControl();
+            this.gridGenelStok = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colGenelBilgi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colGenelKayitSayisi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colGenelToplam = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridContStokHareket)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridStokHareket)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).BeginInit();
             this.splitContainerControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridContDepoStok)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridDepoStok)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stokHareketBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridContGenelStok)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridGenelStok)).BeginInit();
             this.SuspendLayout();
             // 
             // lblBaslik
@@ -136,6 +134,14 @@
             this.btnKapat.TabIndex = 0;
             this.btnKapat.Text = "Kapat";
             // 
+            // ımageList1
+            // 
+            this.ımageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ımageList1.ImageStream")));
+            this.ımageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.ımageList1.Images.SetKeyName(0, "folder_out.png");
+            this.ımageList1.Images.SetKeyName(1, "refresh.png");
+            this.ımageList1.Images.SetKeyName(2, "view.png");
+            // 
             // btnAra
             // 
             this.btnAra.ImageOptions.ImageIndex = 2;
@@ -162,7 +168,7 @@
             this.splitContainerControl1.Horizontal = false;
             this.splitContainerControl1.Location = new System.Drawing.Point(0, 47);
             this.splitContainerControl1.Name = "splitContainerControl1";
-            this.splitContainerControl1.Panel1.Controls.Add(this.gridControl1);
+            this.splitContainerControl1.Panel1.Controls.Add(this.gridContStokHareket);
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.splitContainerControl2);
             this.splitContainerControl1.Panel2.Text = "Panel2";
@@ -171,35 +177,20 @@
             this.splitContainerControl1.TabIndex = 3;
             this.splitContainerControl1.Text = "splitContainerControl1";
             // 
-            // splitContainerControl2
+            // gridContStokHareket
             // 
-            this.splitContainerControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerControl2.Location = new System.Drawing.Point(0, 0);
-            this.splitContainerControl2.Name = "splitContainerControl2";
-            this.splitContainerControl2.Panel1.Controls.Add(this.groupControl1);
-            this.splitContainerControl2.Panel1.Text = "Panel1";
-            this.splitContainerControl2.Panel2.Controls.Add(this.groupControl2);
-            this.splitContainerControl2.Panel2.Text = "Panel2";
-            this.splitContainerControl2.Size = new System.Drawing.Size(1097, 245);
-            this.splitContainerControl2.SplitterPosition = 547;
-            this.splitContainerControl2.TabIndex = 0;
-            this.splitContainerControl2.Text = "splitContainerControl2";
+            this.gridContStokHareket.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridContStokHareket.Location = new System.Drawing.Point(0, 0);
+            this.gridContStokHareket.MainView = this.gridStokHareket;
+            this.gridContStokHareket.Name = "gridContStokHareket";
+            this.gridContStokHareket.Size = new System.Drawing.Size(1097, 230);
+            this.gridContStokHareket.TabIndex = 1;
+            this.gridContStokHareket.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridStokHareket});
             // 
-            // gridControl1
+            // gridStokHareket
             // 
-            this.gridControl1.DataSource = this.stokHareketBindingSource;
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 0);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1097, 230);
-            this.gridControl1.TabIndex = 1;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridStokHareket.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colId,
             this.colFisKodu,
             this.colHareket,
@@ -220,76 +211,8 @@
             this.colTarih,
             this.colSaat,
             this.colAciklama});
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            // 
-            // groupControl1
-            // 
-            this.groupControl1.Controls.Add(this.gridControl2);
-            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl1.Location = new System.Drawing.Point(0, 0);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(547, 245);
-            this.groupControl1.TabIndex = 0;
-            this.groupControl1.Text = "Depo Bazında Stok Miktarları";
-            // 
-            // groupControl2
-            // 
-            this.groupControl2.Controls.Add(this.gridControl3);
-            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(0, 0);
-            this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(545, 245);
-            this.groupControl2.TabIndex = 1;
-            this.groupControl2.Text = "Genel Stok Miktarları";
-            // 
-            // gridControl2
-            // 
-            this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(2, 20);
-            this.gridControl2.MainView = this.gridView2;
-            this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(543, 223);
-            this.gridControl2.TabIndex = 2;
-            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
-            // 
-            // gridView2
-            // 
-            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colDepolarDepoKodu,
-            this.colDepolarDepoAdi,
-            this.colDepolarStokGiris,
-            this.colDepolarStokCikis,
-            this.colDepolarMevcutStok});
-            this.gridView2.GridControl = this.gridControl2;
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsView.ShowGroupPanel = false;
-            // 
-            // gridControl3
-            // 
-            this.gridControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl3.Location = new System.Drawing.Point(2, 20);
-            this.gridControl3.MainView = this.gridView3;
-            this.gridControl3.Name = "gridControl3";
-            this.gridControl3.Size = new System.Drawing.Size(541, 223);
-            this.gridControl3.TabIndex = 2;
-            this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView3});
-            // 
-            // gridView3
-            // 
-            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colGenelBilgi,
-            this.colGenelKayitSayisi,
-            this.colGenelToplam});
-            this.gridView3.GridControl = this.gridControl3;
-            this.gridView3.Name = "gridView3";
-            this.gridView3.OptionsView.ShowGroupPanel = false;
-            // 
-            // stokHareketBindingSource
-            // 
-            this.stokHareketBindingSource.DataSource = typeof(SabzFara.Entities.Tables.StokHareket);
+            this.gridStokHareket.GridControl = this.gridContStokHareket;
+            this.gridStokHareket.Name = "gridStokHareket";
             // 
             // colId
             // 
@@ -447,6 +370,15 @@
             this.colTarih.Visible = true;
             this.colTarih.VisibleIndex = 3;
             // 
+            // colSaat
+            // 
+            this.colSaat.Caption = "Saat";
+            this.colSaat.FieldName = "Tarih";
+            this.colSaat.Name = "colSaat";
+            this.colSaat.Visible = true;
+            this.colSaat.VisibleIndex = 4;
+            this.colSaat.Width = 59;
+            // 
             // colAciklama
             // 
             this.colAciklama.Caption = "Açıklama";
@@ -457,18 +389,57 @@
             this.colAciklama.VisibleIndex = 5;
             this.colAciklama.Width = 107;
             // 
-            // colSaat
+            // splitContainerControl2
             // 
-            this.colSaat.Caption = "Saat";
-            this.colSaat.FieldName = "Tarih";
-            this.colSaat.Name = "colSaat";
-            this.colSaat.Visible = true;
-            this.colSaat.VisibleIndex = 4;
-            this.colSaat.Width = 59;
+            this.splitContainerControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainerControl2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerControl2.Name = "splitContainerControl2";
+            this.splitContainerControl2.Panel1.Controls.Add(this.groupControl1);
+            this.splitContainerControl2.Panel1.Text = "Panel1";
+            this.splitContainerControl2.Panel2.Controls.Add(this.groupControl2);
+            this.splitContainerControl2.Panel2.Text = "Panel2";
+            this.splitContainerControl2.Size = new System.Drawing.Size(1097, 245);
+            this.splitContainerControl2.SplitterPosition = 547;
+            this.splitContainerControl2.TabIndex = 0;
+            this.splitContainerControl2.Text = "splitContainerControl2";
+            // 
+            // groupControl1
+            // 
+            this.groupControl1.Controls.Add(this.gridContDepoStok);
+            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl1.Location = new System.Drawing.Point(0, 0);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(547, 245);
+            this.groupControl1.TabIndex = 0;
+            this.groupControl1.Text = "Depo Bazında Stok Miktarları";
+            // 
+            // gridContDepoStok
+            // 
+            this.gridContDepoStok.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridContDepoStok.Location = new System.Drawing.Point(2, 20);
+            this.gridContDepoStok.MainView = this.gridDepoStok;
+            this.gridContDepoStok.Name = "gridContDepoStok";
+            this.gridContDepoStok.Size = new System.Drawing.Size(543, 223);
+            this.gridContDepoStok.TabIndex = 2;
+            this.gridContDepoStok.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridDepoStok});
+            // 
+            // gridDepoStok
+            // 
+            this.gridDepoStok.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colDepolarDepoKodu,
+            this.colDepolarDepoAdi,
+            this.colDepolarStokGiris,
+            this.colDepolarStokCikis,
+            this.colDepolarMevcutStok});
+            this.gridDepoStok.GridControl = this.gridContDepoStok;
+            this.gridDepoStok.Name = "gridDepoStok";
+            this.gridDepoStok.OptionsView.ShowGroupPanel = false;
             // 
             // colDepolarDepoKodu
             // 
             this.colDepolarDepoKodu.Caption = "Depo Kodu";
+            this.colDepolarDepoKodu.FieldName = "DepoKodu";
             this.colDepolarDepoKodu.Name = "colDepolarDepoKodu";
             this.colDepolarDepoKodu.Visible = true;
             this.colDepolarDepoKodu.VisibleIndex = 0;
@@ -476,6 +447,7 @@
             // colDepolarDepoAdi
             // 
             this.colDepolarDepoAdi.Caption = "Depo Adı";
+            this.colDepolarDepoAdi.FieldName = "DepoAdi";
             this.colDepolarDepoAdi.Name = "colDepolarDepoAdi";
             this.colDepolarDepoAdi.Visible = true;
             this.colDepolarDepoAdi.VisibleIndex = 1;
@@ -483,6 +455,7 @@
             // colDepolarStokGiris
             // 
             this.colDepolarStokGiris.Caption = "Stok Giriş";
+            this.colDepolarStokGiris.FieldName = "StokGiris";
             this.colDepolarStokGiris.Name = "colDepolarStokGiris";
             this.colDepolarStokGiris.Visible = true;
             this.colDepolarStokGiris.VisibleIndex = 2;
@@ -490,6 +463,7 @@
             // colDepolarStokCikis
             // 
             this.colDepolarStokCikis.Caption = "Stok Çıkış";
+            this.colDepolarStokCikis.FieldName = "StokCikis";
             this.colDepolarStokCikis.Name = "colDepolarStokCikis";
             this.colDepolarStokCikis.Visible = true;
             this.colDepolarStokCikis.VisibleIndex = 3;
@@ -497,13 +471,46 @@
             // colDepolarMevcutStok
             // 
             this.colDepolarMevcutStok.Caption = "Mevcut Stok";
+            this.colDepolarMevcutStok.FieldName = "MevcutStok";
             this.colDepolarMevcutStok.Name = "colDepolarMevcutStok";
             this.colDepolarMevcutStok.Visible = true;
             this.colDepolarMevcutStok.VisibleIndex = 4;
             // 
+            // groupControl2
+            // 
+            this.groupControl2.Controls.Add(this.gridContGenelStok);
+            this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl2.Location = new System.Drawing.Point(0, 0);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(545, 245);
+            this.groupControl2.TabIndex = 1;
+            this.groupControl2.Text = "Genel Stok Miktarları";
+            // 
+            // gridContGenelStok
+            // 
+            this.gridContGenelStok.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridContGenelStok.Location = new System.Drawing.Point(2, 20);
+            this.gridContGenelStok.MainView = this.gridGenelStok;
+            this.gridContGenelStok.Name = "gridContGenelStok";
+            this.gridContGenelStok.Size = new System.Drawing.Size(541, 223);
+            this.gridContGenelStok.TabIndex = 2;
+            this.gridContGenelStok.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridGenelStok});
+            // 
+            // gridGenelStok
+            // 
+            this.gridGenelStok.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colGenelBilgi,
+            this.colGenelKayitSayisi,
+            this.colGenelToplam});
+            this.gridGenelStok.GridControl = this.gridContGenelStok;
+            this.gridGenelStok.Name = "gridGenelStok";
+            this.gridGenelStok.OptionsView.ShowGroupPanel = false;
+            // 
             // colGenelBilgi
             // 
             this.colGenelBilgi.Caption = "Bilgi";
+            this.colGenelBilgi.FieldName = "Bilgi";
             this.colGenelBilgi.Name = "colGenelBilgi";
             this.colGenelBilgi.Visible = true;
             this.colGenelBilgi.VisibleIndex = 0;
@@ -512,6 +519,7 @@
             // colGenelKayitSayisi
             // 
             this.colGenelKayitSayisi.Caption = "Kayıt Sayısı";
+            this.colGenelKayitSayisi.FieldName = "KayitSayisi";
             this.colGenelKayitSayisi.Name = "colGenelKayitSayisi";
             this.colGenelKayitSayisi.Visible = true;
             this.colGenelKayitSayisi.VisibleIndex = 1;
@@ -520,18 +528,11 @@
             // colGenelToplam
             // 
             this.colGenelToplam.Caption = "Toplam";
+            this.colGenelToplam.FieldName = "Toplam";
             this.colGenelToplam.Name = "colGenelToplam";
             this.colGenelToplam.Visible = true;
             this.colGenelToplam.VisibleIndex = 2;
             this.colGenelToplam.Width = 122;
-            // 
-            // ımageList1
-            // 
-            this.ımageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ımageList1.ImageStream")));
-            this.ımageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.ımageList1.Images.SetKeyName(0, "folder_out.png");
-            this.ımageList1.Images.SetKeyName(1, "refresh.png");
-            this.ımageList1.Images.SetKeyName(2, "view.png");
             // 
             // FrmStokHareket
             // 
@@ -545,24 +546,25 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmStokHareket";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Stok Hareketleri";
+            this.Load += new System.EventHandler(this.FrmStokHareket_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).EndInit();
             this.grpMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridContStokHareket)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridStokHareket)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).EndInit();
             this.splitContainerControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridContDepoStok)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridDepoStok)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stokHareketBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridContGenelStok)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridGenelStok)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -577,9 +579,8 @@
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl2;
         private System.Windows.Forms.ImageList ımageList1;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private System.Windows.Forms.BindingSource stokHareketBindingSource;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.GridControl gridContStokHareket;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridStokHareket;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
         private DevExpress.XtraGrid.Columns.GridColumn colFisKodu;
         private DevExpress.XtraGrid.Columns.GridColumn colHareket;
@@ -601,16 +602,16 @@
         private DevExpress.XtraGrid.Columns.GridColumn colSaat;
         private DevExpress.XtraGrid.Columns.GridColumn colAciklama;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraGrid.GridControl gridControl2;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.GridControl gridContDepoStok;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridDepoStok;
         private DevExpress.XtraGrid.Columns.GridColumn colDepolarDepoKodu;
         private DevExpress.XtraGrid.Columns.GridColumn colDepolarDepoAdi;
         private DevExpress.XtraGrid.Columns.GridColumn colDepolarStokGiris;
         private DevExpress.XtraGrid.Columns.GridColumn colDepolarStokCikis;
         private DevExpress.XtraGrid.Columns.GridColumn colDepolarMevcutStok;
         private DevExpress.XtraEditors.GroupControl groupControl2;
-        private DevExpress.XtraGrid.GridControl gridControl3;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
+        private DevExpress.XtraGrid.GridControl gridContGenelStok;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridGenelStok;
         private DevExpress.XtraGrid.Columns.GridColumn colGenelBilgi;
         private DevExpress.XtraGrid.Columns.GridColumn colGenelKayitSayisi;
         private DevExpress.XtraGrid.Columns.GridColumn colGenelToplam;

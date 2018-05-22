@@ -18,6 +18,7 @@ namespace SabzFara.BackOffice.Stok
     {
         SabzFaraContext context = new SabzFaraContext();
         StokDAL _stokDAL = new StokDAL();
+        string secilen;
         public FrmStok()
         {
             InitializeComponent();
@@ -70,7 +71,7 @@ namespace SabzFara.BackOffice.Stok
         {
             if (MessageBox.Show("Seçili olan veriyi silmek istediğinize emin misiniz?", "Uyarı", MessageBoxButtons.YesNo)==DialogResult.Yes)
             {
-                string secilen = gridView1.GetFocusedRowCellValue(colStokKodu).ToString();
+                 secilen = gridView1.GetFocusedRowCellValue(colStokKodu).ToString();
                 _stokDAL.Delete(context, s => s.StokKodu == secilen);
                 _stokDAL.Save(context);
                 GetAll();
@@ -85,14 +86,14 @@ namespace SabzFara.BackOffice.Stok
 
         private void btnDuzenle_Click(object sender, EventArgs e)
         {
-            string secilen = gridView1.GetFocusedRowCellValue(colStokKodu).ToString();
+             secilen = gridView1.GetFocusedRowCellValue(colStokKodu).ToString();
             FrmStokIslem frm = new FrmStokIslem(_stokDAL.GetByFilter(context, s => s.StokKodu == secilen));
             frm.ShowDialog();
         }
 
         private void btnKopyala_Click(object sender, EventArgs e)
         {
-            string secilen = gridView1.GetFocusedRowCellValue(colStokKodu).ToString();
+             secilen = gridView1.GetFocusedRowCellValue(colStokKodu).ToString();
             Entities.Tables.Stok _stokEntity = new Entities.Tables.Stok();
             
             _stokEntity = _stokDAL.GetByFilter(context, s => s.StokKodu == secilen);
@@ -100,6 +101,13 @@ namespace SabzFara.BackOffice.Stok
 
             _stokEntity.StokKodu = null;
             FrmStokIslem frm = new FrmStokIslem(_stokEntity);
+            frm.ShowDialog();
+        }
+
+        private void btnStokHareket_Click(object sender, EventArgs e)
+        {
+            secilen = gridView1.GetFocusedRowCellValue(colStokKodu).ToString();
+            FrmStokHareket frm = new FrmStokHareket(secilen);
             frm.ShowDialog();
         }
     }
