@@ -73,7 +73,7 @@ namespace SabzFara.Entities.DataAccess
                 depolar.DepoAdi,
                 StokGiris = stokhareketleri.Where(sh => sh.Hareket == "Stok Giriş").Sum(sh => sh.Miktar) ?? 0,
                 StokCikis = stokhareketleri.Where(sh => sh.Hareket == "Stok Çıkış").Sum(sh => sh.Miktar) ?? 0,
-                MevcutStok = stokhareketleri.Where(sh => sh.Hareket == "Stok Giriş").Sum(sh => sh.Miktar) ?? 0 - stokhareketleri.Where(sh => sh.Hareket == "Stok Çıkış").Sum(sh => sh.Miktar) ?? 0
+                MevcutStok = (stokhareketleri.Where(sh => sh.Hareket == "Stok Giriş").Sum(sh => sh.Miktar) ?? 0) - (stokhareketleri.Where(sh => sh.Hareket == "Stok Çıkış").Sum(sh => sh.Miktar) ?? 0)
             }).ToList();
 
             return result;

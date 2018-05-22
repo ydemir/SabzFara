@@ -107,7 +107,8 @@ namespace SabzFara.BackOffice.Stok
         private void btnStokHareket_Click(object sender, EventArgs e)
         {
             secilen = gridView1.GetFocusedRowCellValue(colStokKodu).ToString();
-            FrmStokHareket frm = new FrmStokHareket(secilen);
+           string secilenAd = gridView1.GetFocusedRowCellValue(colStokAdi).ToString();
+            FrmStokHareket frm = new FrmStokHareket(secilen,secilenAd);
             frm.ShowDialog();
         }
     }

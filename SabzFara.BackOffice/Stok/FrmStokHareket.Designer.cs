@@ -133,6 +133,7 @@
             this.btnKapat.Size = new System.Drawing.Size(83, 52);
             this.btnKapat.TabIndex = 0;
             this.btnKapat.Text = "Kapat";
+            this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
             // 
             // ımageList1
             // 
@@ -151,6 +152,7 @@
             this.btnAra.Size = new System.Drawing.Size(83, 44);
             this.btnAra.TabIndex = 0;
             this.btnAra.Text = "Ara";
+            this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
             // 
             // btnGuncelle
             // 
@@ -161,6 +163,7 @@
             this.btnGuncelle.Size = new System.Drawing.Size(83, 44);
             this.btnGuncelle.TabIndex = 0;
             this.btnGuncelle.Text = "Güncelle";
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // splitContainerControl1
             // 
@@ -375,6 +378,7 @@
             this.colSaat.Caption = "Saat";
             this.colSaat.FieldName = "Tarih";
             this.colSaat.Name = "colSaat";
+            this.colSaat.OptionsColumn.AllowEdit = false;
             this.colSaat.Visible = true;
             this.colSaat.VisibleIndex = 4;
             this.colSaat.Width = 59;
@@ -441,6 +445,7 @@
             this.colDepolarDepoKodu.Caption = "Depo Kodu";
             this.colDepolarDepoKodu.FieldName = "DepoKodu";
             this.colDepolarDepoKodu.Name = "colDepolarDepoKodu";
+            this.colDepolarDepoKodu.OptionsColumn.AllowEdit = false;
             this.colDepolarDepoKodu.Visible = true;
             this.colDepolarDepoKodu.VisibleIndex = 0;
             // 
@@ -449,6 +454,7 @@
             this.colDepolarDepoAdi.Caption = "Depo Adı";
             this.colDepolarDepoAdi.FieldName = "DepoAdi";
             this.colDepolarDepoAdi.Name = "colDepolarDepoAdi";
+            this.colDepolarDepoAdi.OptionsColumn.AllowEdit = false;
             this.colDepolarDepoAdi.Visible = true;
             this.colDepolarDepoAdi.VisibleIndex = 1;
             // 
@@ -457,6 +463,7 @@
             this.colDepolarStokGiris.Caption = "Stok Giriş";
             this.colDepolarStokGiris.FieldName = "StokGiris";
             this.colDepolarStokGiris.Name = "colDepolarStokGiris";
+            this.colDepolarStokGiris.OptionsColumn.AllowEdit = false;
             this.colDepolarStokGiris.Visible = true;
             this.colDepolarStokGiris.VisibleIndex = 2;
             // 
@@ -465,6 +472,7 @@
             this.colDepolarStokCikis.Caption = "Stok Çıkış";
             this.colDepolarStokCikis.FieldName = "StokCikis";
             this.colDepolarStokCikis.Name = "colDepolarStokCikis";
+            this.colDepolarStokCikis.OptionsColumn.AllowEdit = false;
             this.colDepolarStokCikis.Visible = true;
             this.colDepolarStokCikis.VisibleIndex = 3;
             // 
@@ -473,6 +481,7 @@
             this.colDepolarMevcutStok.Caption = "Mevcut Stok";
             this.colDepolarMevcutStok.FieldName = "MevcutStok";
             this.colDepolarMevcutStok.Name = "colDepolarMevcutStok";
+            this.colDepolarMevcutStok.OptionsColumn.AllowEdit = false;
             this.colDepolarMevcutStok.Visible = true;
             this.colDepolarMevcutStok.VisibleIndex = 4;
             // 
@@ -512,6 +521,7 @@
             this.colGenelBilgi.Caption = "Bilgi";
             this.colGenelBilgi.FieldName = "Bilgi";
             this.colGenelBilgi.Name = "colGenelBilgi";
+            this.colGenelBilgi.OptionsColumn.AllowEdit = false;
             this.colGenelBilgi.Visible = true;
             this.colGenelBilgi.VisibleIndex = 0;
             this.colGenelBilgi.Width = 281;
@@ -521,6 +531,7 @@
             this.colGenelKayitSayisi.Caption = "Kayıt Sayısı";
             this.colGenelKayitSayisi.FieldName = "KayitSayisi";
             this.colGenelKayitSayisi.Name = "colGenelKayitSayisi";
+            this.colGenelKayitSayisi.OptionsColumn.AllowEdit = false;
             this.colGenelKayitSayisi.Visible = true;
             this.colGenelKayitSayisi.VisibleIndex = 1;
             this.colGenelKayitSayisi.Width = 122;
@@ -530,6 +541,7 @@
             this.colGenelToplam.Caption = "Toplam";
             this.colGenelToplam.FieldName = "Toplam";
             this.colGenelToplam.Name = "colGenelToplam";
+            this.colGenelToplam.OptionsColumn.AllowEdit = false;
             this.colGenelToplam.Visible = true;
             this.colGenelToplam.VisibleIndex = 2;
             this.colGenelToplam.Width = 122;
