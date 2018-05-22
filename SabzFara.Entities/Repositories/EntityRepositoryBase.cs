@@ -17,7 +17,7 @@ namespace SabzFara.Entities.Repositories
             where TEntity : class, IEntity, new()
             where TValidator: IValidator, new()
     {
-        public void AddOrUpdate(TContext context, TEntity entity)
+        public bool AddOrUpdate(TContext context, TEntity entity)
         {
             TValidator validator = new TValidator();
             var validationResult = ValidatorTool.Validate(validator,entity);
@@ -25,7 +25,7 @@ namespace SabzFara.Entities.Repositories
             {
                 context.Set<TEntity>().AddOrUpdate(entity);
             }
-            
+            return validationResult;
         }
 
         public void Delete(TContext context, Expression<Func<TEntity, bool>> filter)

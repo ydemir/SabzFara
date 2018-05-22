@@ -488,6 +488,8 @@
             // colAlisKdv
             // 
             this.colAlisKdv.Caption = "Kdv Alış";
+            this.colAlisKdv.DisplayFormat.FormatString = "\'%\'0";
+            this.colAlisKdv.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colAlisKdv.FieldName = "AlisKdv";
             this.colAlisKdv.Name = "colAlisKdv";
             this.colAlisKdv.OptionsColumn.AllowEdit = false;
@@ -495,6 +497,8 @@
             // colSatisKdv
             // 
             this.colSatisKdv.Caption = "Kdv Satış";
+            this.colSatisKdv.DisplayFormat.FormatString = "\'%\'0";
+            this.colSatisKdv.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colSatisKdv.FieldName = "SatisKdv";
             this.colSatisKdv.Name = "colSatisKdv";
             this.colSatisKdv.OptionsColumn.AllowEdit = false;
@@ -502,6 +506,8 @@
             // colAlisFiyati1
             // 
             this.colAlisFiyati1.Caption = "Alış Fiyatı 1";
+            this.colAlisFiyati1.DisplayFormat.FormatString = "C2";
+            this.colAlisFiyati1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colAlisFiyati1.FieldName = "AlisFiyati1";
             this.colAlisFiyati1.Name = "colAlisFiyati1";
             this.colAlisFiyati1.OptionsColumn.AllowEdit = false;
@@ -509,6 +515,8 @@
             // colAlisFiyati2
             // 
             this.colAlisFiyati2.Caption = "Alış Fiyatı 2";
+            this.colAlisFiyati2.DisplayFormat.FormatString = "C2";
+            this.colAlisFiyati2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colAlisFiyati2.FieldName = "AlisFiyati2";
             this.colAlisFiyati2.Name = "colAlisFiyati2";
             this.colAlisFiyati2.OptionsColumn.AllowEdit = false;
@@ -516,6 +524,8 @@
             // colAlisFiyati3
             // 
             this.colAlisFiyati3.Caption = "Alış Fiyatı 3";
+            this.colAlisFiyati3.DisplayFormat.FormatString = "C2";
+            this.colAlisFiyati3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colAlisFiyati3.FieldName = "AlisFiyati3";
             this.colAlisFiyati3.Name = "colAlisFiyati3";
             this.colAlisFiyati3.OptionsColumn.AllowEdit = false;
@@ -523,6 +533,8 @@
             // colSatisFiyati1
             // 
             this.colSatisFiyati1.Caption = "Satış Fiyatı 1";
+            this.colSatisFiyati1.DisplayFormat.FormatString = "C2";
+            this.colSatisFiyati1.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colSatisFiyati1.FieldName = "SatisFiyati1";
             this.colSatisFiyati1.Name = "colSatisFiyati1";
             this.colSatisFiyati1.OptionsColumn.AllowEdit = false;
@@ -530,6 +542,8 @@
             // colSatisFiyati2
             // 
             this.colSatisFiyati2.Caption = "Satış Fiyatı 2";
+            this.colSatisFiyati2.DisplayFormat.FormatString = "C2";
+            this.colSatisFiyati2.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colSatisFiyati2.FieldName = "SatisFiyati2";
             this.colSatisFiyati2.Name = "colSatisFiyati2";
             this.colSatisFiyati2.OptionsColumn.AllowEdit = false;
@@ -537,6 +551,8 @@
             // colSatisFiyati3
             // 
             this.colSatisFiyati3.Caption = " Satış Fiyatı 3";
+            this.colSatisFiyati3.DisplayFormat.FormatString = "C2";
+            this.colSatisFiyati3.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colSatisFiyati3.FieldName = "SatisFiyati3";
             this.colSatisFiyati3.Name = "colSatisFiyati3";
             this.colSatisFiyati3.OptionsColumn.AllowEdit = false;

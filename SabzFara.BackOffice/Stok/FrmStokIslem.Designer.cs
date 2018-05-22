@@ -411,8 +411,8 @@
             // 
             this.toggleDurumu.Location = new System.Drawing.Point(107, 23);
             this.toggleDurumu.Name = "toggleDurumu";
-            this.toggleDurumu.Properties.OffText = "Off";
-            this.toggleDurumu.Properties.OnText = "On";
+            this.toggleDurumu.Properties.OffText = "Pasif";
+            this.toggleDurumu.Properties.OnText = "Aktif";
             this.toggleDurumu.Size = new System.Drawing.Size(95, 24);
             this.toggleDurumu.TabIndex = 5;
             // 

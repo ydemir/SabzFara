@@ -85,14 +85,22 @@ namespace SabzFara.BackOffice.Stok
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            _stokDal.AddOrUpdate(_context, _entity);
-            _stokDal.Save(_context);
-            this.Close();
+            if (_stokDal.AddOrUpdate(_context, _entity))
+            {
+                _stokDal.Save(_context);
+                this.Close();
+
+            }
+            
+            
+            
         }
 
         private void btnKapat_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+       
     }
 }
