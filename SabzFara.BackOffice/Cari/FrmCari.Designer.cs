@@ -36,16 +36,6 @@
             this.btnFiltreIptal = new DevExpress.XtraEditors.SimpleButton();
             this.btnFiltrele = new DevExpress.XtraEditors.SimpleButton();
             this.filterControl1 = new DevExpress.XtraEditors.FilterControl();
-            this.grpMenu = new DevExpress.XtraEditors.GroupControl();
-            this.btnKapat = new DevExpress.XtraEditors.SimpleButton();
-            this.btnAra = new DevExpress.XtraEditors.SimpleButton();
-            this.btnStokHareket = new DevExpress.XtraEditors.SimpleButton();
-            this.btnGuncelle = new DevExpress.XtraEditors.SimpleButton();
-            this.btnKopyala = new DevExpress.XtraEditors.SimpleButton();
-            this.btnSil = new DevExpress.XtraEditors.SimpleButton();
-            this.btnDuzenle = new DevExpress.XtraEditors.SimpleButton();
-            this.btnEkle = new DevExpress.XtraEditors.SimpleButton();
-            this.lblBaslik = new DevExpress.XtraEditors.LabelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -80,12 +70,22 @@
             this.colAlacak = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBorc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colBakiye = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.grpMenu = new DevExpress.XtraEditors.GroupControl();
+            this.btnKapat = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAra = new DevExpress.XtraEditors.SimpleButton();
+            this.btnStokHareket = new DevExpress.XtraEditors.SimpleButton();
+            this.btnGuncelle = new DevExpress.XtraEditors.SimpleButton();
+            this.btnKopyala = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSil = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDuzenle = new DevExpress.XtraEditors.SimpleButton();
+            this.btnEkle = new DevExpress.XtraEditors.SimpleButton();
+            this.lblBaslik = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
-            this.grpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
+            this.grpMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainerControl1
@@ -171,126 +171,6 @@
             this.filterControl1.SourceControl = this.gridControl1;
             this.filterControl1.TabIndex = 0;
             this.filterControl1.Text = "filterControl1";
-            // 
-            // grpMenu
-            // 
-            this.grpMenu.Controls.Add(this.btnKapat);
-            this.grpMenu.Controls.Add(this.btnAra);
-            this.grpMenu.Controls.Add(this.btnStokHareket);
-            this.grpMenu.Controls.Add(this.btnGuncelle);
-            this.grpMenu.Controls.Add(this.btnKopyala);
-            this.grpMenu.Controls.Add(this.btnSil);
-            this.grpMenu.Controls.Add(this.btnDuzenle);
-            this.grpMenu.Controls.Add(this.btnEkle);
-            this.grpMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.grpMenu.Location = new System.Drawing.Point(0, 456);
-            this.grpMenu.Name = "grpMenu";
-            this.grpMenu.Size = new System.Drawing.Size(1129, 74);
-            this.grpMenu.TabIndex = 4;
-            this.grpMenu.Text = "Menü";
-            // 
-            // btnKapat
-            // 
-            this.btnKapat.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnKapat.ImageOptions.ImageIndex = 6;
-            this.btnKapat.ImageOptions.ImageList = this.imgMenu;
-            this.btnKapat.Location = new System.Drawing.Point(1044, 20);
-            this.btnKapat.Name = "btnKapat";
-            this.btnKapat.Size = new System.Drawing.Size(83, 52);
-            this.btnKapat.TabIndex = 0;
-            this.btnKapat.Text = "Kapat";
-            this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
-            // 
-            // btnAra
-            // 
-            this.btnAra.ImageOptions.ImageIndex = 9;
-            this.btnAra.ImageOptions.ImageList = this.imgMenu;
-            this.btnAra.Location = new System.Drawing.Point(546, 25);
-            this.btnAra.Name = "btnAra";
-            this.btnAra.Size = new System.Drawing.Size(83, 44);
-            this.btnAra.TabIndex = 0;
-            this.btnAra.Text = "Ara";
-            this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
-            // 
-            // btnStokHareket
-            // 
-            this.btnStokHareket.ImageOptions.ImageIndex = 7;
-            this.btnStokHareket.ImageOptions.ImageList = this.imgMenu;
-            this.btnStokHareket.Location = new System.Drawing.Point(368, 25);
-            this.btnStokHareket.Name = "btnStokHareket";
-            this.btnStokHareket.Size = new System.Drawing.Size(83, 44);
-            this.btnStokHareket.TabIndex = 0;
-            this.btnStokHareket.Text = "Stok\r\nHareket";
-            // 
-            // btnGuncelle
-            // 
-            this.btnGuncelle.ImageOptions.ImageIndex = 0;
-            this.btnGuncelle.ImageOptions.ImageList = this.imgMenu;
-            this.btnGuncelle.Location = new System.Drawing.Point(457, 24);
-            this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(83, 44);
-            this.btnGuncelle.TabIndex = 0;
-            this.btnGuncelle.Text = "Güncelle";
-            // 
-            // btnKopyala
-            // 
-            this.btnKopyala.ImageOptions.ImageIndex = 4;
-            this.btnKopyala.ImageOptions.ImageList = this.imgMenu;
-            this.btnKopyala.Location = new System.Drawing.Point(279, 26);
-            this.btnKopyala.Name = "btnKopyala";
-            this.btnKopyala.Size = new System.Drawing.Size(83, 44);
-            this.btnKopyala.TabIndex = 0;
-            this.btnKopyala.Text = "Kopyala";
-            // 
-            // btnSil
-            // 
-            this.btnSil.ImageOptions.ImageIndex = 5;
-            this.btnSil.ImageOptions.ImageList = this.imgMenu;
-            this.btnSil.Location = new System.Drawing.Point(190, 26);
-            this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(83, 44);
-            this.btnSil.TabIndex = 0;
-            this.btnSil.Text = "Sil";
-            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
-            // 
-            // btnDuzenle
-            // 
-            this.btnDuzenle.ImageOptions.ImageIndex = 1;
-            this.btnDuzenle.ImageOptions.ImageList = this.imgMenu;
-            this.btnDuzenle.Location = new System.Drawing.Point(101, 26);
-            this.btnDuzenle.Name = "btnDuzenle";
-            this.btnDuzenle.Size = new System.Drawing.Size(83, 44);
-            this.btnDuzenle.TabIndex = 0;
-            this.btnDuzenle.Text = "Düzenle";
-            // 
-            // btnEkle
-            // 
-            this.btnEkle.ImageOptions.ImageIndex = 2;
-            this.btnEkle.ImageOptions.ImageList = this.imgMenu;
-            this.btnEkle.Location = new System.Drawing.Point(12, 26);
-            this.btnEkle.Name = "btnEkle";
-            this.btnEkle.Size = new System.Drawing.Size(83, 44);
-            this.btnEkle.TabIndex = 0;
-            this.btnEkle.Text = "Ekle";
-            // 
-            // lblBaslik
-            // 
-            this.lblBaslik.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBaslik.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("lblBaslik.Appearance.Image")));
-            this.lblBaslik.Appearance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblBaslik.Appearance.Options.UseFont = true;
-            this.lblBaslik.Appearance.Options.UseImage = true;
-            this.lblBaslik.Appearance.Options.UseImageAlign = true;
-            this.lblBaslik.Appearance.Options.UseTextOptions = true;
-            this.lblBaslik.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.lblBaslik.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.lblBaslik.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
-            this.lblBaslik.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblBaslik.Location = new System.Drawing.Point(0, 0);
-            this.lblBaslik.Name = "lblBaslik";
-            this.lblBaslik.Size = new System.Drawing.Size(1129, 47);
-            this.lblBaslik.TabIndex = 3;
-            this.lblBaslik.Text = "Cari Kartları";
             // 
             // gridControl1
             // 
@@ -600,6 +480,129 @@
             this.colBakiye.Visible = true;
             this.colBakiye.VisibleIndex = 11;
             // 
+            // grpMenu
+            // 
+            this.grpMenu.Controls.Add(this.btnKapat);
+            this.grpMenu.Controls.Add(this.btnAra);
+            this.grpMenu.Controls.Add(this.btnStokHareket);
+            this.grpMenu.Controls.Add(this.btnGuncelle);
+            this.grpMenu.Controls.Add(this.btnKopyala);
+            this.grpMenu.Controls.Add(this.btnSil);
+            this.grpMenu.Controls.Add(this.btnDuzenle);
+            this.grpMenu.Controls.Add(this.btnEkle);
+            this.grpMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.grpMenu.Location = new System.Drawing.Point(0, 456);
+            this.grpMenu.Name = "grpMenu";
+            this.grpMenu.Size = new System.Drawing.Size(1129, 74);
+            this.grpMenu.TabIndex = 4;
+            this.grpMenu.Text = "Menü";
+            // 
+            // btnKapat
+            // 
+            this.btnKapat.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnKapat.ImageOptions.ImageIndex = 6;
+            this.btnKapat.ImageOptions.ImageList = this.imgMenu;
+            this.btnKapat.Location = new System.Drawing.Point(1044, 20);
+            this.btnKapat.Name = "btnKapat";
+            this.btnKapat.Size = new System.Drawing.Size(83, 52);
+            this.btnKapat.TabIndex = 0;
+            this.btnKapat.Text = "Kapat";
+            this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
+            // 
+            // btnAra
+            // 
+            this.btnAra.ImageOptions.ImageIndex = 9;
+            this.btnAra.ImageOptions.ImageList = this.imgMenu;
+            this.btnAra.Location = new System.Drawing.Point(546, 25);
+            this.btnAra.Name = "btnAra";
+            this.btnAra.Size = new System.Drawing.Size(83, 44);
+            this.btnAra.TabIndex = 0;
+            this.btnAra.Text = "Ara";
+            this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
+            // 
+            // btnStokHareket
+            // 
+            this.btnStokHareket.ImageOptions.ImageIndex = 7;
+            this.btnStokHareket.ImageOptions.ImageList = this.imgMenu;
+            this.btnStokHareket.Location = new System.Drawing.Point(368, 25);
+            this.btnStokHareket.Name = "btnStokHareket";
+            this.btnStokHareket.Size = new System.Drawing.Size(83, 44);
+            this.btnStokHareket.TabIndex = 0;
+            this.btnStokHareket.Text = "Stok\r\nHareket";
+            // 
+            // btnGuncelle
+            // 
+            this.btnGuncelle.ImageOptions.ImageIndex = 0;
+            this.btnGuncelle.ImageOptions.ImageList = this.imgMenu;
+            this.btnGuncelle.Location = new System.Drawing.Point(457, 24);
+            this.btnGuncelle.Name = "btnGuncelle";
+            this.btnGuncelle.Size = new System.Drawing.Size(83, 44);
+            this.btnGuncelle.TabIndex = 0;
+            this.btnGuncelle.Text = "Güncelle";
+            // 
+            // btnKopyala
+            // 
+            this.btnKopyala.ImageOptions.ImageIndex = 4;
+            this.btnKopyala.ImageOptions.ImageList = this.imgMenu;
+            this.btnKopyala.Location = new System.Drawing.Point(279, 26);
+            this.btnKopyala.Name = "btnKopyala";
+            this.btnKopyala.Size = new System.Drawing.Size(83, 44);
+            this.btnKopyala.TabIndex = 0;
+            this.btnKopyala.Text = "Kopyala";
+            this.btnKopyala.Click += new System.EventHandler(this.btnKopyala_Click);
+            // 
+            // btnSil
+            // 
+            this.btnSil.ImageOptions.ImageIndex = 5;
+            this.btnSil.ImageOptions.ImageList = this.imgMenu;
+            this.btnSil.Location = new System.Drawing.Point(190, 26);
+            this.btnSil.Name = "btnSil";
+            this.btnSil.Size = new System.Drawing.Size(83, 44);
+            this.btnSil.TabIndex = 0;
+            this.btnSil.Text = "Sil";
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
+            // 
+            // btnDuzenle
+            // 
+            this.btnDuzenle.ImageOptions.ImageIndex = 1;
+            this.btnDuzenle.ImageOptions.ImageList = this.imgMenu;
+            this.btnDuzenle.Location = new System.Drawing.Point(101, 26);
+            this.btnDuzenle.Name = "btnDuzenle";
+            this.btnDuzenle.Size = new System.Drawing.Size(83, 44);
+            this.btnDuzenle.TabIndex = 0;
+            this.btnDuzenle.Text = "Düzenle";
+            this.btnDuzenle.Click += new System.EventHandler(this.btnDuzenle_Click);
+            // 
+            // btnEkle
+            // 
+            this.btnEkle.ImageOptions.ImageIndex = 2;
+            this.btnEkle.ImageOptions.ImageList = this.imgMenu;
+            this.btnEkle.Location = new System.Drawing.Point(12, 26);
+            this.btnEkle.Name = "btnEkle";
+            this.btnEkle.Size = new System.Drawing.Size(83, 44);
+            this.btnEkle.TabIndex = 0;
+            this.btnEkle.Text = "Ekle";
+            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
+            // 
+            // lblBaslik
+            // 
+            this.lblBaslik.Appearance.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBaslik.Appearance.Image = ((System.Drawing.Image)(resources.GetObject("lblBaslik.Appearance.Image")));
+            this.lblBaslik.Appearance.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblBaslik.Appearance.Options.UseFont = true;
+            this.lblBaslik.Appearance.Options.UseImage = true;
+            this.lblBaslik.Appearance.Options.UseImageAlign = true;
+            this.lblBaslik.Appearance.Options.UseTextOptions = true;
+            this.lblBaslik.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lblBaslik.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblBaslik.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.UltraFlat;
+            this.lblBaslik.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblBaslik.Location = new System.Drawing.Point(0, 0);
+            this.lblBaslik.Name = "lblBaslik";
+            this.lblBaslik.Size = new System.Drawing.Size(1129, 47);
+            this.lblBaslik.TabIndex = 3;
+            this.lblBaslik.Text = "Cari Kartları";
+            // 
             // FrmCari
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -613,10 +616,10 @@
             this.Load += new System.EventHandler(this.FrmCari_Load);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).EndInit();
-            this.grpMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).EndInit();
+            this.grpMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

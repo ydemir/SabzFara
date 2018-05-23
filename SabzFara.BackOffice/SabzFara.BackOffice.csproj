@@ -124,6 +124,9 @@
     <EmbeddedResource Include="Cari\FrmCari.resx">
       <DependentUpon>FrmCari.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Cari\FrmCariIslem.resx">
+      <DependentUpon>FrmCariIslem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

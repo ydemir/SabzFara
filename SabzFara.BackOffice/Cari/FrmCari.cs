@@ -15,8 +15,9 @@ namespace SabzFara.BackOffice.Cari
 {
     public partial class FrmCari : DevExpress.XtraEditors.XtraForm
     {
-        SabzFaraContext _context = SabzFaraContext();
+        SabzFaraContext _context = new SabzFaraContext();
         CariDAL _caridal = new CariDAL();
+        string secilen;
         public FrmCari()
         {
             InitializeComponent();
@@ -57,7 +58,7 @@ namespace SabzFara.BackOffice.Cari
         {
             if (MessageBox.Show("Seçili olan veriyi silmek istediğinize emin misiniz?", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-              string  secilen = gridView1.GetFocusedRowCellValue(colCariKodu).ToString();
+                 secilen = gridView1.GetFocusedRowCellValue(colCariKodu).ToString();
                 _caridal.Delete(_context, s => s.CariKodu == secilen);
                 _caridal.Save(_context);
                 GetAll();
@@ -67,6 +68,33 @@ namespace SabzFara.BackOffice.Cari
         private void btnKapat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnEkle_Click(object sender, EventArgs e)
+        {
+            FrmCariIslem frm = new FrmCariIslem(new Entities.Tables.Cari());
+            frm.ShowDialog();
+
+        }
+
+        private void btnDuzenle_Click(object sender, EventArgs e)
+        {
+            secilen = gridView1.GetFocusedRowCellValue(colCariKodu).ToString();
+            FrmCariIslem frm = new FrmCariIslem(_caridal.GetByFilter(_context, s => s.CariKodu == secilen));
+            frm.ShowDialog();
+        }
+
+        private void btnKopyala_Click(object sender, EventArgs e)
+        {
+            secilen = gridView1.GetFocusedRowCellValue(colCariKodu).ToString();
+            Entities.Tables.Cari __cariEntity = new Entities.Tables.Cari();
+
+            __cariEntity = _caridal.GetByFilter(_context, s => s.CariKodu == secilen);
+            __cariEntity.Id = -1;
+
+            __cariEntity.CariKodu = null;
+            FrmCariIslem frm = new FrmCariIslem(__cariEntity);
+            frm.ShowDialog();
         }
     }
 }
