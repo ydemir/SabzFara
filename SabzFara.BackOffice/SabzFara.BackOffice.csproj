@@ -124,6 +124,9 @@
     <EmbeddedResource Include="Cari\FrmCari.resx">
       <DependentUpon>FrmCari.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Cari\FrmCariHareket.resx">
+      <DependentUpon>FrmCariHareket.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cari\FrmCariIslem.resx">
       <DependentUpon>FrmCariIslem.cs</DependentUpon>
     </EmbeddedResource>

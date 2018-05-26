@@ -88,5 +88,69 @@ namespace SabzFara.Entities.DataAccess
 
             return result;
         }
+
+        public object CariFisAyrinti(SabzFaraContext _context, string cariKodu)
+        {
+            var result = _context.Fisler.Where(f => f.CariKodu == cariKodu)
+            .GroupJoin(_context.KasaHareketleri.Where(kh => kh.CariKodu == cariKodu), f => f.CariKodu, kh => kh.CariKodu, (fisler, kasaHareket) => new
+            {
+                fisler.FisKodu,
+                fisler.FisTuru,
+                fisler.PlasiyerAdi,
+                fisler.PlasiyerKodu,
+                fisler.BelgeNo,
+                fisler.Tarih,
+                fisler.IskontoOrani,
+                fisler.IskontoTutar,
+                fisler.Aciklama,
+                fisler.ToplamTutar,
+                Odenen=_context.KasaHareketleri.Sum(kh=>kh.Tutar) ??0,
+                KalanOdeme=fisler.ToplamTutar - _context.KasaHareketleri.Sum(kh => kh.Tutar) ?? 0
+            }).ToList();
+
+            return result;
+        }
+
+        public object CariFisGenelToplam(SabzFaraContext _context,string cariKodu)
+        {
+            var result = (from f in _context.Fisler.Where(f => f.CariKodu == cariKodu) group f by new { f.FisTuru, f.ToplamTutar } into grp
+                          select new
+                          {
+                              Bilgi = grp.Key.FisTuru,
+                              KayitSayisi = grp.Count(),
+                              ToplamTutar=grp.Sum(f=>f.ToplamTutar)
+                          }).ToList();
+            return result;
+        }
+
+        public object CariGenelToplam(SabzFaraContext _context,string cariKodu)
+        {
+            decimal alacak = (_context.Fisler.Where(f => f.CariKodu == cariKodu && f.FisTuru == "Aliş Faturası").Sum(f => f.ToplamTutar) ?? 0) +
+                (_context.KasaHareketleri.Where(f => f.CariKodu == cariKodu && f.Hareket == "Kasa Giriş").Sum(f => f.Tutar) ?? 0);
+
+            decimal borc = (_context.Fisler.Where(f => f.CariKodu == cariKodu && f.FisTuru == "Satış Faturası").Sum(f => f.ToplamTutar) ?? 0) +
+               (_context.KasaHareketleri.Where(f => f.CariKodu == cariKodu && f.Hareket == "Kasa Çıkış").Sum(f => f.Tutar) ?? 0);
+
+            List<GenelToplam> genelToplamlar = new List<GenelToplam>()
+            {
+               new GenelToplam
+               {
+                   Bilgi="Alacak",
+                   Tutar=alacak,
+               },
+               new GenelToplam
+               {
+                   Bilgi="Borç",
+                   Tutar=borc
+               },
+                new GenelToplam
+               {
+                   Bilgi="Bakiye",
+                   Tutar=alacak-borc
+               },
+            };
+
+            return genelToplamlar;
+        }
     }
 }
