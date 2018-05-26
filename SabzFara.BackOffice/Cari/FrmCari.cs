@@ -58,7 +58,7 @@ namespace SabzFara.BackOffice.Cari
         {
             if (MessageBox.Show("Seçili olan veriyi silmek istediğinize emin misiniz?", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                 secilen = gridView1.GetFocusedRowCellValue(colCariKodu).ToString();
+                secilen = gridView1.GetFocusedRowCellValue(colCariKodu).ToString();
                 _caridal.Delete(_context, s => s.CariKodu == secilen);
                 _caridal.Save(_context);
                 GetAll();
@@ -74,6 +74,10 @@ namespace SabzFara.BackOffice.Cari
         {
             FrmCariIslem frm = new FrmCariIslem(new Entities.Tables.Cari());
             frm.ShowDialog();
+            if (frm.saved)
+            {
+                GetAll();
+            }
 
         }
 
@@ -82,6 +86,7 @@ namespace SabzFara.BackOffice.Cari
             secilen = gridView1.GetFocusedRowCellValue(colCariKodu).ToString();
             FrmCariIslem frm = new FrmCariIslem(_caridal.GetByFilter(_context, s => s.CariKodu == secilen));
             frm.ShowDialog();
+            GetAll();
         }
 
         private void btnKopyala_Click(object sender, EventArgs e)
@@ -95,6 +100,11 @@ namespace SabzFara.BackOffice.Cari
             __cariEntity.CariKodu = null;
             FrmCariIslem frm = new FrmCariIslem(__cariEntity);
             frm.ShowDialog();
+            if (frm.saved)
+            {
+                GetAll();
+            }
+           
         }
 
         private void btnCariHareket_Click(object sender, EventArgs e)

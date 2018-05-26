@@ -18,6 +18,7 @@ namespace SabzFara.BackOffice.Cari
         private Entities.Tables.Cari _entity;
         private CariDAL _cariDal = new CariDAL();
         private SabzFaraContext _context = new SabzFaraContext();
+        public bool saved = false;
         public FrmCariIslem(Entities.Tables.Cari entity)
         {
             InitializeComponent();
@@ -48,8 +49,8 @@ namespace SabzFara.BackOffice.Cari
             btnOzelKod2.DataBindings.Add("Text", _entity, "OzelKod2");
             btnOzelKod3.DataBindings.Add("Text", _entity, "OzelKod3");
             btnOzelKod4.DataBindings.Add("Text", _entity, "OzelKod4");
-            cmbAlisOzelFiyati.DataBindings.Add("Text", _entity, "AlisOzelFiyat");
-            cmbSatisOzelFiyati.DataBindings.Add("Text", _entity, "SatisOzelFiyat");
+            cmbAlisOzelFiyati.DataBindings.Add("Text", _entity, "AlisOzelFiyati");
+            cmbSatisOzelFiyati.DataBindings.Add("Text", _entity, "SatisOzelFiyati");
 
             txtIskontoOrani.DataBindings.Add("Text", _entity, "IskontoOrani");
             txtIskontoOrani.DataBindings[0].FormattingEnabled = true;
@@ -77,6 +78,7 @@ namespace SabzFara.BackOffice.Cari
             if (_cariDal.AddOrUpdate(_context,_entity))
             {
                 _cariDal.Save(_context);
+                saved = true;
                 this.Close();
             }
         }

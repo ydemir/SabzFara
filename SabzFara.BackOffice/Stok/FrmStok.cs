@@ -82,6 +82,10 @@ namespace SabzFara.BackOffice.Stok
         {
             FrmStokIslem frm = new FrmStokIslem(new Entities.Tables.Stok());
             frm.ShowDialog();
+            if (frm.saved)
+            {
+                GetAll();
+            }
         }
 
         private void btnDuzenle_Click(object sender, EventArgs e)
@@ -89,6 +93,10 @@ namespace SabzFara.BackOffice.Stok
              secilen = gridView1.GetFocusedRowCellValue(colStokKodu).ToString();
             FrmStokIslem frm = new FrmStokIslem(_stokDAL.GetByFilter(context, s => s.StokKodu == secilen));
             frm.ShowDialog();
+            if (frm.saved)
+            {
+                GetAll();
+            }
         }
 
         private void btnKopyala_Click(object sender, EventArgs e)
@@ -102,6 +110,10 @@ namespace SabzFara.BackOffice.Stok
             _stokEntity.StokKodu = null;
             FrmStokIslem frm = new FrmStokIslem(_stokEntity);
             frm.ShowDialog();
+            if (frm.saved)
+            {
+                GetAll();
+            }
         }
 
         private void btnStokHareket_Click(object sender, EventArgs e)
