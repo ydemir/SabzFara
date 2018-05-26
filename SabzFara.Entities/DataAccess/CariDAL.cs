@@ -48,8 +48,8 @@ namespace SabzFara.Entities.DataAccess
                 cariler.AlisOzelFiyati,
                 cariler.SatisOzelFiyati,
                 cariler.Aciklama,
-                AlisToplam = fisler.Where(f => f.FisTuru == "Alış Fişi").Sum(f => f.ToplamTutar) ?? 0,
-                SatisToplam = fisler.Where(f => f.FisTuru == "Satış Fişi").Sum(f => f.ToplamTutar) ?? 0,
+                AlisToplam = fisler.Where(f => f.FisTuru == "Alış Faturası").Sum(f => f.ToplamTutar) ?? 0,
+                SatisToplam = fisler.Where(f => f.FisTuru == "Perakende Satış Faturası").Sum(f => f.ToplamTutar) ?? 0,
             }).GroupJoin(_context.KasaHareketleri, c => c.CariKodu, c => c.CariKodu, (cariler, kasahareket) => new
             {
                 cariler.Id,
@@ -104,8 +104,8 @@ namespace SabzFara.Entities.DataAccess
                 fisler.IskontoTutar,
                 fisler.Aciklama,
                 fisler.ToplamTutar,
-                Odenen=_context.KasaHareketleri.Sum(kh=>kh.Tutar) ??0,
-                KalanOdeme=fisler.ToplamTutar - _context.KasaHareketleri.Sum(kh => kh.Tutar) ?? 0
+                Odenen=_context.KasaHareketleri.Where(f=>f.FisKodu==fisler.FisKodu).Sum(kh=>kh.Tutar) ??0,
+                KalanOdeme=fisler.ToplamTutar - _context.KasaHareketleri.Where(f => f.FisKodu == fisler.FisKodu).Sum(kh => kh.Tutar) ?? 0
             }).ToList();
 
             return result;
@@ -113,12 +113,12 @@ namespace SabzFara.Entities.DataAccess
 
         public object CariFisGenelToplam(SabzFaraContext _context,string cariKodu)
         {
-            var result = (from f in _context.Fisler.Where(f => f.CariKodu == cariKodu) group f by new { f.FisTuru, f.ToplamTutar } into grp
+            var result = (from f in _context.Fisler.Where(f => f.CariKodu == cariKodu) group f by new { f.FisTuru } into grp
                           select new
                           {
                               Bilgi = grp.Key.FisTuru,
                               KayitSayisi = grp.Count(),
-                              ToplamTutar=grp.Sum(f=>f.ToplamTutar)
+                              Tutar=grp.Sum(f=>f.ToplamTutar)
                           }).ToList();
             return result;
         }
@@ -128,7 +128,7 @@ namespace SabzFara.Entities.DataAccess
             decimal alacak = (_context.Fisler.Where(f => f.CariKodu == cariKodu && f.FisTuru == "Aliş Faturası").Sum(f => f.ToplamTutar) ?? 0) +
                 (_context.KasaHareketleri.Where(f => f.CariKodu == cariKodu && f.Hareket == "Kasa Giriş").Sum(f => f.Tutar) ?? 0);
 
-            decimal borc = (_context.Fisler.Where(f => f.CariKodu == cariKodu && f.FisTuru == "Satış Faturası").Sum(f => f.ToplamTutar) ?? 0) +
+            decimal borc = (_context.Fisler.Where(f => f.CariKodu == cariKodu && f.FisTuru == "Perakende Satış Faturası").Sum(f => f.ToplamTutar) ?? 0) +
                (_context.KasaHareketleri.Where(f => f.CariKodu == cariKodu && f.Hareket == "Kasa Çıkış").Sum(f => f.Tutar) ?? 0);
 
             List<GenelToplam> genelToplamlar = new List<GenelToplam>()

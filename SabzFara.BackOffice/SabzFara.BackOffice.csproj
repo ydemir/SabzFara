@@ -155,6 +155,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\SabzFara.Entities.Tables.Cari.datasource" />
+    <None Include="Properties\DataSources\SabzFara.Entities.Tables.Fis.datasource" />
     <None Include="Properties\DataSources\SabzFara.Entities.Tables.Stok.datasource" />
     <None Include="Properties\DataSources\SabzFara.Entities.Tables.StokHareket.datasource" />
     <None Include="Properties\Settings.settings">

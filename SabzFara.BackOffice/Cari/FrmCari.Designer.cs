@@ -73,7 +73,7 @@
             this.grpMenu = new DevExpress.XtraEditors.GroupControl();
             this.btnKapat = new DevExpress.XtraEditors.SimpleButton();
             this.btnAra = new DevExpress.XtraEditors.SimpleButton();
-            this.btnStokHareket = new DevExpress.XtraEditors.SimpleButton();
+            this.btnCariHareket = new DevExpress.XtraEditors.SimpleButton();
             this.btnGuncelle = new DevExpress.XtraEditors.SimpleButton();
             this.btnKopyala = new DevExpress.XtraEditors.SimpleButton();
             this.btnSil = new DevExpress.XtraEditors.SimpleButton();
@@ -484,7 +484,7 @@
             // 
             this.grpMenu.Controls.Add(this.btnKapat);
             this.grpMenu.Controls.Add(this.btnAra);
-            this.grpMenu.Controls.Add(this.btnStokHareket);
+            this.grpMenu.Controls.Add(this.btnCariHareket);
             this.grpMenu.Controls.Add(this.btnGuncelle);
             this.grpMenu.Controls.Add(this.btnKopyala);
             this.grpMenu.Controls.Add(this.btnSil);
@@ -520,15 +520,16 @@
             this.btnAra.Text = "Ara";
             this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
             // 
-            // btnStokHareket
+            // btnCariHareket
             // 
-            this.btnStokHareket.ImageOptions.ImageIndex = 7;
-            this.btnStokHareket.ImageOptions.ImageList = this.imgMenu;
-            this.btnStokHareket.Location = new System.Drawing.Point(368, 25);
-            this.btnStokHareket.Name = "btnStokHareket";
-            this.btnStokHareket.Size = new System.Drawing.Size(83, 44);
-            this.btnStokHareket.TabIndex = 0;
-            this.btnStokHareket.Text = "Stok\r\nHareket";
+            this.btnCariHareket.ImageOptions.ImageIndex = 7;
+            this.btnCariHareket.ImageOptions.ImageList = this.imgMenu;
+            this.btnCariHareket.Location = new System.Drawing.Point(368, 25);
+            this.btnCariHareket.Name = "btnCariHareket";
+            this.btnCariHareket.Size = new System.Drawing.Size(83, 44);
+            this.btnCariHareket.TabIndex = 0;
+            this.btnCariHareket.Text = "Cari\r\nHareket";
+            this.btnCariHareket.Click += new System.EventHandler(this.btnCariHareket_Click);
             // 
             // btnGuncelle
             // 
@@ -669,7 +670,7 @@
         private DevExpress.XtraEditors.GroupControl grpMenu;
         private DevExpress.XtraEditors.SimpleButton btnKapat;
         private DevExpress.XtraEditors.SimpleButton btnAra;
-        private DevExpress.XtraEditors.SimpleButton btnStokHareket;
+        private DevExpress.XtraEditors.SimpleButton btnCariHareket;
         private DevExpress.XtraEditors.SimpleButton btnGuncelle;
         private DevExpress.XtraEditors.SimpleButton btnKopyala;
         private DevExpress.XtraEditors.SimpleButton btnSil;

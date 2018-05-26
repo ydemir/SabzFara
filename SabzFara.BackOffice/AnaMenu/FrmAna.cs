@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraBars;
 using SabzFara.BackOffice.Stok;
+using SabzFara.BackOffice.Cari;
 
 namespace SabzFara.BackOffice.AnaMenu
 {
@@ -22,6 +23,13 @@ namespace SabzFara.BackOffice.AnaMenu
         private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
         {
             FrmStok frm = new FrmStok();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void barCari_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FrmCari frm = new FrmCari();
             frm.MdiParent = this;
             frm.Show();
         }

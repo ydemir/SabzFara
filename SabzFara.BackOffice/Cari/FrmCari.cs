@@ -96,5 +96,13 @@ namespace SabzFara.BackOffice.Cari
             FrmCariIslem frm = new FrmCariIslem(__cariEntity);
             frm.ShowDialog();
         }
+
+        private void btnCariHareket_Click(object sender, EventArgs e)
+        {
+            secilen = gridView1.GetFocusedRowCellValue(colCariKodu).ToString();
+            string secilenAd = gridView1.GetFocusedRowCellValue(colCariAdi).ToString();
+            FrmCariHareket frm = new FrmCariHareket(secilen, secilenAd);
+            frm.ShowDialog();
+        }
     }
 }

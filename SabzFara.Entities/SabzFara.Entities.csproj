@@ -82,6 +82,10 @@
     <Compile Include="Migrations\201805201103397_InitialCreate.Designer.cs">
       <DependentUpon>201805201103397_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201805261751115_NewContext.cs" />
+    <Compile Include="Migrations\201805261751115_NewContext.Designer.cs">
+      <DependentUpon>201805261751115_NewContext.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\EntityRepositoryBase.cs" />
@@ -109,10 +113,14 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\SabzFara.Entities.Tables.Fis.datasource" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201805201103397_InitialCreate.resx">
       <DependentUpon>201805201103397_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805261751115_NewContext.resx">
+      <DependentUpon>201805261751115_NewContext.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
