@@ -98,6 +98,12 @@
     <Compile Include="Kasa\FrmKasa.Designer.cs">
       <DependentUpon>FrmKasa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Kasa\FrmKasaHareket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kasa\FrmKasaHareket.Designer.cs">
+      <DependentUpon>FrmKasaHareket.cs</DependentUpon>
+    </Compile>
     <Compile Include="Kasa\FrmKasaIslem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Kasa\FrmKasa.resx">
       <DependentUpon>FrmKasa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kasa\FrmKasaHareket.resx">
+      <DependentUpon>FrmKasaHareket.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Kasa\FrmKasaIslem.resx">
       <DependentUpon>FrmKasaIslem.cs</DependentUpon>
