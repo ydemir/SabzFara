@@ -110,6 +110,12 @@
     <Compile Include="Kasa\FrmKasaIslem.Designer.cs">
       <DependentUpon>FrmKasaIslem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Kasa\FrmKasaSec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kasa\FrmKasaSec.Designer.cs">
+      <DependentUpon>FrmKasaSec.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Stok\FrmStok.cs">
@@ -159,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Kasa\FrmKasaIslem.resx">
       <DependentUpon>FrmKasaIslem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kasa\FrmKasaSec.resx">
+      <DependentUpon>FrmKasaSec.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
