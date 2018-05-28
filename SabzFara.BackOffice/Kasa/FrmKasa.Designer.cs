@@ -42,37 +42,34 @@
             this.lblBaslik = new DevExpress.XtraEditors.LabelControl();
             this.filterControl1 = new DevExpress.XtraEditors.FilterControl();
             this.gridContKasalar = new DevExpress.XtraGrid.GridControl();
+            this.layoutView1 = new DevExpress.XtraGrid.Views.Layout.LayoutView();
+            this.colId = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
+            this.layoutViewField_colId = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.colKasaKodu = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
+            this.layoutViewField_colKasaKodu = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.colKasaAdi = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
+            this.layoutViewField_colKasaAdi = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.colYetkiliKodu = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
+            this.layoutViewField_colYetkiliKodu = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.colYetkiliKisi = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
+            this.layoutViewField_colYetkiliKisi = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.colAciklama = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
+            this.layoutViewField_colAciklama = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.colKasaGiris = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
+            this.layoutViewField_colKasaGiris = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.colKasaCikis = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
+            this.layoutViewField_colKasaCikis = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.colBakiye = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
+            this.layoutViewField_colBakiye = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
+            this.layoutViewCard1 = new DevExpress.XtraGrid.Views.Layout.LayoutViewCard();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.btnFiltreKapat = new DevExpress.XtraEditors.SimpleButton();
             this.btnFiltreIptal = new DevExpress.XtraEditors.SimpleButton();
             this.btnFiltrele = new DevExpress.XtraEditors.SimpleButton();
-            this.layoutView1 = new DevExpress.XtraGrid.Views.Layout.LayoutView();
-            this.colId = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
-            this.colKasaKodu = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
-            this.colKasaAdi = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
-            this.colYetkiliKodu = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
-            this.colYetkiliKisi = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
-            this.colAciklama = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
-            this.colKasaGiris = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
-            this.colKasaCikis = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
-            this.colBakiye = new DevExpress.XtraGrid.Columns.LayoutViewColumn();
-            this.layoutViewCard1 = new DevExpress.XtraGrid.Views.Layout.LayoutViewCard();
-            this.layoutViewField_colId = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
-            this.layoutViewField_colKasaKodu = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
-            this.layoutViewField_colKasaAdi = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
-            this.layoutViewField_colYetkiliKodu = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
-            this.layoutViewField_colYetkiliKisi = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
-            this.layoutViewField_colAciklama = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
-            this.layoutViewField_colKasaGiris = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
-            this.layoutViewField_colKasaCikis = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
-            this.layoutViewField_colBakiye = new DevExpress.XtraGrid.Views.Layout.LayoutViewField();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridContKasalar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
-            this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutViewCard1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colId)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colKasaKodu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colKasaAdi)).BeginInit();
@@ -82,6 +79,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colKasaGiris)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colKasaCikis)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colBakiye)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewCard1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
+            this.splitContainerControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpMenu
@@ -170,6 +170,7 @@
             this.btnSil.Size = new System.Drawing.Size(83, 44);
             this.btnSil.TabIndex = 0;
             this.btnSil.Text = "Sil";
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnDuzenle
             // 
@@ -180,6 +181,7 @@
             this.btnDuzenle.Size = new System.Drawing.Size(83, 44);
             this.btnDuzenle.TabIndex = 0;
             this.btnDuzenle.Text = "Düzenle";
+            this.btnDuzenle.Click += new System.EventHandler(this.btnDuzenle_Click);
             // 
             // btnEkle
             // 
@@ -190,6 +192,7 @@
             this.btnEkle.Size = new System.Drawing.Size(83, 44);
             this.btnEkle.TabIndex = 0;
             this.btnEkle.Text = "Ekle";
+            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
             // lblBaslik
             // 
@@ -232,6 +235,196 @@
             this.gridContKasalar.TabIndex = 0;
             this.gridContKasalar.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.layoutView1});
+            // 
+            // layoutView1
+            // 
+            this.layoutView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.LayoutViewColumn[] {
+            this.colId,
+            this.colKasaKodu,
+            this.colKasaAdi,
+            this.colYetkiliKodu,
+            this.colYetkiliKisi,
+            this.colAciklama,
+            this.colKasaGiris,
+            this.colKasaCikis,
+            this.colBakiye});
+            this.layoutView1.GridControl = this.gridContKasalar;
+            this.layoutView1.HiddenItems.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutViewField_colId});
+            this.layoutView1.Name = "layoutView1";
+            this.layoutView1.TemplateCard = this.layoutViewCard1;
+            // 
+            // colId
+            // 
+            this.colId.FieldName = "Id";
+            this.colId.LayoutViewField = this.layoutViewField_colId;
+            this.colId.Name = "colId";
+            this.colId.OptionsColumn.AllowEdit = false;
+            this.colId.OptionsColumn.ShowInCustomizationForm = false;
+            // 
+            // layoutViewField_colId
+            // 
+            this.layoutViewField_colId.EditorPreferredWidth = 137;
+            this.layoutViewField_colId.Location = new System.Drawing.Point(0, 0);
+            this.layoutViewField_colId.Name = "layoutViewField_colId";
+            this.layoutViewField_colId.Size = new System.Drawing.Size(203, 24);
+            this.layoutViewField_colId.TextSize = new System.Drawing.Size(58, 20);
+            // 
+            // colKasaKodu
+            // 
+            this.colKasaKodu.Caption = "Kasa Kodu";
+            this.colKasaKodu.FieldName = "KasaKodu";
+            this.colKasaKodu.LayoutViewField = this.layoutViewField_colKasaKodu;
+            this.colKasaKodu.Name = "colKasaKodu";
+            this.colKasaKodu.OptionsColumn.AllowEdit = false;
+            this.colKasaKodu.Width = 85;
+            // 
+            // layoutViewField_colKasaKodu
+            // 
+            this.layoutViewField_colKasaKodu.EditorPreferredWidth = 137;
+            this.layoutViewField_colKasaKodu.Location = new System.Drawing.Point(0, 0);
+            this.layoutViewField_colKasaKodu.Name = "layoutViewField_colKasaKodu";
+            this.layoutViewField_colKasaKodu.Size = new System.Drawing.Size(203, 24);
+            this.layoutViewField_colKasaKodu.TextSize = new System.Drawing.Size(58, 13);
+            // 
+            // colKasaAdi
+            // 
+            this.colKasaAdi.Caption = "Kasa Adı";
+            this.colKasaAdi.FieldName = "KasaAdi";
+            this.colKasaAdi.LayoutViewField = this.layoutViewField_colKasaAdi;
+            this.colKasaAdi.Name = "colKasaAdi";
+            this.colKasaAdi.OptionsColumn.AllowEdit = false;
+            this.colKasaAdi.Width = 147;
+            // 
+            // layoutViewField_colKasaAdi
+            // 
+            this.layoutViewField_colKasaAdi.EditorPreferredWidth = 137;
+            this.layoutViewField_colKasaAdi.Location = new System.Drawing.Point(0, 24);
+            this.layoutViewField_colKasaAdi.Name = "layoutViewField_colKasaAdi";
+            this.layoutViewField_colKasaAdi.Size = new System.Drawing.Size(203, 24);
+            this.layoutViewField_colKasaAdi.TextSize = new System.Drawing.Size(58, 13);
+            // 
+            // colYetkiliKodu
+            // 
+            this.colYetkiliKodu.Caption = "Yetkili Kodu";
+            this.colYetkiliKodu.FieldName = "YetkiliKodu";
+            this.colYetkiliKodu.LayoutViewField = this.layoutViewField_colYetkiliKodu;
+            this.colYetkiliKodu.Name = "colYetkiliKodu";
+            this.colYetkiliKodu.OptionsColumn.AllowEdit = false;
+            this.colYetkiliKodu.Width = 112;
+            // 
+            // layoutViewField_colYetkiliKodu
+            // 
+            this.layoutViewField_colYetkiliKodu.EditorPreferredWidth = 137;
+            this.layoutViewField_colYetkiliKodu.Location = new System.Drawing.Point(0, 48);
+            this.layoutViewField_colYetkiliKodu.Name = "layoutViewField_colYetkiliKodu";
+            this.layoutViewField_colYetkiliKodu.Size = new System.Drawing.Size(203, 24);
+            this.layoutViewField_colYetkiliKodu.TextSize = new System.Drawing.Size(58, 13);
+            // 
+            // colYetkiliKisi
+            // 
+            this.colYetkiliKisi.Caption = "Yetkili Kişi";
+            this.colYetkiliKisi.FieldName = "YetkiliKisi";
+            this.colYetkiliKisi.LayoutViewField = this.layoutViewField_colYetkiliKisi;
+            this.colYetkiliKisi.Name = "colYetkiliKisi";
+            this.colYetkiliKisi.OptionsColumn.AllowEdit = false;
+            this.colYetkiliKisi.Width = 154;
+            // 
+            // layoutViewField_colYetkiliKisi
+            // 
+            this.layoutViewField_colYetkiliKisi.EditorPreferredWidth = 137;
+            this.layoutViewField_colYetkiliKisi.Location = new System.Drawing.Point(0, 72);
+            this.layoutViewField_colYetkiliKisi.Name = "layoutViewField_colYetkiliKisi";
+            this.layoutViewField_colYetkiliKisi.Size = new System.Drawing.Size(203, 24);
+            this.layoutViewField_colYetkiliKisi.TextSize = new System.Drawing.Size(58, 13);
+            // 
+            // colAciklama
+            // 
+            this.colAciklama.Caption = "Açıklama";
+            this.colAciklama.FieldName = "Aciklama";
+            this.colAciklama.LayoutViewField = this.layoutViewField_colAciklama;
+            this.colAciklama.Name = "colAciklama";
+            this.colAciklama.OptionsColumn.AllowEdit = false;
+            this.colAciklama.Width = 377;
+            // 
+            // layoutViewField_colAciklama
+            // 
+            this.layoutViewField_colAciklama.EditorPreferredWidth = 137;
+            this.layoutViewField_colAciklama.Location = new System.Drawing.Point(0, 96);
+            this.layoutViewField_colAciklama.Name = "layoutViewField_colAciklama";
+            this.layoutViewField_colAciklama.Size = new System.Drawing.Size(203, 24);
+            this.layoutViewField_colAciklama.TextSize = new System.Drawing.Size(58, 13);
+            // 
+            // colKasaGiris
+            // 
+            this.colKasaGiris.Caption = "Kasa Giriş";
+            this.colKasaGiris.DisplayFormat.FormatString = "C2";
+            this.colKasaGiris.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colKasaGiris.FieldName = "KasaGiris";
+            this.colKasaGiris.LayoutViewField = this.layoutViewField_colKasaGiris;
+            this.colKasaGiris.Name = "colKasaGiris";
+            this.colKasaGiris.OptionsColumn.AllowEdit = false;
+            this.colKasaGiris.Width = 113;
+            // 
+            // layoutViewField_colKasaGiris
+            // 
+            this.layoutViewField_colKasaGiris.EditorPreferredWidth = 137;
+            this.layoutViewField_colKasaGiris.Location = new System.Drawing.Point(0, 120);
+            this.layoutViewField_colKasaGiris.Name = "layoutViewField_colKasaGiris";
+            this.layoutViewField_colKasaGiris.Size = new System.Drawing.Size(203, 24);
+            this.layoutViewField_colKasaGiris.TextSize = new System.Drawing.Size(58, 13);
+            // 
+            // colKasaCikis
+            // 
+            this.colKasaCikis.Caption = "Kasa Çıkış";
+            this.colKasaCikis.DisplayFormat.FormatString = "C2";
+            this.colKasaCikis.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colKasaCikis.FieldName = "KasaCikis";
+            this.colKasaCikis.LayoutViewField = this.layoutViewField_colKasaCikis;
+            this.colKasaCikis.Name = "colKasaCikis";
+            this.colKasaCikis.OptionsColumn.AllowEdit = false;
+            this.colKasaCikis.Width = 103;
+            // 
+            // layoutViewField_colKasaCikis
+            // 
+            this.layoutViewField_colKasaCikis.EditorPreferredWidth = 137;
+            this.layoutViewField_colKasaCikis.Location = new System.Drawing.Point(0, 144);
+            this.layoutViewField_colKasaCikis.Name = "layoutViewField_colKasaCikis";
+            this.layoutViewField_colKasaCikis.Size = new System.Drawing.Size(203, 24);
+            this.layoutViewField_colKasaCikis.TextSize = new System.Drawing.Size(58, 13);
+            // 
+            // colBakiye
+            // 
+            this.colBakiye.Caption = "Bakiye";
+            this.colBakiye.DisplayFormat.FormatString = "C2";
+            this.colBakiye.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colBakiye.FieldName = "Bakiye";
+            this.colBakiye.LayoutViewField = this.layoutViewField_colBakiye;
+            this.colBakiye.Name = "colBakiye";
+            this.colBakiye.OptionsColumn.AllowEdit = false;
+            this.colBakiye.Width = 82;
+            // 
+            // layoutViewField_colBakiye
+            // 
+            this.layoutViewField_colBakiye.EditorPreferredWidth = 137;
+            this.layoutViewField_colBakiye.Location = new System.Drawing.Point(0, 168);
+            this.layoutViewField_colBakiye.Name = "layoutViewField_colBakiye";
+            this.layoutViewField_colBakiye.Size = new System.Drawing.Size(203, 24);
+            this.layoutViewField_colBakiye.TextSize = new System.Drawing.Size(58, 13);
+            // 
+            // layoutViewCard1
+            // 
+            this.layoutViewCard1.HeaderButtonsLocation = DevExpress.Utils.GroupElementLocation.AfterText;
+            this.layoutViewCard1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutViewField_colKasaKodu,
+            this.layoutViewField_colKasaAdi,
+            this.layoutViewField_colYetkiliKodu,
+            this.layoutViewField_colYetkiliKisi,
+            this.layoutViewField_colAciklama,
+            this.layoutViewField_colKasaGiris,
+            this.layoutViewField_colKasaCikis,
+            this.layoutViewField_colBakiye});
+            this.layoutViewCard1.Name = "layoutViewCard1";
             // 
             // splitContainerControl1
             // 
@@ -287,196 +480,6 @@
             this.btnFiltrele.TabIndex = 0;
             this.btnFiltrele.Click += new System.EventHandler(this.btnFiltrele_Click);
             // 
-            // layoutView1
-            // 
-            this.layoutView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.LayoutViewColumn[] {
-            this.colId,
-            this.colKasaKodu,
-            this.colKasaAdi,
-            this.colYetkiliKodu,
-            this.colYetkiliKisi,
-            this.colAciklama,
-            this.colKasaGiris,
-            this.colKasaCikis,
-            this.colBakiye});
-            this.layoutView1.GridControl = this.gridContKasalar;
-            this.layoutView1.HiddenItems.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutViewField_colId});
-            this.layoutView1.Name = "layoutView1";
-            this.layoutView1.TemplateCard = this.layoutViewCard1;
-            // 
-            // colId
-            // 
-            this.colId.FieldName = "Id";
-            this.colId.LayoutViewField = this.layoutViewField_colId;
-            this.colId.Name = "colId";
-            this.colId.OptionsColumn.AllowEdit = false;
-            this.colId.OptionsColumn.ShowInCustomizationForm = false;
-            // 
-            // colKasaKodu
-            // 
-            this.colKasaKodu.Caption = "Kasa Kodu";
-            this.colKasaKodu.FieldName = "KasaKodu";
-            this.colKasaKodu.LayoutViewField = this.layoutViewField_colKasaKodu;
-            this.colKasaKodu.Name = "colKasaKodu";
-            this.colKasaKodu.OptionsColumn.AllowEdit = false;
-            this.colKasaKodu.Width = 85;
-            // 
-            // colKasaAdi
-            // 
-            this.colKasaAdi.Caption = "Kasa Adı";
-            this.colKasaAdi.FieldName = "KasaAdi";
-            this.colKasaAdi.LayoutViewField = this.layoutViewField_colKasaAdi;
-            this.colKasaAdi.Name = "colKasaAdi";
-            this.colKasaAdi.OptionsColumn.AllowEdit = false;
-            this.colKasaAdi.Width = 147;
-            // 
-            // colYetkiliKodu
-            // 
-            this.colYetkiliKodu.Caption = "Yetkili Kodu";
-            this.colYetkiliKodu.FieldName = "YetkiliKodu";
-            this.colYetkiliKodu.LayoutViewField = this.layoutViewField_colYetkiliKodu;
-            this.colYetkiliKodu.Name = "colYetkiliKodu";
-            this.colYetkiliKodu.OptionsColumn.AllowEdit = false;
-            this.colYetkiliKodu.Width = 112;
-            // 
-            // colYetkiliKisi
-            // 
-            this.colYetkiliKisi.Caption = "Yetkili Kişi";
-            this.colYetkiliKisi.FieldName = "YetkiliKisi";
-            this.colYetkiliKisi.LayoutViewField = this.layoutViewField_colYetkiliKisi;
-            this.colYetkiliKisi.Name = "colYetkiliKisi";
-            this.colYetkiliKisi.OptionsColumn.AllowEdit = false;
-            this.colYetkiliKisi.Width = 154;
-            // 
-            // colAciklama
-            // 
-            this.colAciklama.Caption = "Açıklama";
-            this.colAciklama.FieldName = "Aciklama";
-            this.colAciklama.LayoutViewField = this.layoutViewField_colAciklama;
-            this.colAciklama.Name = "colAciklama";
-            this.colAciklama.OptionsColumn.AllowEdit = false;
-            this.colAciklama.Width = 377;
-            // 
-            // colKasaGiris
-            // 
-            this.colKasaGiris.Caption = "Kasa Giriş";
-            this.colKasaGiris.DisplayFormat.FormatString = "C2";
-            this.colKasaGiris.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colKasaGiris.FieldName = "KasaGiris";
-            this.colKasaGiris.LayoutViewField = this.layoutViewField_colKasaGiris;
-            this.colKasaGiris.Name = "colKasaGiris";
-            this.colKasaGiris.OptionsColumn.AllowEdit = false;
-            this.colKasaGiris.Width = 113;
-            // 
-            // colKasaCikis
-            // 
-            this.colKasaCikis.Caption = "Kasa Çıkış";
-            this.colKasaCikis.DisplayFormat.FormatString = "C2";
-            this.colKasaCikis.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colKasaCikis.FieldName = "KasaCikis";
-            this.colKasaCikis.LayoutViewField = this.layoutViewField_colKasaCikis;
-            this.colKasaCikis.Name = "colKasaCikis";
-            this.colKasaCikis.OptionsColumn.AllowEdit = false;
-            this.colKasaCikis.Width = 103;
-            // 
-            // colBakiye
-            // 
-            this.colBakiye.Caption = "Bakiye";
-            this.colBakiye.DisplayFormat.FormatString = "C2";
-            this.colBakiye.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colBakiye.FieldName = "Bakiye";
-            this.colBakiye.LayoutViewField = this.layoutViewField_colBakiye;
-            this.colBakiye.Name = "colBakiye";
-            this.colBakiye.OptionsColumn.AllowEdit = false;
-            this.colBakiye.Width = 82;
-            // 
-            // layoutViewCard1
-            // 
-            this.layoutViewCard1.HeaderButtonsLocation = DevExpress.Utils.GroupElementLocation.AfterText;
-            this.layoutViewCard1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutViewField_colKasaKodu,
-            this.layoutViewField_colKasaAdi,
-            this.layoutViewField_colYetkiliKodu,
-            this.layoutViewField_colYetkiliKisi,
-            this.layoutViewField_colAciklama,
-            this.layoutViewField_colKasaGiris,
-            this.layoutViewField_colKasaCikis,
-            this.layoutViewField_colBakiye});
-            this.layoutViewCard1.Name = "layoutViewCard1";
-            // 
-            // layoutViewField_colId
-            // 
-            this.layoutViewField_colId.EditorPreferredWidth = 137;
-            this.layoutViewField_colId.Location = new System.Drawing.Point(0, 0);
-            this.layoutViewField_colId.Name = "layoutViewField_colId";
-            this.layoutViewField_colId.Size = new System.Drawing.Size(203, 24);
-            this.layoutViewField_colId.TextSize = new System.Drawing.Size(58, 20);
-            // 
-            // layoutViewField_colKasaKodu
-            // 
-            this.layoutViewField_colKasaKodu.EditorPreferredWidth = 137;
-            this.layoutViewField_colKasaKodu.Location = new System.Drawing.Point(0, 0);
-            this.layoutViewField_colKasaKodu.Name = "layoutViewField_colKasaKodu";
-            this.layoutViewField_colKasaKodu.Size = new System.Drawing.Size(203, 24);
-            this.layoutViewField_colKasaKodu.TextSize = new System.Drawing.Size(58, 13);
-            // 
-            // layoutViewField_colKasaAdi
-            // 
-            this.layoutViewField_colKasaAdi.EditorPreferredWidth = 137;
-            this.layoutViewField_colKasaAdi.Location = new System.Drawing.Point(0, 24);
-            this.layoutViewField_colKasaAdi.Name = "layoutViewField_colKasaAdi";
-            this.layoutViewField_colKasaAdi.Size = new System.Drawing.Size(203, 24);
-            this.layoutViewField_colKasaAdi.TextSize = new System.Drawing.Size(58, 13);
-            // 
-            // layoutViewField_colYetkiliKodu
-            // 
-            this.layoutViewField_colYetkiliKodu.EditorPreferredWidth = 137;
-            this.layoutViewField_colYetkiliKodu.Location = new System.Drawing.Point(0, 48);
-            this.layoutViewField_colYetkiliKodu.Name = "layoutViewField_colYetkiliKodu";
-            this.layoutViewField_colYetkiliKodu.Size = new System.Drawing.Size(203, 24);
-            this.layoutViewField_colYetkiliKodu.TextSize = new System.Drawing.Size(58, 13);
-            // 
-            // layoutViewField_colYetkiliKisi
-            // 
-            this.layoutViewField_colYetkiliKisi.EditorPreferredWidth = 137;
-            this.layoutViewField_colYetkiliKisi.Location = new System.Drawing.Point(0, 72);
-            this.layoutViewField_colYetkiliKisi.Name = "layoutViewField_colYetkiliKisi";
-            this.layoutViewField_colYetkiliKisi.Size = new System.Drawing.Size(203, 24);
-            this.layoutViewField_colYetkiliKisi.TextSize = new System.Drawing.Size(58, 13);
-            // 
-            // layoutViewField_colAciklama
-            // 
-            this.layoutViewField_colAciklama.EditorPreferredWidth = 137;
-            this.layoutViewField_colAciklama.Location = new System.Drawing.Point(0, 96);
-            this.layoutViewField_colAciklama.Name = "layoutViewField_colAciklama";
-            this.layoutViewField_colAciklama.Size = new System.Drawing.Size(203, 24);
-            this.layoutViewField_colAciklama.TextSize = new System.Drawing.Size(58, 13);
-            // 
-            // layoutViewField_colKasaGiris
-            // 
-            this.layoutViewField_colKasaGiris.EditorPreferredWidth = 137;
-            this.layoutViewField_colKasaGiris.Location = new System.Drawing.Point(0, 120);
-            this.layoutViewField_colKasaGiris.Name = "layoutViewField_colKasaGiris";
-            this.layoutViewField_colKasaGiris.Size = new System.Drawing.Size(203, 24);
-            this.layoutViewField_colKasaGiris.TextSize = new System.Drawing.Size(58, 13);
-            // 
-            // layoutViewField_colKasaCikis
-            // 
-            this.layoutViewField_colKasaCikis.EditorPreferredWidth = 137;
-            this.layoutViewField_colKasaCikis.Location = new System.Drawing.Point(0, 144);
-            this.layoutViewField_colKasaCikis.Name = "layoutViewField_colKasaCikis";
-            this.layoutViewField_colKasaCikis.Size = new System.Drawing.Size(203, 24);
-            this.layoutViewField_colKasaCikis.TextSize = new System.Drawing.Size(58, 13);
-            // 
-            // layoutViewField_colBakiye
-            // 
-            this.layoutViewField_colBakiye.EditorPreferredWidth = 137;
-            this.layoutViewField_colBakiye.Location = new System.Drawing.Point(0, 168);
-            this.layoutViewField_colBakiye.Name = "layoutViewField_colBakiye";
-            this.layoutViewField_colBakiye.Size = new System.Drawing.Size(203, 24);
-            this.layoutViewField_colBakiye.TextSize = new System.Drawing.Size(58, 13);
-            // 
             // FrmKasa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -491,10 +494,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).EndInit();
             this.grpMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridContKasalar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
-            this.splitContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutViewCard1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colId)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colKasaKodu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colKasaAdi)).EndInit();
@@ -504,6 +504,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colKasaGiris)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colKasaCikis)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutViewField_colBakiye)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutViewCard1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
+            this.splitContainerControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
