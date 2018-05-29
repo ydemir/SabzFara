@@ -39,5 +39,45 @@ namespace SabzFara.Entities.DataAccess
 
             return result;
         }
+
+        public object DepoStokListele(SabzFaraContext context,string depoKodu)
+        {
+            var tablo = context.Stoklar.GroupJoin(context.StokHareketleri.Where(c=>c.DepoKodu==depoKodu), s => s.StokKodu, sh => sh.StokKodu, (Stoklar, StokHarekeleri) => new
+            {
+             
+    
+                Stoklar.StokAdi,
+                Stoklar.Barkod,
+                
+                StokGiris = StokHarekeleri.Where(s => s.Hareket == "Stok Giriş").Sum(sh => sh.Miktar) ?? 0,
+                StokCikis = StokHarekeleri.Where(s => s.Hareket == "Stok Çıkış").Sum(sh => sh.Miktar) ?? 0,
+                MevcutStok = StokHarekeleri.Where(s => s.Hareket == "Stok Giriş").Sum(sh => sh.Miktar) - StokHarekeleri.Where(s => s.Hareket == "Stok Çıkış").Sum(sh => sh.Miktar) ?? 0
+            }).ToList();
+
+            return tablo;
+        }
+
+        public object DepoIstatistikListele(SabzFaraContext _context, string depoKodu)
+        {
+            
+
+            List<GenelToplam> genelToplamlar = new List<GenelToplam>()
+            {
+               new GenelToplam
+               {
+                   Bilgi="Stok Giriş",
+                   KayitSayisi=_context.StokHareketleri.Where(c=>c.DepoKodu==depoKodu && c.Hareket=="Stok Giriş").Count(),
+                   Tutar=_context.StokHareketleri.Where(c=>c.DepoKodu==depoKodu && c.Hareket=="Stok Giriş").Sum(c=>c.Miktar)?? 0
+               },
+               new GenelToplam
+               {
+                   Bilgi="Stok Giriş",
+                   KayitSayisi=_context.StokHareketleri.Where(c=>c.DepoKodu==depoKodu && c.Hareket=="Stok Çıkış").Count(),
+                   Tutar=_context.StokHareketleri.Where(c=>c.DepoKodu==depoKodu && c.Hareket=="Stok Çıkış").Sum(c=>c.Miktar)?? 0
+               }
+            };
+
+            return genelToplamlar;
+        }
     }
 }
