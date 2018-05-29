@@ -22,6 +22,7 @@ namespace SabzFara.BackOffice.Kasa
         {
             InitializeComponent();
             _kasaKodu = kasaKodu;
+            lblBaslik.Text = kasaKodu + " - " + kasaKodu + "Hareketleri";
         }
 
         private void FrmKasaHareket_Load(object sender, EventArgs e)
