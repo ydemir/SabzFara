@@ -17,6 +17,7 @@ namespace SabzFara.BackOffice.Depo
     {
         SabzFaraContext context = new SabzFaraContext();
         DepoDAL depoDAL = new DepoDAL();
+        string secilen = null;
         public FrmDepo()
         {
             InitializeComponent();
@@ -64,7 +65,10 @@ namespace SabzFara.BackOffice.Depo
 
         private void btnDuzenle_Click(object sender, EventArgs e)
         {
-
+            secilen = gridDepolar.GetFocusedRowCellValue(colDepoKodu).ToString();
+            FrmDepoIslem frm = new FrmDepoIslem(depoDAL.GetByFilter(context, s => s.DepoKodu == secilen));
+            frm.ShowDialog();
+            Listele();
         }
 
         private void btnSil_Click(object sender, EventArgs e)
@@ -74,6 +78,16 @@ namespace SabzFara.BackOffice.Depo
               string  secilen = gridDepolar.GetFocusedRowCellValue(colDepoKodu).ToString();
                 depoDAL.Delete(context, s => s.DepoKodu == secilen);
                 depoDAL.Save(context);
+                Listele();
+            }
+        }
+
+        private void btnEkle_Click(object sender, EventArgs e)
+        {
+            FrmDepoIslem frm = new FrmDepoIslem(new Entities.Tables.Depo());
+            frm.ShowDialog();
+            if (frm.kaydedildi)
+            {
                 Listele();
             }
         }
