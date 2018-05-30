@@ -184,6 +184,12 @@
     <Compile Include="Stok\FrmStokSec.Designer.cs">
       <DependentUpon>FrmStokSec.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tanim\FrmTanim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tanim\FrmTanim.Designer.cs">
+      <DependentUpon>FrmTanim.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AnaMenu\FrmAna.resx">
       <DependentUpon>FrmAna.cs</DependentUpon>
     </EmbeddedResource>
@@ -253,6 +259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Stok\FrmStokSec.resx">
       <DependentUpon>FrmStokSec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tanim\FrmTanim.resx">
+      <DependentUpon>FrmTanim.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
