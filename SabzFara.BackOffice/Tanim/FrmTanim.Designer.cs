@@ -32,34 +32,35 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmTanim));
             this.lblBaslik = new DevExpress.XtraEditors.LabelControl();
             this.grpMenu = new DevExpress.XtraEditors.GroupControl();
-            this.btnAra = new DevExpress.XtraEditors.SimpleButton();
-            this.btnGuncelle = new DevExpress.XtraEditors.SimpleButton();
-            this.btnKopyala = new DevExpress.XtraEditors.SimpleButton();
+            this.btnKapat = new DevExpress.XtraEditors.SimpleButton();
+            this.btnVazgec = new DevExpress.XtraEditors.SimpleButton();
+            this.btnKaydet = new DevExpress.XtraEditors.SimpleButton();
             this.btnSil = new DevExpress.XtraEditors.SimpleButton();
             this.btnDuzenle = new DevExpress.XtraEditors.SimpleButton();
             this.btnEkle = new DevExpress.XtraEditors.SimpleButton();
             this.navigationFrame1 = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.navigationPage1 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.navigationPage2 = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridContTanim = new DevExpress.XtraGrid.GridControl();
+            this.gridTanim = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.txtTanim = new DevExpress.XtraEditors.TextEdit();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.txtAciklama = new DevExpress.XtraEditors.MemoEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSec = new DevExpress.XtraEditors.SimpleButton();
             this.colTanim = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAciklama = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.navigationFrame1)).BeginInit();
             this.navigationFrame1.SuspendLayout();
             this.navigationPage1.SuspendLayout();
             this.navigationPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridContTanim)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridTanim)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTanim.Properties)).BeginInit();
@@ -87,12 +88,12 @@
             // 
             // grpMenu
             // 
-            this.grpMenu.Controls.Add(this.btnAra);
-            this.grpMenu.Controls.Add(this.btnGuncelle);
-            this.grpMenu.Controls.Add(this.btnKopyala);
+            this.grpMenu.Controls.Add(this.btnKapat);
+            this.grpMenu.Controls.Add(this.btnVazgec);
+            this.grpMenu.Controls.Add(this.btnKaydet);
             this.grpMenu.Controls.Add(this.btnSil);
             this.grpMenu.Controls.Add(this.btnDuzenle);
-            this.grpMenu.Controls.Add(this.simpleButton1);
+            this.grpMenu.Controls.Add(this.btnSec);
             this.grpMenu.Controls.Add(this.btnEkle);
             this.grpMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.grpMenu.Location = new System.Drawing.Point(0, 427);
@@ -101,35 +102,40 @@
             this.grpMenu.TabIndex = 8;
             this.grpMenu.Text = "Menü";
             // 
-            // btnAra
+            // btnKapat
             // 
-            this.btnAra.ImageOptions.ImageIndex = 5;
-            this.btnAra.ImageOptions.ImageList = this.ımageList1;
-            this.btnAra.Location = new System.Drawing.Point(545, 24);
-            this.btnAra.Name = "btnAra";
-            this.btnAra.Size = new System.Drawing.Size(83, 44);
-            this.btnAra.TabIndex = 0;
-            this.btnAra.Text = "Kapat";
+            this.btnKapat.ImageOptions.ImageIndex = 5;
+            this.btnKapat.ImageOptions.ImageList = this.ımageList1;
+            this.btnKapat.Location = new System.Drawing.Point(545, 24);
+            this.btnKapat.Name = "btnKapat";
+            this.btnKapat.Size = new System.Drawing.Size(83, 44);
+            this.btnKapat.TabIndex = 0;
+            this.btnKapat.Text = "Kapat";
+            this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
             // 
-            // btnGuncelle
+            // btnVazgec
             // 
-            this.btnGuncelle.ImageOptions.ImageIndex = 4;
-            this.btnGuncelle.ImageOptions.ImageList = this.ımageList1;
-            this.btnGuncelle.Location = new System.Drawing.Point(456, 25);
-            this.btnGuncelle.Name = "btnGuncelle";
-            this.btnGuncelle.Size = new System.Drawing.Size(83, 44);
-            this.btnGuncelle.TabIndex = 0;
-            this.btnGuncelle.Text = "Vazgeç";
+            this.btnVazgec.Enabled = false;
+            this.btnVazgec.ImageOptions.ImageIndex = 4;
+            this.btnVazgec.ImageOptions.ImageList = this.ımageList1;
+            this.btnVazgec.Location = new System.Drawing.Point(456, 25);
+            this.btnVazgec.Name = "btnVazgec";
+            this.btnVazgec.Size = new System.Drawing.Size(83, 44);
+            this.btnVazgec.TabIndex = 0;
+            this.btnVazgec.Text = "Vazgeç";
+            this.btnVazgec.Click += new System.EventHandler(this.btnVazgec_Click);
             // 
-            // btnKopyala
+            // btnKaydet
             // 
-            this.btnKopyala.ImageOptions.ImageIndex = 3;
-            this.btnKopyala.ImageOptions.ImageList = this.ımageList1;
-            this.btnKopyala.Location = new System.Drawing.Point(367, 26);
-            this.btnKopyala.Name = "btnKopyala";
-            this.btnKopyala.Size = new System.Drawing.Size(83, 44);
-            this.btnKopyala.TabIndex = 0;
-            this.btnKopyala.Text = "Kaydet";
+            this.btnKaydet.Enabled = false;
+            this.btnKaydet.ImageOptions.ImageIndex = 3;
+            this.btnKaydet.ImageOptions.ImageList = this.ımageList1;
+            this.btnKaydet.Location = new System.Drawing.Point(367, 26);
+            this.btnKaydet.Name = "btnKaydet";
+            this.btnKaydet.Size = new System.Drawing.Size(83, 44);
+            this.btnKaydet.TabIndex = 0;
+            this.btnKaydet.Text = "Kaydet";
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // btnSil
             // 
@@ -140,6 +146,7 @@
             this.btnSil.Size = new System.Drawing.Size(83, 44);
             this.btnSil.TabIndex = 0;
             this.btnSil.Text = "Sil";
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
             // btnDuzenle
             // 
@@ -150,6 +157,7 @@
             this.btnDuzenle.Size = new System.Drawing.Size(83, 44);
             this.btnDuzenle.TabIndex = 0;
             this.btnDuzenle.Text = "Düzenle";
+            this.btnDuzenle.Click += new System.EventHandler(this.btnDuzenle_Click);
             // 
             // btnEkle
             // 
@@ -179,7 +187,7 @@
             // 
             // navigationPage1
             // 
-            this.navigationPage1.Controls.Add(this.gridControl1);
+            this.navigationPage1.Controls.Add(this.gridContTanim);
             this.navigationPage1.Name = "navigationPage1";
             this.navigationPage1.Size = new System.Drawing.Size(638, 380);
             // 
@@ -189,25 +197,26 @@
             this.navigationPage2.Name = "navigationPage2";
             this.navigationPage2.Size = new System.Drawing.Size(638, 380);
             // 
-            // gridControl1
+            // gridContTanim
             // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 0);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(638, 380);
-            this.gridControl1.TabIndex = 3;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gridContTanim.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridContTanim.Location = new System.Drawing.Point(0, 0);
+            this.gridContTanim.MainView = this.gridTanim;
+            this.gridContTanim.Name = "gridContTanim";
+            this.gridContTanim.Size = new System.Drawing.Size(638, 380);
+            this.gridContTanim.TabIndex = 3;
+            this.gridContTanim.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridTanim});
             // 
-            // gridView1
+            // gridTanim
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridTanim.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colId,
             this.colTanim,
             this.colAciklama});
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridTanim.GridControl = this.gridContTanim;
+            this.gridTanim.Name = "gridTanim";
+            this.gridTanim.OptionsView.ShowGroupPanel = false;
             // 
             // groupControl1
             // 
@@ -276,22 +285,23 @@
             this.ımageList1.Images.SetKeyName(5, "folder_out.png");
             this.ımageList1.Images.SetKeyName(6, "pencil.png");
             // 
-            // simpleButton1
+            // btnSec
             // 
-            this.simpleButton1.ImageOptions.ImageIndex = 1;
-            this.simpleButton1.ImageOptions.ImageList = this.ımageList1;
-            this.simpleButton1.Location = new System.Drawing.Point(11, 25);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(83, 44);
-            this.simpleButton1.TabIndex = 0;
-            this.simpleButton1.Text = "Seç";
-            this.simpleButton1.Click += new System.EventHandler(this.btnEkle_Click);
+            this.btnSec.ImageOptions.ImageIndex = 1;
+            this.btnSec.ImageOptions.ImageList = this.ımageList1;
+            this.btnSec.Location = new System.Drawing.Point(11, 25);
+            this.btnSec.Name = "btnSec";
+            this.btnSec.Size = new System.Drawing.Size(83, 44);
+            this.btnSec.TabIndex = 0;
+            this.btnSec.Text = "Seç";
+            this.btnSec.Click += new System.EventHandler(this.btnSec_Click);
             // 
             // colTanim
             // 
             this.colTanim.Caption = "Tanım";
             this.colTanim.FieldName = "Tanim";
             this.colTanim.Name = "colTanim";
+            this.colTanim.OptionsColumn.AllowEdit = false;
             this.colTanim.Visible = true;
             this.colTanim.VisibleIndex = 0;
             // 
@@ -300,8 +310,17 @@
             this.colAciklama.Caption = "Açıklama";
             this.colAciklama.FieldName = "Aciklama";
             this.colAciklama.Name = "colAciklama";
+            this.colAciklama.OptionsColumn.AllowEdit = false;
             this.colAciklama.Visible = true;
             this.colAciklama.VisibleIndex = 1;
+            // 
+            // colId
+            // 
+            this.colId.Caption = "Id";
+            this.colId.FieldName = "Id";
+            this.colId.Name = "colId";
+            this.colId.OptionsColumn.AllowEdit = false;
+            this.colId.OptionsColumn.ShowInCustomizationForm = false;
             // 
             // FrmTanim
             // 
@@ -316,14 +335,15 @@
             this.MinimizeBox = false;
             this.Name = "FrmTanim";
             this.Text = "Tanımlar";
+            this.Load += new System.EventHandler(this.FrmTanim_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).EndInit();
             this.grpMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.navigationFrame1)).EndInit();
             this.navigationFrame1.ResumeLayout(false);
             this.navigationPage1.ResumeLayout(false);
             this.navigationPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridContTanim)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridTanim)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtTanim.Properties)).EndInit();
@@ -336,16 +356,16 @@
 
         private DevExpress.XtraEditors.LabelControl lblBaslik;
         private DevExpress.XtraEditors.GroupControl grpMenu;
-        private DevExpress.XtraEditors.SimpleButton btnAra;
-        private DevExpress.XtraEditors.SimpleButton btnGuncelle;
-        private DevExpress.XtraEditors.SimpleButton btnKopyala;
+        private DevExpress.XtraEditors.SimpleButton btnKapat;
+        private DevExpress.XtraEditors.SimpleButton btnVazgec;
+        private DevExpress.XtraEditors.SimpleButton btnKaydet;
         private DevExpress.XtraEditors.SimpleButton btnSil;
         private DevExpress.XtraEditors.SimpleButton btnDuzenle;
         private DevExpress.XtraEditors.SimpleButton btnEkle;
         private DevExpress.XtraBars.Navigation.NavigationFrame navigationFrame1;
         private DevExpress.XtraBars.Navigation.NavigationPage navigationPage1;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.GridControl gridContTanim;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridTanim;
         private DevExpress.XtraBars.Navigation.NavigationPage navigationPage2;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private System.Windows.Forms.ImageList ımageList1;
@@ -353,8 +373,9 @@
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.MemoEdit txtAciklama;
         private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btnSec;
         private DevExpress.XtraGrid.Columns.GridColumn colTanim;
         private DevExpress.XtraGrid.Columns.GridColumn colAciklama;
+        private DevExpress.XtraGrid.Columns.GridColumn colId;
     }
 }
