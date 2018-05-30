@@ -197,6 +197,7 @@
             this.btnDuzenle.Size = new System.Drawing.Size(83, 44);
             this.btnDuzenle.TabIndex = 0;
             this.btnDuzenle.Text = "Düzenle";
+            this.btnDuzenle.Click += new System.EventHandler(this.btnDuzenle_Click);
             // 
             // btnEkle
             // 
@@ -207,6 +208,7 @@
             this.btnEkle.Size = new System.Drawing.Size(83, 44);
             this.btnEkle.TabIndex = 0;
             this.btnEkle.Text = "Ekle";
+            this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
             // lblBaslik
             // 

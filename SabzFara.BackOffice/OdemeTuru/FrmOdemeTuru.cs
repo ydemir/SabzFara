@@ -74,5 +74,18 @@ namespace SabzFara.BackOffice.OdemeTuru
                 Listele();
             }
         }
+
+        private void btnEkle_Click(object sender, EventArgs e)
+        {
+            FrmOdemeTuruIslem frm = new FrmOdemeTuruIslem(new Entities.Tables.OdemeTuru());
+            frm.ShowDialog();
+        }
+
+        private void btnDuzenle_Click(object sender, EventArgs e)
+        {
+            string secilen = gridOdemeTuru.GetFocusedRowCellValue(colOdemeTuruKodu).ToString();
+            FrmOdemeTuruIslem frm = new FrmOdemeTuruIslem(odemeTuruDAL.GetByFilter(context,c=>c.OdemeTuruKodu==secilen));
+            frm.ShowDialog();
+        }
     }
 }
