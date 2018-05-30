@@ -146,6 +146,12 @@
     <Compile Include="OdemeTuru\FrmOdemeTuru.Designer.cs">
       <DependentUpon>FrmOdemeTuru.cs</DependentUpon>
     </Compile>
+    <Compile Include="OdemeTuru\FrmOdemeTuruHareket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OdemeTuru\FrmOdemeTuruHareket.Designer.cs">
+      <DependentUpon>FrmOdemeTuruHareket.cs</DependentUpon>
+    </Compile>
     <Compile Include="OdemeTuru\FrmOdemeTuruIslem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OdemeTuru\FrmOdemeTuru.resx">
       <DependentUpon>FrmOdemeTuru.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OdemeTuru\FrmOdemeTuruHareket.resx">
+      <DependentUpon>FrmOdemeTuruHareket.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OdemeTuru\FrmOdemeTuruIslem.resx">
       <DependentUpon>FrmOdemeTuruIslem.cs</DependentUpon>
