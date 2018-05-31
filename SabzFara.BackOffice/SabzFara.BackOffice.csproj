@@ -116,6 +116,12 @@
     <Compile Include="Depo\FrmDepoSec.Designer.cs">
       <DependentUpon>FrmDepoSec.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fis\FrmFis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fis\FrmFis.Designer.cs">
+      <DependentUpon>FrmFis.cs</DependentUpon>
+    </Compile>
     <Compile Include="Kasa\FrmKasa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,6 +222,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Depo\FrmDepoSec.resx">
       <DependentUpon>FrmDepoSec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fis\FrmFis.resx">
+      <DependentUpon>FrmFis.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Kasa\FrmKasa.resx">
       <DependentUpon>FrmKasa.cs</DependentUpon>
