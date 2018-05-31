@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraBars;
 using SabzFara.BackOffice.Stok;
 using SabzFara.BackOffice.Cari;
+using SabzFara.BackOffice.Tanim;
 
 namespace SabzFara.BackOffice.AnaMenu
 {
@@ -32,6 +33,12 @@ namespace SabzFara.BackOffice.AnaMenu
             FrmCari frm = new FrmCari();
             frm.MdiParent = this;
             frm.Show();
+        }
+
+        private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
+        {
+           
+
         }
     }
 }

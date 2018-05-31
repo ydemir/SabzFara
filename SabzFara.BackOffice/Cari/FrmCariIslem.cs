@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using SabzFara.Entities.DataAccess;
 using SabzFara.Entities.Context;
+using SabzFara.BackOffice.Tanim;
 
 namespace SabzFara.BackOffice.Cari
 {
@@ -80,6 +81,46 @@ namespace SabzFara.BackOffice.Cari
                 _cariDal.Save(_context);
                 saved = true;
                 this.Close();
+            }
+        }
+
+        private void btnCariGrubu_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            switch (e.Button.Index)
+            {
+                case 0:
+                        FrmTanim frm = new FrmTanim(FrmTanim.TanimTuru.CariGrubu);
+                    frm.ShowDialog();
+                    if (frm.Secildi)
+                    {
+                        btnCariGrubu.Text = frm._entity.Tanimi;
+                    }
+                  
+                    break;
+
+                case 1:
+                    btnCariGrubu.Text = null;
+                    break;
+            }
+        }
+
+        private void btnOzelKod1_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            switch (e.Button.Index)
+            {
+                case 0:
+                    FrmTanim frm = new FrmTanim(FrmTanim.TanimTuru.CariOzelKod1);
+                    frm.ShowDialog();
+                    if (frm.Secildi)
+                    {
+                        btnOzelKod1.Text = frm._entity.Tanimi;
+                    }
+
+                    break;
+
+                case 1:
+                    btnCariGrubu.Text = null;
+                    break;
             }
         }
     }

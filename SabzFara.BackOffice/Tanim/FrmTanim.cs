@@ -17,23 +17,38 @@ namespace SabzFara.BackOffice.Tanim
     {
         SabzFaraContext context = new SabzFaraContext();
         TanimDAL tanimDAL = new TanimDAL();
-       public Entities.Tables.Tanim _entity;
-        public FrmTanim()
+        private TanimTuru _tanimTuru;
+        public Entities.Tables.Tanim _entity = new Entities.Tables.Tanim();
+        public bool Secildi = false;
+        public FrmTanim(TanimTuru tanimTuru)
+      
         {
             InitializeComponent();
-            txtTanim.DataBindings.Add("Text", _entity, "Tanim");
+            _tanimTuru = tanimTuru;
+            txtTanim.DataBindings.Add("Text", _entity, "Tanimi");
             txtAciklama.DataBindings.Add("Text", _entity, "Aciklama");
+        }
+
+        public enum TanimTuru
+        {
+            CariGrubu,
+            CariAltGrubu,
+            CariOzelKod1,
+            CariOzelKod2,
+            CariOzelKod4
         }
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
-            KayitAc();
+           
             _entity = new Entities.Tables.Tanim();
+            KayitAc();
         }
 
         private void FrmTanim_Load(object sender, EventArgs e)
         {
             Listele();
+
         }
 
         private void btnKapat_Click(object sender, EventArgs e)
@@ -51,6 +66,7 @@ namespace SabzFara.BackOffice.Tanim
             btnVazgec.Enabled = true;
 
             navigationFrame1.SelectedPage = navigationPage1;
+        
 
         }
         void KayitKapat()
@@ -66,14 +82,15 @@ namespace SabzFara.BackOffice.Tanim
 
         void Listele()
         {
-            gridContTanim.DataSource = tanimDAL.GetAll(context);
+            gridContTanim.DataSource = tanimDAL.GetAll(context, c => c.Turu == _tanimTuru.ToString());
         }
 
         private void btnDuzenle_Click(object sender, EventArgs e)
         {
-            KayitAc();
+           
             int secilen = (int)gridTanim.GetFocusedRowCellValue(colId);
             _entity = context.Tanimlar.Where(c => c.Id == secilen).Single();
+            KayitAc();
         }
 
         private void btnSil_Click(object sender, EventArgs e)
@@ -89,10 +106,13 @@ namespace SabzFara.BackOffice.Tanim
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
+            _entity.Tanimi = txtTanim.Text;
+            _entity.Turu = _tanimTuru.ToString();
             if (tanimDAL.AddOrUpdate(context, _entity))
             {
                 tanimDAL.Save(context);
                 KayitKapat();
+                Listele();
             }
           
         }
@@ -106,6 +126,7 @@ namespace SabzFara.BackOffice.Tanim
         {
             int secilen = (int)gridTanim.GetFocusedRowCellValue(colId);
             _entity = context.Tanimlar.Where(c => c.Id == secilen).SingleOrDefault();
+            Secildi = true;
             this.Close();
         }
     }
