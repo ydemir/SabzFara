@@ -11,6 +11,7 @@ using DevExpress.XtraBars;
 using SabzFara.BackOffice.Stok;
 using SabzFara.BackOffice.Cari;
 using SabzFara.BackOffice.Tanim;
+using SabzFara.BackOffice.Fis;
 
 namespace SabzFara.BackOffice.AnaMenu
 {
@@ -37,7 +38,9 @@ namespace SabzFara.BackOffice.AnaMenu
 
         private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
         {
-           
+            FrmFisIslem frm = new FrmFisIslem();
+            frm.MdiParent = this;
+            frm.Show();
 
         }
     }
