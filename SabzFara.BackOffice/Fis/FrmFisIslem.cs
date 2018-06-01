@@ -67,5 +67,24 @@ namespace SabzFara.BackOffice.Fis
             }
 
         }
+
+        private void txtBarkod_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Entities.Tables.Stok entity;
+                entity = context.Stoklar.Where(c => c.Barkod == txtBarkod.Text).SingleOrDefault();
+                if (entity != null)
+                {
+                    stokHareketDal.AddOrUpdate(context, StokSec(entity));
+                }
+                else
+                {
+                    MessageBox.Show("Aradığınız barkod numarası ürünler arasında bulunamadı.");
+                }
+                txtBarkod.Text = null;
+
+            }
+        }
     }
 }
