@@ -265,6 +265,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Stok\FrmStok.resx">
       <DependentUpon>FrmStok.cs</DependentUpon>
@@ -285,6 +286,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\SabzFara.Entities.Tables.Cari.datasource" />
     <None Include="Properties\DataSources\SabzFara.Entities.Tables.Fis.datasource" />
+    <None Include="Properties\DataSources\SabzFara.Entities.Tables.KasaHareket.datasource" />
     <None Include="Properties\DataSources\SabzFara.Entities.Tables.Stok.datasource" />
     <None Include="Properties\DataSources\SabzFara.Entities.Tables.StokHareket.datasource" />
     <None Include="Properties\Settings.settings">
@@ -303,7 +305,12 @@
       <Name>SabzFara.Entities</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_headset.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
