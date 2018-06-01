@@ -130,11 +130,11 @@
             this.labelControl23 = new DevExpress.XtraEditors.LabelControl();
             this.navigationPane1 = new DevExpress.XtraBars.Navigation.NavigationPane();
             this.navFisBilgi = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
-            this.memoEdit1 = new DevExpress.XtraEditors.MemoEdit();
+            this.cmbTarih = new DevExpress.XtraEditors.DateEdit();
+            this.txtAciklama = new DevExpress.XtraEditors.MemoEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit10 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit9 = new DevExpress.XtraEditors.TextEdit();
+            this.txtBelgeNo = new DevExpress.XtraEditors.TextEdit();
+            this.txtFisTuru = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -157,8 +157,8 @@
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
+            this.lblCariAdi = new DevExpress.XtraEditors.LabelControl();
+            this.lblCariKodu = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl21 = new DevExpress.XtraEditors.LabelControl();
@@ -169,9 +169,9 @@
             this.navPlasiyerBilgi = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.navigationPane2 = new DevExpress.XtraBars.Navigation.NavigationPane();
             this.NavSatisEkrani = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridcontStokHareket = new DevExpress.XtraGrid.GridControl();
             this.stokHareketBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridStokHareket = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStokKodu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStokAdi = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -194,14 +194,14 @@
             this.colSil = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repoSil = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.calcEdit1 = new DevExpress.XtraEditors.CalcEdit();
-            this.btnUrunBul = new DevExpress.XtraEditors.SimpleButton();
+            this.txtMiktar = new DevExpress.XtraEditors.CalcEdit();
+            this.btnStokSec = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl31 = new DevExpress.XtraEditors.LabelControl();
             this.textEdit12 = new DevExpress.XtraEditors.TextEdit();
             this.NavOdemeEkrani = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
+            this.gridcontKasaHareket = new DevExpress.XtraGrid.GridControl();
             this.kasaHareketBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridKasaHareket = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colKasaKodu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colKasaAdi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repoKasa = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
@@ -227,11 +227,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.navigationPane1)).BeginInit();
             this.navigationPane1.SuspendLayout();
             this.navFisBilgi.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit10.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit9.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbTarih.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbTarih.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAciklama.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBelgeNo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFisTuru.Properties)).BeginInit();
             this.navCariBilgi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtVergiNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtVergiDairesi.Properties)).BeginInit();
@@ -244,21 +244,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.navigationPane2)).BeginInit();
             this.navigationPane2.SuspendLayout();
             this.NavSatisEkrani.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridcontStokHareket)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stokHareketBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridStokHareket)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoBirimFiyat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoDepo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoSeriNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoSil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.calcEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMiktar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit12.Properties)).BeginInit();
             this.NavOdemeEkrani.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridcontKasaHareket)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kasaHareketBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridKasaHareket)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoKasa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoOdemeSil)).BeginInit();
             this.SuspendLayout();
@@ -700,11 +700,11 @@
             // navFisBilgi
             // 
             this.navFisBilgi.Caption = "Fiş Bilgi";
-            this.navFisBilgi.Controls.Add(this.dateEdit1);
-            this.navFisBilgi.Controls.Add(this.memoEdit1);
+            this.navFisBilgi.Controls.Add(this.cmbTarih);
+            this.navFisBilgi.Controls.Add(this.txtAciklama);
             this.navFisBilgi.Controls.Add(this.labelControl3);
-            this.navFisBilgi.Controls.Add(this.textEdit10);
-            this.navFisBilgi.Controls.Add(this.textEdit9);
+            this.navFisBilgi.Controls.Add(this.txtBelgeNo);
+            this.navFisBilgi.Controls.Add(this.txtFisTuru);
             this.navFisBilgi.Controls.Add(this.labelControl5);
             this.navFisBilgi.Controls.Add(this.labelControl2);
             this.navFisBilgi.Controls.Add(this.labelControl1);
@@ -714,27 +714,31 @@
             this.navFisBilgi.Properties.ShowExpandButton = DevExpress.Utils.DefaultBoolean.False;
             this.navFisBilgi.Size = new System.Drawing.Size(1070, 179);
             // 
-            // dateEdit1
+            // cmbTarih
             // 
-            this.dateEdit1.EditValue = null;
-            this.dateEdit1.Location = new System.Drawing.Point(89, 43);
-            this.dateEdit1.Name = "dateEdit1";
-            this.dateEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cmbTarih.EditValue = null;
+            this.cmbTarih.Location = new System.Drawing.Point(89, 43);
+            this.cmbTarih.Name = "cmbTarih";
+            this.cmbTarih.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cmbTarih.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateEdit1.Size = new System.Drawing.Size(408, 20);
-            this.dateEdit1.TabIndex = 44;
+            this.cmbTarih.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.TouchUI;
+            this.cmbTarih.Properties.ContextImageOptions.Alignment = DevExpress.XtraEditors.ContextImageAlignment.Far;
+            this.cmbTarih.Properties.ContextImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("cmbTarih.Properties.ContextImageOptions.Image")));
+            this.cmbTarih.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
+            this.cmbTarih.Size = new System.Drawing.Size(408, 20);
+            this.cmbTarih.TabIndex = 44;
             // 
-            // memoEdit1
+            // txtAciklama
             // 
-            this.memoEdit1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtAciklama.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.memoEdit1.Location = new System.Drawing.Point(89, 69);
-            this.memoEdit1.Name = "memoEdit1";
-            this.memoEdit1.Size = new System.Drawing.Size(978, 97);
-            this.memoEdit1.TabIndex = 43;
+            this.txtAciklama.Location = new System.Drawing.Point(89, 69);
+            this.txtAciklama.Name = "txtAciklama";
+            this.txtAciklama.Size = new System.Drawing.Size(978, 97);
+            this.txtAciklama.TabIndex = 43;
             // 
             // labelControl3
             // 
@@ -750,27 +754,27 @@
             this.labelControl3.TabIndex = 42;
             this.labelControl3.Text = "Adres :";
             // 
-            // textEdit10
+            // txtBelgeNo
             // 
-            this.textEdit10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtBelgeNo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit10.Enabled = false;
-            this.textEdit10.Location = new System.Drawing.Point(585, 43);
-            this.textEdit10.Name = "textEdit10";
-            this.textEdit10.Size = new System.Drawing.Size(461, 20);
-            this.textEdit10.TabIndex = 41;
+            this.txtBelgeNo.Enabled = false;
+            this.txtBelgeNo.Location = new System.Drawing.Point(585, 43);
+            this.txtBelgeNo.Name = "txtBelgeNo";
+            this.txtBelgeNo.Size = new System.Drawing.Size(461, 20);
+            this.txtBelgeNo.TabIndex = 41;
             // 
-            // textEdit9
+            // txtFisTuru
             // 
-            this.textEdit9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txtFisTuru.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textEdit9.Enabled = false;
-            this.textEdit9.Location = new System.Drawing.Point(89, 13);
-            this.textEdit9.Name = "textEdit9";
-            this.textEdit9.Size = new System.Drawing.Size(408, 20);
-            this.textEdit9.TabIndex = 41;
+            this.txtFisTuru.Enabled = false;
+            this.txtFisTuru.Location = new System.Drawing.Point(89, 13);
+            this.txtFisTuru.Name = "txtFisTuru";
+            this.txtFisTuru.Size = new System.Drawing.Size(408, 20);
+            this.txtFisTuru.TabIndex = 41;
             // 
             // labelControl5
             // 
@@ -835,8 +839,8 @@
             this.navCariBilgi.Controls.Add(this.labelControl11);
             this.navCariBilgi.Controls.Add(this.labelControl7);
             this.navCariBilgi.Controls.Add(this.labelControl10);
-            this.navCariBilgi.Controls.Add(this.labelControl20);
-            this.navCariBilgi.Controls.Add(this.labelControl19);
+            this.navCariBilgi.Controls.Add(this.lblCariAdi);
+            this.navCariBilgi.Controls.Add(this.lblCariKodu);
             this.navCariBilgi.Controls.Add(this.labelControl9);
             this.navCariBilgi.Controls.Add(this.labelControl6);
             this.navCariBilgi.Controls.Add(this.labelControl21);
@@ -1061,33 +1065,31 @@
             this.labelControl10.TabIndex = 27;
             this.labelControl10.Text = "Görüntülenemiyor";
             // 
-            // labelControl20
+            // lblCariAdi
             // 
-            this.labelControl20.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.labelControl20.Appearance.Options.UseBorderColor = true;
-            this.labelControl20.Appearance.Options.UseTextOptions = true;
-            this.labelControl20.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl20.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl20.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelControl20.Location = new System.Drawing.Point(338, 35);
-            this.labelControl20.Name = "labelControl20";
-            this.labelControl20.Size = new System.Drawing.Size(468, 21);
-            this.labelControl20.TabIndex = 26;
-            this.labelControl20.Text = "-Seçilen bir cari yok-";
+            this.lblCariAdi.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblCariAdi.Appearance.Options.UseBorderColor = true;
+            this.lblCariAdi.Appearance.Options.UseTextOptions = true;
+            this.lblCariAdi.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lblCariAdi.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblCariAdi.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.lblCariAdi.Location = new System.Drawing.Point(338, 35);
+            this.lblCariAdi.Name = "lblCariAdi";
+            this.lblCariAdi.Size = new System.Drawing.Size(468, 21);
+            this.lblCariAdi.TabIndex = 26;
             // 
-            // labelControl19
+            // lblCariKodu
             // 
-            this.labelControl19.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.labelControl19.Appearance.Options.UseBorderColor = true;
-            this.labelControl19.Appearance.Options.UseTextOptions = true;
-            this.labelControl19.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.labelControl19.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
-            this.labelControl19.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.labelControl19.Location = new System.Drawing.Point(338, 8);
-            this.labelControl19.Name = "labelControl19";
-            this.labelControl19.Size = new System.Drawing.Size(468, 21);
-            this.labelControl19.TabIndex = 25;
-            this.labelControl19.Text = "-Seçilen bir cari yok-";
+            this.lblCariKodu.Appearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lblCariKodu.Appearance.Options.UseBorderColor = true;
+            this.lblCariKodu.Appearance.Options.UseTextOptions = true;
+            this.lblCariKodu.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.lblCariKodu.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.None;
+            this.lblCariKodu.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.lblCariKodu.Location = new System.Drawing.Point(338, 8);
+            this.lblCariKodu.Name = "lblCariKodu";
+            this.lblCariKodu.Size = new System.Drawing.Size(468, 21);
+            this.lblCariKodu.TabIndex = 25;
             // 
             // labelControl9
             // 
@@ -1211,7 +1213,7 @@
             // NavSatisEkrani
             // 
             this.NavSatisEkrani.Caption = "Satış Ekranı";
-            this.NavSatisEkrani.Controls.Add(this.gridControl1);
+            this.NavSatisEkrani.Controls.Add(this.gridcontStokHareket);
             this.NavSatisEkrani.Controls.Add(this.panelControl1);
             this.NavSatisEkrani.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("NavSatisEkrani.ImageOptions.Image")));
             this.NavSatisEkrani.Name = "NavSatisEkrani";
@@ -1219,30 +1221,30 @@
             this.NavSatisEkrani.Properties.ShowExpandButton = DevExpress.Utils.DefaultBoolean.False;
             this.NavSatisEkrani.Size = new System.Drawing.Size(1070, 202);
             // 
-            // gridControl1
+            // gridcontStokHareket
             // 
-            this.gridControl1.DataSource = this.stokHareketBindingSource;
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 51);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.gridcontStokHareket.DataSource = this.stokHareketBindingSource;
+            this.gridcontStokHareket.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridcontStokHareket.Location = new System.Drawing.Point(0, 51);
+            this.gridcontStokHareket.MainView = this.gridStokHareket;
+            this.gridcontStokHareket.Name = "gridcontStokHareket";
+            this.gridcontStokHareket.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repoSil,
             this.repoBirimFiyat,
             this.repoDepo,
             this.repoSeriNo});
-            this.gridControl1.Size = new System.Drawing.Size(1070, 151);
-            this.gridControl1.TabIndex = 2;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gridcontStokHareket.Size = new System.Drawing.Size(1070, 151);
+            this.gridcontStokHareket.TabIndex = 2;
+            this.gridcontStokHareket.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridStokHareket});
             // 
             // stokHareketBindingSource
             // 
             this.stokHareketBindingSource.DataSource = typeof(SabzFara.Entities.Tables.StokHareket);
             // 
-            // gridView1
+            // gridStokHareket
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridStokHareket.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colId,
             this.colStokKodu,
             this.colStokAdi,
@@ -1260,9 +1262,9 @@
             this.colSeriNo,
             this.colAciklama,
             this.colSil});
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridStokHareket.GridControl = this.gridcontStokHareket;
+            this.gridStokHareket.Name = "gridStokHareket";
+            this.gridStokHareket.OptionsView.ShowGroupPanel = false;
             // 
             // colId
             // 
@@ -1464,8 +1466,8 @@
             // 
             // panelControl1
             // 
-            this.panelControl1.Controls.Add(this.calcEdit1);
-            this.panelControl1.Controls.Add(this.btnUrunBul);
+            this.panelControl1.Controls.Add(this.txtMiktar);
+            this.panelControl1.Controls.Add(this.btnStokSec);
             this.panelControl1.Controls.Add(this.labelControl31);
             this.panelControl1.Controls.Add(this.textEdit12);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -1474,41 +1476,42 @@
             this.panelControl1.Size = new System.Drawing.Size(1070, 51);
             this.panelControl1.TabIndex = 3;
             // 
-            // calcEdit1
+            // txtMiktar
             // 
-            this.calcEdit1.EditValue = new decimal(new int[] {
+            this.txtMiktar.EditValue = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            this.calcEdit1.Location = new System.Drawing.Point(13, 8);
-            this.calcEdit1.Name = "calcEdit1";
-            this.calcEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Green;
-            this.calcEdit1.Properties.Appearance.Font = new System.Drawing.Font("DS-Digital", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.calcEdit1.Properties.Appearance.ForeColor = System.Drawing.Color.White;
-            this.calcEdit1.Properties.Appearance.Options.UseBackColor = true;
-            this.calcEdit1.Properties.Appearance.Options.UseFont = true;
-            this.calcEdit1.Properties.Appearance.Options.UseForeColor = true;
-            this.calcEdit1.Properties.AutoHeight = false;
-            this.calcEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.txtMiktar.Location = new System.Drawing.Point(13, 8);
+            this.txtMiktar.Name = "txtMiktar";
+            this.txtMiktar.Properties.Appearance.BackColor = System.Drawing.Color.Green;
+            this.txtMiktar.Properties.Appearance.Font = new System.Drawing.Font("DS-Digital", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMiktar.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.txtMiktar.Properties.Appearance.Options.UseBackColor = true;
+            this.txtMiktar.Properties.Appearance.Options.UseFont = true;
+            this.txtMiktar.Properties.Appearance.Options.UseForeColor = true;
+            this.txtMiktar.Properties.AutoHeight = false;
+            this.txtMiktar.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, false, false, editorButtonImageOptions13, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject49, serializableAppearanceObject50, serializableAppearanceObject51, serializableAppearanceObject52, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.calcEdit1.Properties.DisplayFormat.FormatString = "C2";
-            this.calcEdit1.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.calcEdit1.Properties.EditFormat.FormatString = "C2";
-            this.calcEdit1.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.calcEdit1.Size = new System.Drawing.Size(79, 35);
-            this.calcEdit1.TabIndex = 22;
+            this.txtMiktar.Properties.DisplayFormat.FormatString = "C2";
+            this.txtMiktar.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtMiktar.Properties.EditFormat.FormatString = "C2";
+            this.txtMiktar.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtMiktar.Size = new System.Drawing.Size(79, 35);
+            this.txtMiktar.TabIndex = 22;
             // 
-            // btnUrunBul
+            // btnStokSec
             // 
-            this.btnUrunBul.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnUrunBul.ImageOptions.ImageIndex = 2;
-            this.btnUrunBul.ImageOptions.ImageList = this.ımageList1;
-            this.btnUrunBul.Location = new System.Drawing.Point(935, 5);
-            this.btnUrunBul.Name = "btnUrunBul";
-            this.btnUrunBul.Size = new System.Drawing.Size(130, 37);
-            this.btnUrunBul.TabIndex = 21;
-            this.btnUrunBul.Text = "Ürün Bul";
+            this.btnStokSec.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnStokSec.ImageOptions.ImageIndex = 2;
+            this.btnStokSec.ImageOptions.ImageList = this.ımageList1;
+            this.btnStokSec.Location = new System.Drawing.Point(935, 5);
+            this.btnStokSec.Name = "btnStokSec";
+            this.btnStokSec.Size = new System.Drawing.Size(130, 37);
+            this.btnStokSec.TabIndex = 21;
+            this.btnStokSec.Text = "Ürün Bul";
+            this.btnStokSec.Click += new System.EventHandler(this.btnStokSec_Click);
             // 
             // labelControl31
             // 
@@ -1544,7 +1547,7 @@
             // NavOdemeEkrani
             // 
             this.NavOdemeEkrani.Caption = "Ödeme Ekranı";
-            this.NavOdemeEkrani.Controls.Add(this.gridControl2);
+            this.NavOdemeEkrani.Controls.Add(this.gridcontKasaHareket);
             this.NavOdemeEkrani.Controls.Add(this.flowLayoutPanel1);
             this.NavOdemeEkrani.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("NavOdemeEkrani.ImageOptions.Image")));
             this.NavOdemeEkrani.Name = "NavOdemeEkrani";
@@ -1552,28 +1555,28 @@
             this.NavOdemeEkrani.Properties.ShowExpandButton = DevExpress.Utils.DefaultBoolean.False;
             this.NavOdemeEkrani.Size = new System.Drawing.Size(1070, 202);
             // 
-            // gridControl2
+            // gridcontKasaHareket
             // 
-            this.gridControl2.DataSource = this.kasaHareketBindingSource;
-            this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(0, 37);
-            this.gridControl2.MainView = this.gridView2;
-            this.gridControl2.Name = "gridControl2";
-            this.gridControl2.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.gridcontKasaHareket.DataSource = this.kasaHareketBindingSource;
+            this.gridcontKasaHareket.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridcontKasaHareket.Location = new System.Drawing.Point(0, 37);
+            this.gridcontKasaHareket.MainView = this.gridKasaHareket;
+            this.gridcontKasaHareket.Name = "gridcontKasaHareket";
+            this.gridcontKasaHareket.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repoKasa,
             this.repoOdemeSil});
-            this.gridControl2.Size = new System.Drawing.Size(1070, 165);
-            this.gridControl2.TabIndex = 3;
-            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
+            this.gridcontKasaHareket.Size = new System.Drawing.Size(1070, 165);
+            this.gridcontKasaHareket.TabIndex = 3;
+            this.gridcontKasaHareket.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridKasaHareket});
             // 
             // kasaHareketBindingSource
             // 
             this.kasaHareketBindingSource.DataSource = typeof(SabzFara.Entities.Tables.KasaHareket);
             // 
-            // gridView2
+            // gridKasaHareket
             // 
-            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridKasaHareket.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colKasaKodu,
             this.colKasaAdi,
             this.colOdemeTuruKodu,
@@ -1581,9 +1584,9 @@
             this.colTutar,
             this.colAciklama1,
             this.colKhSil});
-            this.gridView2.GridControl = this.gridControl2;
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsView.ShowGroupPanel = false;
+            this.gridKasaHareket.GridControl = this.gridcontKasaHareket;
+            this.gridKasaHareket.Name = "gridKasaHareket";
+            this.gridKasaHareket.OptionsView.ShowGroupPanel = false;
             // 
             // colKasaKodu
             // 
@@ -1688,6 +1691,7 @@
             this.Controls.Add(this.lblBaslik);
             this.Name = "FrmFisIslem";
             this.Text = "FrmFisIslem";
+            this.Load += new System.EventHandler(this.FrmFisIslem_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).EndInit();
             this.grpMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
@@ -1703,11 +1707,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.navigationPane1)).EndInit();
             this.navigationPane1.ResumeLayout(false);
             this.navFisBilgi.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit10.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit9.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbTarih.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbTarih.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAciklama.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBelgeNo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFisTuru.Properties)).EndInit();
             this.navCariBilgi.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtVergiNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtVergiDairesi.Properties)).EndInit();
@@ -1720,21 +1724,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.navigationPane2)).EndInit();
             this.navigationPane2.ResumeLayout(false);
             this.NavSatisEkrani.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridcontStokHareket)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stokHareketBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridStokHareket)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoBirimFiyat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoDepo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoSeriNo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoSil)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.calcEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMiktar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit12.Properties)).EndInit();
             this.NavOdemeEkrani.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridcontKasaHareket)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kasaHareketBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridKasaHareket)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoKasa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoOdemeSil)).EndInit();
             this.ResumeLayout(false);
@@ -1759,7 +1763,7 @@
         private DevExpress.XtraBars.Navigation.NavigationPane navigationPane1;
         private DevExpress.XtraBars.Navigation.NavigationPage navFisBilgi;
         private DevExpress.XtraBars.Navigation.NavigationPage navCariBilgi;
-        private DevExpress.XtraEditors.TextEdit textEdit9;
+        private DevExpress.XtraEditors.TextEdit txtFisTuru;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.TextEdit txtVergiNo;
@@ -1780,8 +1784,8 @@
         private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.LabelControl labelControl10;
-        private DevExpress.XtraEditors.LabelControl labelControl20;
-        private DevExpress.XtraEditors.LabelControl labelControl19;
+        private DevExpress.XtraEditors.LabelControl lblCariAdi;
+        private DevExpress.XtraEditors.LabelControl lblCariKodu;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl21;
@@ -1789,26 +1793,26 @@
         private DevExpress.XtraEditors.LabelControl labelControl13;
         private DevExpress.XtraEditors.LabelControl labelControl12;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.DateEdit dateEdit1;
-        private DevExpress.XtraEditors.MemoEdit memoEdit1;
+        private DevExpress.XtraEditors.DateEdit cmbTarih;
+        private DevExpress.XtraEditors.MemoEdit txtAciklama;
         private DevExpress.XtraEditors.LabelControl labelControl3;
-        private DevExpress.XtraEditors.TextEdit textEdit10;
+        private DevExpress.XtraEditors.TextEdit txtBelgeNo;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraBars.Navigation.NavigationPage navPlasiyerBilgi;
         private DevExpress.XtraBars.Navigation.NavigationPane navigationPane2;
         private DevExpress.XtraBars.Navigation.NavigationPage NavSatisEkrani;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.GridControl gridcontStokHareket;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridStokHareket;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl31;
         private DevExpress.XtraEditors.TextEdit textEdit12;
         private DevExpress.XtraBars.Navigation.NavigationPage NavOdemeEkrani;
-        private DevExpress.XtraGrid.GridControl gridControl2;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.GridControl gridcontKasaHareket;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridKasaHareket;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.ImageList ımageList1;
-        private DevExpress.XtraEditors.SimpleButton btnUrunBul;
-        private DevExpress.XtraEditors.CalcEdit calcEdit1;
+        private DevExpress.XtraEditors.SimpleButton btnStokSec;
+        private DevExpress.XtraEditors.CalcEdit txtMiktar;
         private DevExpress.XtraEditors.CalcEdit calcEdit3;
         private DevExpress.XtraEditors.CalcEdit calcEdit2;
         private DevExpress.XtraEditors.CalcEdit calcEdit5;

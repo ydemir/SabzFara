@@ -17,15 +17,16 @@ namespace SabzFara.BackOffice.Stok
     {
         StokDAL _stokDal = new StokDAL();
         SabzFaraContext _context = new SabzFaraContext();
-       public List<Entities.Tables.Stok> _secilen = new List<Entities.Tables.Stok>();
-        public FrmStokSec(bool cokluSecim=false)
+        public List<Entities.Tables.Stok> _secilen = new List<Entities.Tables.Stok>();
+        public bool Secildi = false;
+        public FrmStokSec(bool cokluSecim = false)
         {
             InitializeComponent();
             if (cokluSecim)
             {
                 lblUyari.Visible = true;
                 gridStoklar.OptionsSelection.MultiSelect = true;
-                
+
             }
 
         }
@@ -42,12 +43,22 @@ namespace SabzFara.BackOffice.Stok
 
         private void btnSec_Click(object sender, EventArgs e)
         {
-            foreach (var row in gridStoklar.GetSelectedRows())
+            if (gridStoklar.GetSelectedRows().Length != 0)
             {
-                string stokKodu = gridStoklar.GetRowCellValue(row, colStokKodu).ToString();
-                _secilen.Add(_context.Stoklar.SingleOrDefault(c=>c.StokKodu==stokKodu));
+                foreach (var row in gridStoklar.GetSelectedRows())
+                {
+                    string stokKodu = gridStoklar.GetRowCellValue(row, colStokKodu).ToString();
+                    _secilen.Add(_context.Stoklar.SingleOrDefault(c => c.StokKodu == stokKodu));
+                }
+
+                Secildi = true;
+                this.Close();
             }
-            this.Close();
+            else
+            {
+                MessageBox.Show("Seçilen bir ürün bulunamadı.");
+            }
+
         }
     }
 }
