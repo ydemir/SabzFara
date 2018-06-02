@@ -21,8 +21,6 @@ namespace SabzFara.Entities.Tables
         public int Kdv { get; set; }
         public Nullable<decimal> BirimFiyati { get; set; }
         public Nullable<decimal> IndirimOrani { get; set; }
-        public Nullable<decimal> IndirimTutari { get; set; }
-        public Nullable<decimal> ToplamTutar { get; set; }
         public string DepoKodu { get; set; }
         public string DepoAdi { get; set; }
         public string SeriNo { get; set; }

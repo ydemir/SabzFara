@@ -25,8 +25,6 @@ namespace SabzFara.Entities.Mapping
             this.Property(p => p.Miktar).HasPrecision(12,3);
             this.Property(p => p.BirimFiyati).HasPrecision(12,2);
             this.Property(p => p.IndirimOrani).HasPrecision(5,2);
-            this.Property(p => p.IndirimTutari).HasPrecision(12,2);
-            this.Property(p => p.ToplamTutar).HasPrecision(12,2);
             this.Property(p => p.DepoKodu).HasMaxLength(12);
             this.Property(p => p.DepoAdi).HasMaxLength(30);
             this.Property(p => p.SeriNo).HasMaxLength(200);
@@ -46,8 +44,6 @@ namespace SabzFara.Entities.Mapping
             this.Property(p => p.Kdv).HasColumnName("Kdv");
             this.Property(p => p.BirimFiyati).HasColumnName("BirimFiyati");
             this.Property(p => p.IndirimOrani).HasColumnName("IndirimOrani");
-            this.Property(p => p.IndirimTutari).HasColumnName("IndirimTutari");
-            this.Property(p => p.ToplamTutar).HasColumnName("ToplamTutar");
             this.Property(p => p.DepoKodu).HasColumnName("DepoKodu");
             this.Property(p => p.DepoAdi).HasColumnName("DepoAdi");
             this.Property(p => p.SeriNo).HasColumnName("SeriNo");

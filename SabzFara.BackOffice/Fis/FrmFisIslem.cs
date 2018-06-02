@@ -31,12 +31,19 @@ namespace SabzFara.BackOffice.Fis
         public FrmFisIslem()
         {
             InitializeComponent();
-            txtFisTuru.DataBindings.Add("Text", _fisEntity, "FisTuru");
-            cmbTarih.DataBindings.Add("EditValue", _fisEntity, "Tarih");
-            txtBelgeNo.DataBindings.Add("Text", _fisEntity, "BelgeNo");
-            txtAciklama.DataBindings.Add("Text", _fisEntity, "Aciklama");
-            lblCariKodu.DataBindings.Add("Text", _fisEntity, "CariKodu");
-            lblCariAdi.DataBindings.Add("Text", _fisEntity, "CariAdi");
+            txtFisKodu.DataBindings.Add("Text", _fisEntity, "FisKodu",false,DataSourceUpdateMode.OnPropertyChanged);
+            txtFisTuru.DataBindings.Add("Text", _fisEntity, "FisTuru", false, DataSourceUpdateMode.OnPropertyChanged);
+            cmbTarih.DataBindings.Add("EditValue", _fisEntity, "Tarih", false, DataSourceUpdateMode.OnPropertyChanged);
+            txtBelgeNo.DataBindings.Add("Text", _fisEntity, "BelgeNo", false, DataSourceUpdateMode.OnPropertyChanged);
+            txtAciklama.DataBindings.Add("Text", _fisEntity, "Aciklama", false, DataSourceUpdateMode.OnPropertyChanged);
+            lblCariKodu.DataBindings.Add("Text", _fisEntity, "CariKodu", false, DataSourceUpdateMode.OnPropertyChanged);
+            lblCariAdi.DataBindings.Add("Text", _fisEntity, "CariAdi", false, DataSourceUpdateMode.OnPropertyChanged);
+            txtFaturaUnvani.DataBindings.Add("Text", _fisEntity, "FaturaUnvani", false, DataSourceUpdateMode.OnPropertyChanged);
+            txtCepTel.DataBindings.Add("Text", _fisEntity, "CepTelefonu", false, DataSourceUpdateMode.OnPropertyChanged);
+            txtIl.DataBindings.Add("Text", _fisEntity, "Il", false, DataSourceUpdateMode.OnPropertyChanged);
+            txtIlce.DataBindings.Add("Text", _fisEntity, "Ilce", false, DataSourceUpdateMode.OnPropertyChanged);
+            txtVergiDairesi.DataBindings.Add("Text", _fisEntity, "VergiDairesi", false, DataSourceUpdateMode.OnPropertyChanged);
+            txtVergiNo.DataBindings.Add("Text", _fisEntity, "VergiNo", false, DataSourceUpdateMode.OnPropertyChanged);
             gridcontStokHareket.DataSource = context.StokHareketleri.Local.ToBindingList();
             gridcontKasaHareket.DataSource = context.KasaHareketleri.Local.ToBindingList();
 
@@ -150,6 +157,7 @@ namespace SabzFara.BackOffice.Fis
                 lblCariAdi.Text = entity.CariAdi;
                 txtFaturaUnvani.Text = entity.FaturaUnvani;
                 txtVergiDairesi.Text = entity.VergiDairesi;
+                txtCepTel.Text = entity.CepTelefonu;
                 txtVergiNo.Text = entity.VergiNo;
                 txtIl.Text = entity.Il;
                 txtIlce.Text = entity.Ilce;
@@ -283,6 +291,40 @@ namespace SabzFara.BackOffice.Fis
             }
 
             OdenenTutarGuncelle();
+        }
+
+        private void btnSatisBitir_Click(object sender, EventArgs e)
+        {
+
+            int StokHata = context.StokHareketleri.Local.Where(c => c.DepoKodu == null).Count();
+            int KasaHata = context.StokHareketleri.Local.Where(c => c.DepoKodu == null).Count();
+
+            if (StokHata==0 && KasaHata==0)
+            {
+                foreach (var stokVeri in context.StokHareketleri.Local.ToList())
+                {
+                    stokVeri.Tarih = cmbTarih.DateTime;
+                    stokVeri.FisKodu = txtFisKodu.Text;
+                    stokVeri.Hareket = _fisEntity.FisTuru == "Alış Faturası" ? "Stok Giriş" : "Stok Çıkış";
+                }
+
+                foreach (var kasaVeri in context.KasaHareketleri.Local.ToList())
+                {
+                    kasaVeri.Tarih = kasaVeri.Tarih == null ? cmbTarih.DateTime : kasaVeri.Tarih;
+                    kasaVeri.FisKodu = txtFisKodu.Text;
+                    kasaVeri.Hareket = _fisEntity.FisTuru == "Alış Faturası" ? "Kasa Çıkış" : "Kasa Giriş";
+                    kasaVeri.CariKodu = lblCariKodu.Text;
+                    kasaVeri.CariAdi = lblCariAdi.Text;
+                }
+
+                _fisEntity.ToplamTutar = txtToplam.Value;
+                _fisEntity.IskontoOrani = txtIskontoOrani.Value;
+                _fisEntity.IskontoTutar = txtIskontoTutar.Value;
+                fisDAL.AddOrUpdate(context, _fisEntity);
+                context.SaveChanges();
+            }
+            
+            
         }
     }
 }

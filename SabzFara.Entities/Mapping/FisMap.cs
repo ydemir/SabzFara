@@ -19,6 +19,13 @@ namespace SabzFara.Entities.Mapping
             this.Property(p => p.FisTuru).HasMaxLength(30);
             this.Property(p => p.CariKodu).HasMaxLength(12);
             this.Property(p => p.CariAdi).HasMaxLength(50);
+            this.Property(p => p.FaturaUnvani).HasMaxLength(50);
+            this.Property(p => p.Il).HasMaxLength(20);
+            this.Property(p => p.Ilce).HasMaxLength(20);
+            this.Property(p => p.Semt).HasMaxLength(20);
+            this.Property(p => p.Adres).HasMaxLength(100);
+            this.Property(p => p.VergiDairesi).HasMaxLength(30);
+            this.Property(p => p.VergiNo).HasMaxLength(15);
             this.Property(p => p.BelgeNo).HasMaxLength(20);
             this.Property(p => p.PlasiyerKodu).HasMaxLength(12);
             this.Property(p => p.PlasiyerAdi).HasMaxLength(12);
@@ -34,6 +41,13 @@ namespace SabzFara.Entities.Mapping
             this.Property(p => p.FisTuru).HasColumnName("FisTuru");
             this.Property(p => p.CariKodu).HasColumnName("CariKodu");
             this.Property(p => p.CariAdi).HasColumnName("CariAdi");
+            this.Property(p => p.FaturaUnvani).HasColumnName("FaturaUnvani");
+            this.Property(p => p.Il).HasColumnName("Il");
+            this.Property(p => p.Ilce).HasColumnName("Ilce");
+            this.Property(p => p.Semt).HasColumnName("Semt");
+            this.Property(p => p.Adres).HasColumnName("Adres");
+            this.Property(p => p.VergiDairesi).HasColumnName("VergiDairesi");
+            this.Property(p => p.VergiNo).HasColumnName("VergiNo");
             this.Property(p => p.BelgeNo).HasColumnName("BelgeNo");
             this.Property(p => p.Tarih).HasColumnName("Tarih");
             this.Property(p => p.PlasiyerKodu).HasColumnName("PlasiyerKodu");
