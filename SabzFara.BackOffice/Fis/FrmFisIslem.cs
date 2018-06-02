@@ -13,6 +13,7 @@ using SabzFara.Entities.DataAccess;
 using System.Data.Entity;
 using SabzFara.Entities.Tables;
 using SabzFara.BackOffice.Stok;
+using SabzFara.BackOffice.Cari;
 
 namespace SabzFara.BackOffice.Fis
 {
@@ -85,6 +86,33 @@ namespace SabzFara.BackOffice.Fis
                 txtBarkod.Text = null;
 
             }
+        }
+
+        private void btnBul_Click(object sender, EventArgs e)
+        {
+            FrmCariSec frm = new FrmCariSec();
+            frm.ShowDialog();
+            if (frm.secildi)
+            {
+                Entities.Tables.Cari entity = frm._secilen.FirstOrDefault();
+                CariBakiye bakiye = frm.secilenCariBakiye.FirstOrDefault();
+
+                lblCariKodu.Text = entity.CariKodu;
+                lblCariAdi.Text = entity.CariAdi;
+                txtFaturaUnvani.Text = entity.FaturaUnvani;
+                txtVergiDairesi.Text = entity.VergiDairesi;
+                txtVergiNo.Text = entity.VergiNo;
+                txtIl.Text = entity.Il;
+                txtIlce.Text = entity.Ilce;
+                txtSemt.Text = entity.Semt;
+                txtAdres.Text = entity.Adres;
+                lblAlacak.Text = bakiye.Alacak.ToString("C2");
+                lblBorc.Text = bakiye.Borc.ToString("C2");
+                lblBakiye.Text = bakiye.Bakiye.ToString("C2");
+
+               
+            }
+
         }
     }
 }
