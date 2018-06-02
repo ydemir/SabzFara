@@ -152,7 +152,7 @@
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.txtAdres = new DevExpress.XtraEditors.MemoEdit();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
-            this.btnBul = new DevExpress.XtraEditors.SimpleButton();
+            this.btnTemizle = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.lblBorc = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
@@ -212,6 +212,7 @@
             this.colKhSil = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repoOdemeSil = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -834,7 +835,8 @@
             this.navCariBilgi.Controls.Add(this.labelControl18);
             this.navCariBilgi.Controls.Add(this.txtAdres);
             this.navCariBilgi.Controls.Add(this.labelControl15);
-            this.navCariBilgi.Controls.Add(this.btnBul);
+            this.navCariBilgi.Controls.Add(this.simpleButton2);
+            this.navCariBilgi.Controls.Add(this.btnTemizle);
             this.navCariBilgi.Controls.Add(this.labelControl8);
             this.navCariBilgi.Controls.Add(this.lblBorc);
             this.navCariBilgi.Controls.Add(this.labelControl7);
@@ -1002,17 +1004,17 @@
             this.labelControl15.TabIndex = 33;
             this.labelControl15.Text = "Adres :";
             // 
-            // btnBul
+            // btnTemizle
             // 
-            this.btnBul.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCariSec.ImageOptions.Image")));
-            this.btnBul.ImageOptions.ImageIndex = 19;
-            this.btnBul.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopLeft;
-            this.btnBul.Location = new System.Drawing.Point(13, 4);
-            this.btnBul.Name = "btnBul";
-            this.btnBul.Size = new System.Drawing.Size(227, 82);
-            this.btnBul.TabIndex = 19;
-            this.btnBul.Text = "Cari Seç";
-            this.btnBul.Click += new System.EventHandler(this.btnBul_Click);
+            this.btnTemizle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBul.ImageOptions.Image")));
+            this.btnTemizle.ImageOptions.ImageIndex = 19;
+            this.btnTemizle.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopLeft;
+            this.btnTemizle.Location = new System.Drawing.Point(125, 4);
+            this.btnTemizle.Name = "btnTemizle";
+            this.btnTemizle.Size = new System.Drawing.Size(106, 82);
+            this.btnTemizle.TabIndex = 19;
+            this.btnTemizle.Text = "Temizle";
+            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
             // 
             // labelControl8
             // 
@@ -1680,6 +1682,18 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1070, 37);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
+            // simpleButton2
+            // 
+            this.simpleButton2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.ImageOptions.Image")));
+            this.simpleButton2.ImageOptions.ImageIndex = 19;
+            this.simpleButton2.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopLeft;
+            this.simpleButton2.Location = new System.Drawing.Point(13, 4);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(106, 82);
+            this.simpleButton2.TabIndex = 19;
+            this.simpleButton2.Text = "Cari Seç";
+            this.simpleButton2.Click += new System.EventHandler(this.btnBul_Click);
+            // 
             // FrmFisIslem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1780,7 +1794,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl18;
         private DevExpress.XtraEditors.MemoEdit txtAdres;
         private DevExpress.XtraEditors.LabelControl labelControl15;
-        private DevExpress.XtraEditors.SimpleButton btnBul;
+        private DevExpress.XtraEditors.SimpleButton btnTemizle;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.LabelControl lblBorc;
         private DevExpress.XtraEditors.LabelControl labelControl7;
@@ -1855,5 +1869,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colAciklama1;
         private DevExpress.XtraGrid.Columns.GridColumn colKhSil;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repoOdemeSil;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
     }
 }

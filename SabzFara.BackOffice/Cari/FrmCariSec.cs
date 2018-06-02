@@ -20,7 +20,6 @@ namespace SabzFara.BackOffice.Cari
         SabzFaraContext _context = new SabzFaraContext();
         public List<Entities.Tables.Cari> _secilen = new List<Entities.Tables.Cari>();
         public bool secildi = false;
-        public List<CariBakiye> secilenCariBakiye = new List<CariBakiye>();
         public FrmCariSec(bool cokluSecim = false)
         {
             InitializeComponent();
@@ -45,13 +44,7 @@ namespace SabzFara.BackOffice.Cari
                 {
                     string cariKodu = gridView1.GetRowCellValue(row, colCariKodu).ToString();
                     _secilen.Add(_context.Cariler.SingleOrDefault(c => c.CariKodu == cariKodu));
-                    secilenCariBakiye.Add(new CariBakiye
-                    {
-                        CariKodu= gridView1.GetRowCellValue(row, colCariKodu).ToString(),
-                    Alacak = Convert.ToDecimal(gridView1.GetRowCellValue(row, colAlacak)),
-                        Borc = Convert.ToDecimal(gridView1.GetRowCellValue(row, colBorc)),
-                        Bakiye= Convert.ToDecimal(gridView1.GetRowCellValue(row, colBakiye))
-                    });
+                  
                 }
                 secildi = true;
                 this.Close();

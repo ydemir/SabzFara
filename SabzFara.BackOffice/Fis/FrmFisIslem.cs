@@ -23,7 +23,9 @@ namespace SabzFara.BackOffice.Fis
         FisDAL fisDAL = new FisDAL();
         StokHareketDAL stokHareketDal = new StokHareketDAL();
         KasaHareketDAL kasaHareketDal = new KasaHareketDAL();
+        CariDAL cariDAL = new CariDAL();
         Entities.Tables.Fis _fisEntity = new Entities.Tables.Fis();
+        CariBakiye entityBakiye = new CariBakiye();
         public FrmFisIslem()
         {
             InitializeComponent();
@@ -95,7 +97,7 @@ namespace SabzFara.BackOffice.Fis
             if (frm.secildi)
             {
                 Entities.Tables.Cari entity = frm._secilen.FirstOrDefault();
-                CariBakiye bakiye = frm.secilenCariBakiye.FirstOrDefault();
+                entityBakiye = this.cariDAL.CariBakiyesi(context, entity.CariKodu);
 
                 lblCariKodu.Text = entity.CariKodu;
                 lblCariAdi.Text = entity.CariAdi;
@@ -106,13 +108,30 @@ namespace SabzFara.BackOffice.Fis
                 txtIlce.Text = entity.Ilce;
                 txtSemt.Text = entity.Semt;
                 txtAdres.Text = entity.Adres;
-                lblAlacak.Text = bakiye.Alacak.ToString("C2");
-                lblBorc.Text = bakiye.Borc.ToString("C2");
-                lblBakiye.Text = bakiye.Bakiye.ToString("C2");
+                lblAlacak.Text = entityBakiye.Alacak.ToString("C2");
+                lblBorc.Text = entityBakiye.Borc.ToString("C2");
+                lblBakiye.Text = entityBakiye.Bakiye.ToString("C2");
 
                
             }
 
+        }
+
+        private void btnTemizle_Click(object sender, EventArgs e)
+        {
+
+            lblCariKodu.Text = null;
+            lblCariAdi.Text = null;
+            txtFaturaUnvani.Text = null;
+            txtVergiDairesi.Text = null;
+            txtVergiNo.Text = null;
+            txtIl.Text = null;
+            txtIlce.Text = null;
+            txtSemt.Text = null;
+            txtAdres.Text = null; ;
+            lblAlacak.Text = "Görüntülenemiyor";
+            lblBorc.Text = "Görüntülenemiyor";
+            lblBakiye.Text = "Görüntülenemiyor";
         }
     }
 }

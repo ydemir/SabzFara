@@ -152,5 +152,26 @@ namespace SabzFara.Entities.DataAccess
 
             return genelToplamlar;
         }
+
+        public CariBakiye CariBakiyesi(SabzFaraContext _context, string cariKodu)
+        {
+
+            decimal alacak = (_context.Fisler.Where(f => f.CariKodu == cariKodu && f.FisTuru == "Aliş Faturası").Sum(f => f.ToplamTutar) ?? 0) +
+                (_context.KasaHareketleri.Where(f => f.CariKodu == cariKodu && f.Hareket == "Kasa Giriş").Sum(f => f.Tutar) ?? 0);
+
+            decimal borc = (_context.Fisler.Where(f => f.CariKodu == cariKodu && f.FisTuru == "Perakende Satış Faturası").Sum(f => f.ToplamTutar) ?? 0) +
+               (_context.KasaHareketleri.Where(f => f.CariKodu == cariKodu && f.Hareket == "Kasa Çıkış").Sum(f => f.Tutar) ?? 0);
+
+            CariBakiye entity = new CariBakiye
+            {
+                CariKodu = cariKodu,
+                RiskLimiti =Convert.ToDecimal( _context.Cariler.Where(c => c.CariKodu == cariKodu).SingleOrDefault().RiskLimiti),
+                Alacak = alacak,
+                Borc = borc,
+                Bakiye = alacak - borc
+            };
+
+            return entity;
+        }
     }
 }
