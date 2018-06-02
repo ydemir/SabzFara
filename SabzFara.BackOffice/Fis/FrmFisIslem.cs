@@ -14,6 +14,7 @@ using System.Data.Entity;
 using SabzFara.Entities.Tables;
 using SabzFara.BackOffice.Stok;
 using SabzFara.BackOffice.Cari;
+using SabzFara.BackOffice.Depo;
 
 namespace SabzFara.BackOffice.Fis
 {
@@ -56,6 +57,7 @@ namespace SabzFara.BackOffice.Fis
             stokHareket.Birimi = entity.Birimi;
             stokHareket.Miktar = txtMiktar.Value;
             stokHareket.Kdv = entity.SatisKdv;
+            stokHareket.IndirimOrani = 0;
 
             return stokHareket;
         }
@@ -67,6 +69,7 @@ namespace SabzFara.BackOffice.Fis
             if (frm.Secildi)
             {
                 stokHareketDal.AddOrUpdate(context, StokSec(frm._secilen.First()));
+                Toplamlar();
             }
 
         }
@@ -80,6 +83,7 @@ namespace SabzFara.BackOffice.Fis
                 if (entity != null)
                 {
                     stokHareketDal.AddOrUpdate(context, StokSec(entity));
+                    Toplamlar();
                 }
                 else
                 {
@@ -112,7 +116,7 @@ namespace SabzFara.BackOffice.Fis
                 lblBorc.Text = entityBakiye.Borc.ToString("C2");
                 lblBakiye.Text = entityBakiye.Bakiye.ToString("C2");
 
-               
+
             }
 
         }
@@ -132,6 +136,49 @@ namespace SabzFara.BackOffice.Fis
             lblAlacak.Text = "Görüntülenemiyor";
             lblBorc.Text = "Görüntülenemiyor";
             lblBakiye.Text = "Görüntülenemiyor";
+        }
+
+        private void gridStokHareket_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+
+            Toplamlar();
+
+
+        }
+
+        private void Toplamlar()
+        {
+            gridStokHareket.UpdateSummary();
+            txtIskontoTutar.Value = Convert.ToDecimal(colToplamTutar.SummaryItem.SummaryValue) / 100 * txtIskontoOrani.Value;
+            txtToplam.Value = Convert.ToDecimal(colToplamTutar.SummaryItem.SummaryValue) - txtIskontoOrani.Value;
+            txtKdvToplam.Value = Convert.ToDecimal(colKDVToplam.SummaryItem.SummaryValue);
+            txtIndirimToplam.Value = Convert.ToDecimal(colIndirimTutar.SummaryItem.SummaryValue);
+
+        }
+
+
+
+        private void txtIskontoOrani_Validated(object sender, EventArgs e)
+        {
+            Toplamlar();
+        }
+
+
+
+        private void repoDepo_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            if (e.Button.Index == 0)
+            {
+                FrmDepoSec frm = new FrmDepoSec(gridStokHareket.GetFocusedRowCellValue(colStokKodu).ToString());
+                frm.ShowDialog();
+                if (frm.secildi)
+                {
+                    gridStokHareket.SetFocusedRowCellValue(colDepoKodu, frm.entity.DepoKodu);
+                    gridStokHareket.SetFocusedRowCellValue(colDepoAdi, frm.entity.DepoAdi);
+                }
+            }
+
+
         }
     }
 }
