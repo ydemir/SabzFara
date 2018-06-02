@@ -28,9 +28,18 @@ namespace SabzFara.BackOffice.Fis
         CariDAL cariDAL = new CariDAL();
         Entities.Tables.Fis _fisEntity = new Entities.Tables.Fis();
         CariBakiye entityBakiye = new CariBakiye();
-        public FrmFisIslem()
+        public FrmFisIslem(string fisKodu=null)
         {
+            if (fisKodu!=null)
+            {
+                _fisEntity = context.Fisler.Where(c => c.FisKodu == fisKodu).SingleOrDefault();
+                context.StokHareketleri.Where(c => c.FisKodu == fisKodu).Load();
+                context.KasaHareketleri.Where(c => c.FisKodu == fisKodu).Load();
+            }
             InitializeComponent();
+
+            _fisEntity.FisTuru = "Alış Faturası";
+
             txtFisKodu.DataBindings.Add("Text", _fisEntity, "FisKodu",false,DataSourceUpdateMode.OnPropertyChanged);
             txtFisTuru.DataBindings.Add("Text", _fisEntity, "FisTuru", false, DataSourceUpdateMode.OnPropertyChanged);
             cmbTarih.DataBindings.Add("EditValue", _fisEntity, "Tarih", false, DataSourceUpdateMode.OnPropertyChanged);
@@ -46,6 +55,10 @@ namespace SabzFara.BackOffice.Fis
             txtVergiNo.DataBindings.Add("Text", _fisEntity, "VergiNo", false, DataSourceUpdateMode.OnPropertyChanged);
             gridcontStokHareket.DataSource = context.StokHareketleri.Local.ToBindingList();
             gridcontKasaHareket.DataSource = context.KasaHareketleri.Local.ToBindingList();
+
+            Toplamlar();
+            OdenenTutarGuncelle();
+
 
             foreach (var item in context.OdemeTurleri.ToList())
             {
@@ -103,7 +116,7 @@ namespace SabzFara.BackOffice.Fis
             stokHareket.StokAdi = entity.StokAdi;
             stokHareket.Barkod = entity.Barkod;
             stokHareket.BarkodTuru = entity.BarkodTuru;
-            stokHareket.BirimFiyati = entity.SatisFiyati1;
+            stokHareket.BirimFiyati = txtFisTuru.Text == "Alış Faturası" ? entity.AlisFiyati1 : entity.SatisFiyati1;
             stokHareket.Birimi = entity.Birimi;
             stokHareket.Miktar = txtMiktar.Value;
             stokHareket.Kdv = entity.SatisKdv;
@@ -238,9 +251,9 @@ namespace SabzFara.BackOffice.Fis
             string fiyatSecilen = gridStokHareket.GetFocusedRowCellValue(colStokKodu).ToString();
             Entities.Tables.Stok fiyatEntity = context.Stoklar.Where(c => c.StokKodu == fiyatSecilen).SingleOrDefault();
 
-            barFiyat1.Tag = fiyatEntity.SatisFiyati1 ?? 0;
-            barFiyat2.Tag = fiyatEntity.SatisFiyati2 ?? 0;
-            barFiyat3.Tag = fiyatEntity.SatisFiyati3 ?? 0;
+            barFiyat1.Tag = txtFisTuru.Text=="Alış Faturası" ? fiyatEntity.AlisFiyati1 ?? 0: fiyatEntity.SatisFiyati1 ?? 0;
+            barFiyat2.Tag = txtFisTuru.Text == "Alış Faturası" ? fiyatEntity.AlisFiyati2 ?? 0 : fiyatEntity.SatisFiyati2 ?? 0;
+            barFiyat3.Tag = txtFisTuru.Text == "Alış Faturası" ? fiyatEntity.AlisFiyati3 ?? 0 : fiyatEntity.SatisFiyati3 ?? 0;
 
             barFiyat1.Caption = string.Format("{0:C2}", barFiyat1.Tag);
             barFiyat2.Caption = string.Format("{0:C2}", barFiyat2.Tag);

@@ -38,7 +38,7 @@ namespace SabzFara.BackOffice.AnaMenu
 
         private void barButtonItem2_ItemClick(object sender, ItemClickEventArgs e)
         {
-            FrmFisIslem frm = new FrmFisIslem();
+            FrmFisIslem frm = new FrmFisIslem("3");
             frm.MdiParent = this;
             frm.Show();
 
