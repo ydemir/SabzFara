@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace SabzFara.Entities.DataAccess
 {
-   public class StokHareketDAL : EntityRepositoryBase<SabzFaraContext, StokHareket,StokHareketValidator>
+   public class StokHareketDAL : EntityRepositoryBase<NetSatisContext, StokHareket,StokHareketValidator>
     {
-        public object GetGenelStok(SabzFaraContext context, string stokKodu)
+        public object GetGenelStok(NetSatisContext context, string stokKodu)
         {
             var result = (from c in context.StokHareketleri.Where(c => c.StokKodu == stokKodu)
                           group c by new { c.Hareket } into g
@@ -26,7 +26,7 @@ namespace SabzFara.Entities.DataAccess
             return result;
         }
 
-        public object GetDepoStok(SabzFaraContext context, string stokKodu)
+        public object GetDepoStok(NetSatisContext context, string stokKodu)
         {
             var result = context.Depolar.GroupJoin(context.StokHareketleri.Where(sh => sh.StokKodu == stokKodu), d => d.DepoKodu, sh => sh.DepoKodu, (depolar, stokhareketleri) => new
             {
@@ -40,7 +40,7 @@ namespace SabzFara.Entities.DataAccess
             return result;
         }
 
-        public object DepoStokListele(SabzFaraContext context,string depoKodu)
+        public object DepoStokListele(NetSatisContext context,string depoKodu)
         {
             var tablo = context.Stoklar.GroupJoin(context.StokHareketleri.Where(c=>c.DepoKodu==depoKodu), s => s.StokKodu, sh => sh.StokKodu, (Stoklar, StokHarekeleri) => new
             {
@@ -57,7 +57,7 @@ namespace SabzFara.Entities.DataAccess
             return tablo;
         }
 
-        public object DepoIstatistikListele(SabzFaraContext _context, string depoKodu)
+        public object DepoIstatistikListele(NetSatisContext _context, string depoKodu)
         {
             
 

@@ -16,7 +16,7 @@ namespace SabzFara.BackOffice.Cari
     public partial class FrmCariHareket : DevExpress.XtraEditors.XtraForm
     {
         CariDAL _cariDal = new CariDAL();
-        SabzFaraContext _context = new SabzFaraContext();
+        NetSatisContext _context = new NetSatisContext();
 
         private string _cariKodu = null;
         public FrmCariHareket(string cariKodu,string cariAdi)

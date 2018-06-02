@@ -10,7 +10,7 @@ namespace SabzFara.BackOffice.Stok
 
         private Entities.Tables.Stok _entity;
         private StokDAL _stokDal = new StokDAL();
-        private SabzFaraContext _context = new SabzFaraContext();
+        private NetSatisContext _context = new NetSatisContext();
         public bool saved = false;
         public FrmStokIslem(Entities.Tables.Stok entity)
         {

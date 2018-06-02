@@ -18,7 +18,7 @@ namespace SabzFara.BackOffice.Cari
     {
         private Entities.Tables.Cari _entity;
         private CariDAL _cariDal = new CariDAL();
-        private SabzFaraContext _context = new SabzFaraContext();
+        private NetSatisContext _context = new NetSatisContext();
         public bool saved = false;
         public FrmCariIslem(Entities.Tables.Cari entity)
         {

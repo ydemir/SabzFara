@@ -15,7 +15,7 @@ namespace SabzFara.BackOffice.Depo
 {
     public partial class FrmDepoHareket : DevExpress.XtraEditors.XtraForm
     {
-        SabzFaraContext context = new SabzFaraContext();
+        NetSatisContext context = new NetSatisContext();
         StokHareketDAL stokHareketDAL = new StokHareketDAL();
        private string _depoKodu;
 

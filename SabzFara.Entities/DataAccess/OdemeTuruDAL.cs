@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace SabzFara.Entities.DataAccess
 {
-   public class OdemeTuruDAL: EntityRepositoryBase<SabzFaraContext, OdemeTuru,OdemeTuruValidator>
+   public class OdemeTuruDAL: EntityRepositoryBase<NetSatisContext, OdemeTuru,OdemeTuruValidator>
     {
-        public object OdemeTuruListele(SabzFaraContext context)
+        public object OdemeTuruListele(NetSatisContext context)
         {
             var result = context.OdemeTurleri.GroupJoin(context.KasaHareketleri, k => k.OdemeTuruKodu, kh => kh.OdemeTuruKodu, (odemeTuru, kasahareket) => new
             {
@@ -29,7 +29,7 @@ namespace SabzFara.Entities.DataAccess
             return result;
         }
 
-        public object KasaToplamListele(SabzFaraContext context, string odemeTuruKodu)
+        public object KasaToplamListele(NetSatisContext context, string odemeTuruKodu)
         {
             var result = (from c in context.KasaHareketleri.Where(c => c.OdemeTuruKodu == odemeTuruKodu)
                           group c by new { c.KasaKodu,c.KasaAdi } into grp
@@ -46,7 +46,7 @@ namespace SabzFara.Entities.DataAccess
             return result;
         }
 
-        public object GenelToplamListele(SabzFaraContext context, string odemeTuruKodu)
+        public object GenelToplamListele(NetSatisContext context, string odemeTuruKodu)
         {
             decimal KasaGiris = context.KasaHareketleri.Where(c => c.OdemeTuruKodu == odemeTuruKodu && c.Hareket == "Kasa Giriş").Sum(c => c.Tutar) ?? 0;
             int KasaGirisKayitSayisi = context.KasaHareketleri.Where(c => c.OdemeTuruKodu == odemeTuruKodu && c.Hareket == "Kasa Giriş").Count();

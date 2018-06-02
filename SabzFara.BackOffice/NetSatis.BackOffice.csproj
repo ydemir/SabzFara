@@ -309,9 +309,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SabzFara.Entities\SabzFara.Entities.csproj">
+    <ProjectReference Include="..\SabzFara.Entities\NetSatis.Entities.csproj">
       <Project>{6db21aba-35e1-47c6-8e75-24e25f1a683f}</Project>
-      <Name>SabzFara.Entities</Name>
+      <Name>NetSatis.Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

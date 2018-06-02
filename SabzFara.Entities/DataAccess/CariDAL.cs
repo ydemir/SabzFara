@@ -13,9 +13,9 @@ using System.Threading.Tasks;
 
 namespace SabzFara.Entities.DataAccess
 {
-    public class CariDAL : EntityRepositoryBase<SabzFaraContext, Cari, CariValidator>
+    public class CariDAL : EntityRepositoryBase<NetSatisContext, Cari, CariValidator>
     {
-        public object GetCariler(SabzFaraContext _context)
+        public object GetCariler(NetSatisContext _context)
         {
             var result = _context.Cariler.GroupJoin(_context.Fisler, c => c.CariKodu, f => f.CariKodu, (cariler, fisler) => new
             {
@@ -89,7 +89,7 @@ namespace SabzFara.Entities.DataAccess
             return result;
         }
 
-        public object CariFisAyrinti(SabzFaraContext _context, string cariKodu)
+        public object CariFisAyrinti(NetSatisContext _context, string cariKodu)
         {
             var result = _context.Fisler.Where(f => f.CariKodu == cariKodu)
             .GroupJoin(_context.KasaHareketleri.Where(kh => kh.CariKodu == cariKodu), f => f.CariKodu, kh => kh.CariKodu, (fisler, kasaHareket) => new
@@ -111,7 +111,7 @@ namespace SabzFara.Entities.DataAccess
             return result;
         }
 
-        public object CariFisGenelToplam(SabzFaraContext _context,string cariKodu)
+        public object CariFisGenelToplam(NetSatisContext _context,string cariKodu)
         {
             var result = (from f in _context.Fisler.Where(f => f.CariKodu == cariKodu) group f by new { f.FisTuru } into grp
                           select new
@@ -123,7 +123,7 @@ namespace SabzFara.Entities.DataAccess
             return result;
         }
 
-        public object CariGenelToplam(SabzFaraContext _context,string cariKodu)
+        public object CariGenelToplam(NetSatisContext _context,string cariKodu)
         {
             decimal alacak = (_context.Fisler.Where(f => f.CariKodu == cariKodu && f.FisTuru == "Aliş Faturası").Sum(f => f.ToplamTutar) ?? 0) +
                 (_context.KasaHareketleri.Where(f => f.CariKodu == cariKodu && f.Hareket == "Kasa Giriş").Sum(f => f.Tutar) ?? 0);
@@ -153,7 +153,7 @@ namespace SabzFara.Entities.DataAccess
             return genelToplamlar;
         }
 
-        public CariBakiye CariBakiyesi(SabzFaraContext _context, string cariKodu)
+        public CariBakiye CariBakiyesi(NetSatisContext _context, string cariKodu)
         {
 
             decimal alacak = (_context.Fisler.Where(f => f.CariKodu == cariKodu && f.FisTuru == "Aliş Faturası").Sum(f => f.ToplamTutar) ?? 0) +

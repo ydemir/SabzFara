@@ -17,7 +17,7 @@ namespace SabzFara.BackOffice.Depo
     {
         private Entities.Tables.Depo _entity;
         private DepoDAL depoDAL = new DepoDAL();
-        private SabzFaraContext context = new SabzFaraContext();
+        private NetSatisContext context = new NetSatisContext();
         public bool kaydedildi = false;
         public FrmDepoIslem(Entities.Tables.Depo entity)
         {

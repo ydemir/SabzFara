@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace SabzFara.Entities.DataAccess
 {
-  public  class KasaDAL : EntityRepositoryBase<SabzFaraContext, Kasa,KasaValidator>
+  public  class KasaDAL : EntityRepositoryBase<NetSatisContext, Kasa,KasaValidator>
     {
-        public object KasaListele(SabzFaraContext context)
+        public object KasaListele(NetSatisContext context)
         {
             var result = context.Kasalar.GroupJoin(context.KasaHareketleri, k => k.KasaKodu, kh => kh.KasaKodu, (kasa, kasahareket) => new
             {
@@ -30,7 +30,7 @@ namespace SabzFara.Entities.DataAccess
             return result;
         }
 
-        public object OdemeTuruToplamListele(SabzFaraContext context, string kasaKodu)
+        public object OdemeTuruToplamListele(NetSatisContext context, string kasaKodu)
         {
             var result = (from c in context.KasaHareketleri.Where(c => c.KasaKodu == kasaKodu)
                           group c by new { c.OdemeTuruAdi } into grp
@@ -46,7 +46,7 @@ namespace SabzFara.Entities.DataAccess
             return result;
         }
 
-        public object GenelToplamListele(SabzFaraContext context, string kasaKodu)
+        public object GenelToplamListele(NetSatisContext context, string kasaKodu)
         {
             decimal KasaGiris = context.KasaHareketleri.Where(c => c.KasaKodu == kasaKodu && c.Hareket == "Kasa Giriş").Sum(c => c.Tutar) ?? 0;
             int KasaGirisKayitSayisi = context.KasaHareketleri.Where(c => c.KasaKodu == kasaKodu && c.Hareket == "Kasa Giriş").Count();

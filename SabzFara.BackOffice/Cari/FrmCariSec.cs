@@ -17,7 +17,7 @@ namespace SabzFara.BackOffice.Cari
     public partial class FrmCariSec : DevExpress.XtraEditors.XtraForm
     {
         CariDAL _cariDal = new CariDAL();
-        SabzFaraContext _context = new SabzFaraContext();
+        NetSatisContext _context = new NetSatisContext();
         public List<Entities.Tables.Cari> _secilen = new List<Entities.Tables.Cari>();
         public bool secildi = false;
         public FrmCariSec(bool cokluSecim = false)

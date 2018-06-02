@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SabzFara.Entities", "SabzFara.Entities\SabzFara.Entities.csproj", "{6DB21ABA-35E1-47C6-8E75-24E25F1A683F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetSatis.Entities", "SabzFara.Entities\NetSatis.Entities.csproj", "{6DB21ABA-35E1-47C6-8E75-24E25F1A683F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SabzFara.BackOffice", "SabzFara.BackOffice\SabzFara.BackOffice.csproj", "{C0D633BD-13A4-4F23-844C-FC739CA2F4B9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetSatis.BackOffice", "SabzFara.BackOffice\NetSatis.BackOffice.csproj", "{C0D633BD-13A4-4F23-844C-FC739CA2F4B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SabzFara.FrontOffice", "SabzFara.FrontOffice\SabzFara.FrontOffice.csproj", "{86FFDA1A-103F-40BD-910F-E17CC6276ADF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetSatis.FrontOffice", "SabzFara.FrontOffice\NetSatis.FrontOffice.csproj", "{86FFDA1A-103F-40BD-910F-E17CC6276ADF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

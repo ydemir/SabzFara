@@ -15,7 +15,7 @@ namespace SabzFara.BackOffice.OdemeTuru
 {
     public partial class FrmOdemeTuruIslem : DevExpress.XtraEditors.XtraForm
     {
-        SabzFaraContext context = new SabzFaraContext();
+        NetSatisContext context = new NetSatisContext();
         OdemeTuruDAL odemeTuruDAL = new OdemeTuruDAL();
         private Entities.Tables.OdemeTuru _entity;
         public FrmOdemeTuruIslem(Entities.Tables.OdemeTuru entity)

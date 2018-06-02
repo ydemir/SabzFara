@@ -16,7 +16,7 @@ namespace SabzFara.BackOffice.Stok
 {
     public partial class FrmStok : DevExpress.XtraEditors.XtraForm
     {
-        SabzFaraContext context = new SabzFaraContext();
+        NetSatisContext context = new NetSatisContext();
         StokDAL _stokDAL = new StokDAL();
         string secilen;
         public FrmStok()

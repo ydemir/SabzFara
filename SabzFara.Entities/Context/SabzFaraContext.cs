@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SabzFara.Entities.Context
 {
-    public class SabzFaraContext : DbContext
+    public class NetSatisContext : DbContext
     {
         public DbSet<Stok> Stoklar { get; set; }
         public DbSet<Cari> Cariler { get; set; }

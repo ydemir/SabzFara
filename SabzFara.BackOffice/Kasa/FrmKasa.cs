@@ -16,7 +16,7 @@ namespace SabzFara.BackOffice.Kasa
     public partial class FrmKasa : DevExpress.XtraEditors.XtraForm
     {
         KasaDAL kasaDAL = new KasaDAL();
-        SabzFaraContext context = new SabzFaraContext();
+        NetSatisContext context = new NetSatisContext();
         public FrmKasa()
         {
             InitializeComponent();

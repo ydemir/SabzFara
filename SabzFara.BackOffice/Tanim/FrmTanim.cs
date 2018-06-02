@@ -15,7 +15,7 @@ namespace SabzFara.BackOffice.Tanim
 {
     public partial class FrmTanim : DevExpress.XtraEditors.XtraForm
     {
-        SabzFaraContext context = new SabzFaraContext();
+        NetSatisContext context = new NetSatisContext();
         TanimDAL tanimDAL = new TanimDAL();
         private TanimTuru _tanimTuru;
         public Entities.Tables.Tanim _entity = new Entities.Tables.Tanim();

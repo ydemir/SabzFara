@@ -15,7 +15,7 @@ namespace SabzFara.BackOffice.Depo
 {
     public partial class FrmDepoSec : DevExpress.XtraEditors.XtraForm
     {
-        SabzFaraContext context = new SabzFaraContext();
+        NetSatisContext context = new NetSatisContext();
         DepoDAL depoDAL = new DepoDAL();
         public Entities.Tables.Depo entity = new Entities.Tables.Depo();
         private string _stokKodu;

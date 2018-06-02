@@ -15,7 +15,7 @@ namespace SabzFara.BackOffice.Depo
 {
     public partial class FrmDepo : DevExpress.XtraEditors.XtraForm
     {
-        SabzFaraContext context = new SabzFaraContext();
+        NetSatisContext context = new NetSatisContext();
         DepoDAL depoDAL = new DepoDAL();
         string secilen = null;
         public FrmDepo()

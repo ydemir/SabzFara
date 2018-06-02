@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace SabzFara.Entities.DataAccess
 {
-   public class KasaHareketDAL : EntityRepositoryBase<SabzFaraContext, KasaHareket,KasaHareketValidator>
+   public class KasaHareketDAL : EntityRepositoryBase<NetSatisContext, KasaHareket,KasaHareketValidator>
     {
     }
 }

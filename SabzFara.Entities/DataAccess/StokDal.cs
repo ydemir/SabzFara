@@ -9,9 +9,9 @@ using System.Linq.Expressions;
 
 namespace SabzFara.Entities.DataAccess
 {
-    public class StokDAL : EntityRepositoryBase<SabzFaraContext, Stok, StokValidator>
+    public class StokDAL : EntityRepositoryBase<NetSatisContext, Stok, StokValidator>
     {
-        public object GetAllJoin(SabzFaraContext context)
+        public object GetAllJoin(NetSatisContext context)
         {
             var tablo = context.Stoklar.GroupJoin(context.StokHareketleri, s => s.StokKodu, sh => sh.StokKodu, (Stoklar, StokHarekeleri) => new
             {

@@ -16,7 +16,7 @@ namespace SabzFara.BackOffice.Kasa
     public partial class FrmKasaSec : DevExpress.XtraEditors.XtraForm
     {
         KasaDAL kasaDAL = new KasaDAL();
-        SabzFaraContext context = new SabzFaraContext();
+        NetSatisContext context = new NetSatisContext();
         public Entities.Tables.Kasa entity = new Entities.Tables.Kasa();
         public bool secildi = false;
         public FrmKasaSec()

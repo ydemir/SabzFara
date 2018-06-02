@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace SabzFara.Entities.DataAccess
 {
-   public class TanimDAL : EntityRepositoryBase<SabzFaraContext, Tanim,TanimValidator>
+   public class TanimDAL : EntityRepositoryBase<NetSatisContext, Tanim,TanimValidator>
     {
     }
 }

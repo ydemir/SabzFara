@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace SabzFara.Entities.DataAccess
 {
-   public class DepoDAL:EntityRepositoryBase<SabzFaraContext, Depo,DepoValidator>
+   public class DepoDAL:EntityRepositoryBase<NetSatisContext, Depo,DepoValidator>
     {
-        public object DepoBazindaStokListele(SabzFaraContext context,string stokKodu)
+        public object DepoBazindaStokListele(NetSatisContext context,string stokKodu)
         {
             var result = context.Depolar.GroupJoin(context.StokHareketleri.Where(sh => sh.StokKodu == stokKodu), d => d.DepoKodu, sh => sh.DepoKodu, (depolar, stokhareketleri) => new
             {

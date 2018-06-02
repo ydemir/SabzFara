@@ -15,7 +15,7 @@ namespace SabzFara.BackOffice.Cari
 {
     public partial class FrmCari : DevExpress.XtraEditors.XtraForm
     {
-        SabzFaraContext _context = new SabzFaraContext();
+        NetSatisContext _context = new NetSatisContext();
         CariDAL _caridal = new CariDAL();
         string secilen;
         public FrmCari()

@@ -17,7 +17,7 @@ namespace SabzFara.BackOffice.Stok
     {
         
         StokHareketDAL _stokHareketDAL = new StokHareketDAL();
-        SabzFaraContext _context = new SabzFaraContext();
+        NetSatisContext _context = new NetSatisContext();
         private string _stokKodu;
         public FrmStokHareket(string stokKodu,string stokAdi)
         {

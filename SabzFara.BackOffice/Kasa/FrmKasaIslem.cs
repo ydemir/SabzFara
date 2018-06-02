@@ -16,7 +16,7 @@ namespace SabzFara.BackOffice.Kasa
     public partial class FrmKasaIslem : DevExpress.XtraEditors.XtraForm
     {
         KasaDAL kasaDAL = new KasaDAL();
-        SabzFaraContext context = new SabzFaraContext();
+        NetSatisContext context = new NetSatisContext();
         public bool kaydedildi = false;
         private Entities.Tables.Kasa _entity;
         public FrmKasaIslem(Entities.Tables.Kasa entity)

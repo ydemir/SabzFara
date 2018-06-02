@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace SabzFara.Entities.DataAccess
 {
-    public class FisDAL : EntityRepositoryBase<SabzFaraContext, Fis,FisValidator>
+    public class FisDAL : EntityRepositoryBase<NetSatisContext, Fis,FisValidator>
     {
     }
 }

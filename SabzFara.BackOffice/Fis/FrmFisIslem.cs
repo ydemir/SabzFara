@@ -21,7 +21,7 @@ namespace SabzFara.BackOffice.Fis
 {
     public partial class FrmFisIslem : DevExpress.XtraEditors.XtraForm
     {
-        SabzFaraContext context = new SabzFaraContext();
+        NetSatisContext context = new NetSatisContext();
         FisDAL fisDAL = new FisDAL();
         StokHareketDAL stokHareketDal = new StokHareketDAL();
         KasaHareketDAL kasaHareketDal = new KasaHareketDAL();

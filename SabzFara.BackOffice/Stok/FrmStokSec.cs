@@ -16,7 +16,7 @@ namespace SabzFara.BackOffice.Stok
     public partial class FrmStokSec : DevExpress.XtraEditors.XtraForm
     {
         StokDAL _stokDal = new StokDAL();
-        SabzFaraContext _context = new SabzFaraContext();
+        NetSatisContext _context = new NetSatisContext();
         public List<Entities.Tables.Stok> _secilen = new List<Entities.Tables.Stok>();
         public bool Secildi = false;
         public FrmStokSec(bool cokluSecim = false)
