@@ -201,5 +201,15 @@ namespace SabzFara.BackOffice.Fis
         {
             gridStokHareket.SetFocusedRowCellValue(colBirimFiyati,Convert.ToDecimal(e.Item.Tag));
         }
+
+       
+        private void repoSeriNo_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            string veri = Convert.ToString(gridStokHareket.GetFocusedRowCellValue(colSeriNo));
+            FrmSeriNoGir frm = new FrmSeriNoGir(veri);
+            frm.ShowDialog();
+
+            gridStokHareket.SetFocusedRowCellValue(colSeriNo,frm.veriSeriNo);
+        }
     }
 }
