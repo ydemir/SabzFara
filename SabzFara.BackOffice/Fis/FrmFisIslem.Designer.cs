@@ -118,8 +118,8 @@
             this.txtKdvToplam = new DevExpress.XtraEditors.CalcEdit();
             this.txtIndirimToplam = new DevExpress.XtraEditors.CalcEdit();
             this.calcEdit4 = new DevExpress.XtraEditors.CalcEdit();
-            this.calcEdit3 = new DevExpress.XtraEditors.CalcEdit();
-            this.calcEdit2 = new DevExpress.XtraEditors.CalcEdit();
+            this.txtOdenmesiGereken = new DevExpress.XtraEditors.CalcEdit();
+            this.txtOdenenTutar = new DevExpress.XtraEditors.CalcEdit();
             this.labelControl28 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl25 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl29 = new DevExpress.XtraEditors.LabelControl();
@@ -210,8 +210,8 @@
             this.colTutar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAciklama1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colKhSil = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repoOdemeSil = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.repoKhSil = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.flowOdemeTurleri = new System.Windows.Forms.FlowLayoutPanel();
             this.radialFiyat = new DevExpress.XtraBars.Ribbon.RadialMenu(this.components);
             this.barFiyat1 = new DevExpress.XtraBars.BarButtonItem();
             this.barFiyat2 = new DevExpress.XtraBars.BarButtonItem();
@@ -231,8 +231,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtKdvToplam.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIndirimToplam.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.calcEdit4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.calcEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.calcEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOdenmesiGereken.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOdenenTutar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navigationPane1)).BeginInit();
             this.navigationPane1.SuspendLayout();
             this.navFisBilgi.SuspendLayout();
@@ -267,7 +267,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridcontKasaHareket)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridKasaHareket)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoKasa)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repoOdemeSil)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repoKhSil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radialFiyat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.SuspendLayout();
@@ -349,8 +349,8 @@
             this.groupControl1.Controls.Add(this.txtKdvToplam);
             this.groupControl1.Controls.Add(this.txtIndirimToplam);
             this.groupControl1.Controls.Add(this.calcEdit4);
-            this.groupControl1.Controls.Add(this.calcEdit3);
-            this.groupControl1.Controls.Add(this.calcEdit2);
+            this.groupControl1.Controls.Add(this.txtOdenmesiGereken);
+            this.groupControl1.Controls.Add(this.txtOdenenTutar);
             this.groupControl1.Controls.Add(this.labelControl28);
             this.groupControl1.Controls.Add(this.labelControl25);
             this.groupControl1.Controls.Add(this.labelControl29);
@@ -522,55 +522,55 @@
             this.calcEdit4.Size = new System.Drawing.Size(179, 26);
             this.calcEdit4.TabIndex = 23;
             // 
-            // calcEdit3
+            // txtOdenmesiGereken
             // 
-            this.calcEdit3.EditValue = new decimal(new int[] {
+            this.txtOdenmesiGereken.EditValue = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            this.calcEdit3.Location = new System.Drawing.Point(119, 45);
-            this.calcEdit3.Name = "calcEdit3";
-            this.calcEdit3.Properties.Appearance.BackColor = System.Drawing.Color.Green;
-            this.calcEdit3.Properties.Appearance.Font = new System.Drawing.Font("DS-Digital", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.calcEdit3.Properties.Appearance.ForeColor = System.Drawing.Color.White;
-            this.calcEdit3.Properties.Appearance.Options.UseBackColor = true;
-            this.calcEdit3.Properties.Appearance.Options.UseFont = true;
-            this.calcEdit3.Properties.Appearance.Options.UseForeColor = true;
-            this.calcEdit3.Properties.AutoHeight = false;
-            this.calcEdit3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.txtOdenmesiGereken.Location = new System.Drawing.Point(119, 45);
+            this.txtOdenmesiGereken.Name = "txtOdenmesiGereken";
+            this.txtOdenmesiGereken.Properties.Appearance.BackColor = System.Drawing.Color.Green;
+            this.txtOdenmesiGereken.Properties.Appearance.Font = new System.Drawing.Font("DS-Digital", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOdenmesiGereken.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.txtOdenmesiGereken.Properties.Appearance.Options.UseBackColor = true;
+            this.txtOdenmesiGereken.Properties.Appearance.Options.UseFont = true;
+            this.txtOdenmesiGereken.Properties.Appearance.Options.UseForeColor = true;
+            this.txtOdenmesiGereken.Properties.AutoHeight = false;
+            this.txtOdenmesiGereken.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, false, false, editorButtonImageOptions7, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject25, serializableAppearanceObject26, serializableAppearanceObject27, serializableAppearanceObject28, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.calcEdit3.Properties.DisplayFormat.FormatString = "C2";
-            this.calcEdit3.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.calcEdit3.Properties.EditFormat.FormatString = "C2";
-            this.calcEdit3.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.calcEdit3.Size = new System.Drawing.Size(179, 26);
-            this.calcEdit3.TabIndex = 23;
+            this.txtOdenmesiGereken.Properties.DisplayFormat.FormatString = "C2";
+            this.txtOdenmesiGereken.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtOdenmesiGereken.Properties.EditFormat.FormatString = "C2";
+            this.txtOdenmesiGereken.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtOdenmesiGereken.Size = new System.Drawing.Size(179, 26);
+            this.txtOdenmesiGereken.TabIndex = 23;
             // 
-            // calcEdit2
+            // txtOdenenTutar
             // 
-            this.calcEdit2.EditValue = new decimal(new int[] {
+            this.txtOdenenTutar.EditValue = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            this.calcEdit2.Location = new System.Drawing.Point(119, 18);
-            this.calcEdit2.Name = "calcEdit2";
-            this.calcEdit2.Properties.Appearance.BackColor = System.Drawing.Color.Green;
-            this.calcEdit2.Properties.Appearance.Font = new System.Drawing.Font("DS-Digital", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.calcEdit2.Properties.Appearance.ForeColor = System.Drawing.Color.White;
-            this.calcEdit2.Properties.Appearance.Options.UseBackColor = true;
-            this.calcEdit2.Properties.Appearance.Options.UseFont = true;
-            this.calcEdit2.Properties.Appearance.Options.UseForeColor = true;
-            this.calcEdit2.Properties.AutoHeight = false;
-            this.calcEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.txtOdenenTutar.Location = new System.Drawing.Point(119, 18);
+            this.txtOdenenTutar.Name = "txtOdenenTutar";
+            this.txtOdenenTutar.Properties.Appearance.BackColor = System.Drawing.Color.Green;
+            this.txtOdenenTutar.Properties.Appearance.Font = new System.Drawing.Font("DS-Digital", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOdenenTutar.Properties.Appearance.ForeColor = System.Drawing.Color.White;
+            this.txtOdenenTutar.Properties.Appearance.Options.UseBackColor = true;
+            this.txtOdenenTutar.Properties.Appearance.Options.UseFont = true;
+            this.txtOdenenTutar.Properties.Appearance.Options.UseForeColor = true;
+            this.txtOdenenTutar.Properties.AutoHeight = false;
+            this.txtOdenenTutar.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo, "", -1, true, false, false, editorButtonImageOptions8, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject29, serializableAppearanceObject30, serializableAppearanceObject31, serializableAppearanceObject32, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.calcEdit2.Properties.DisplayFormat.FormatString = "C2";
-            this.calcEdit2.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.calcEdit2.Properties.EditFormat.FormatString = "C2";
-            this.calcEdit2.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.calcEdit2.Size = new System.Drawing.Size(179, 26);
-            this.calcEdit2.TabIndex = 23;
+            this.txtOdenenTutar.Properties.DisplayFormat.FormatString = "C2";
+            this.txtOdenenTutar.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtOdenenTutar.Properties.EditFormat.FormatString = "C2";
+            this.txtOdenenTutar.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtOdenenTutar.Size = new System.Drawing.Size(179, 26);
+            this.txtOdenenTutar.TabIndex = 23;
             // 
             // labelControl28
             // 
@@ -1462,6 +1462,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions12, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject45, serializableAppearanceObject46, serializableAppearanceObject47, serializableAppearanceObject48, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repoSil.Name = "repoSil";
             this.repoSil.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repoSil.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repoSil_ButtonClick);
             // 
             // colToplamTutar
             // 
@@ -1592,7 +1593,7 @@
             // 
             this.NavOdemeEkrani.Caption = "Ödeme Ekranı";
             this.NavOdemeEkrani.Controls.Add(this.gridcontKasaHareket);
-            this.NavOdemeEkrani.Controls.Add(this.flowLayoutPanel1);
+            this.NavOdemeEkrani.Controls.Add(this.flowOdemeTurleri);
             this.NavOdemeEkrani.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("NavOdemeEkrani.ImageOptions.Image")));
             this.NavOdemeEkrani.Name = "NavOdemeEkrani";
             this.NavOdemeEkrani.Properties.ShowCollapseButton = DevExpress.Utils.DefaultBoolean.False;
@@ -1602,13 +1603,13 @@
             // gridcontKasaHareket
             // 
             this.gridcontKasaHareket.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridcontKasaHareket.Location = new System.Drawing.Point(0, 37);
+            this.gridcontKasaHareket.Location = new System.Drawing.Point(0, 56);
             this.gridcontKasaHareket.MainView = this.gridKasaHareket;
             this.gridcontKasaHareket.Name = "gridcontKasaHareket";
             this.gridcontKasaHareket.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repoKasa,
-            this.repoOdemeSil});
-            this.gridcontKasaHareket.Size = new System.Drawing.Size(1070, 165);
+            this.repoKhSil});
+            this.gridcontKasaHareket.Size = new System.Drawing.Size(1070, 146);
             this.gridcontKasaHareket.TabIndex = 3;
             this.gridcontKasaHareket.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridKasaHareket});
@@ -1639,7 +1640,7 @@
             this.colKasaAdi.ColumnEdit = this.repoKasa;
             this.colKasaAdi.FieldName = "KasaAdi";
             this.colKasaAdi.Name = "colKasaAdi";
-            this.colKasaAdi.OptionsColumn.AllowEdit = false;
+            this.colKasaAdi.ShowButtonMode = DevExpress.XtraGrid.Views.Base.ShowButtonModeEnum.ShowAlways;
             this.colKasaAdi.Visible = true;
             this.colKasaAdi.VisibleIndex = 2;
             this.colKasaAdi.Width = 269;
@@ -1653,6 +1654,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions14, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject53, serializableAppearanceObject54, serializableAppearanceObject55, serializableAppearanceObject56, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.repoKasa.Name = "repoKasa";
             this.repoKasa.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.repoKasa.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repoKasa_ButtonClick);
             // 
             // colOdemeTuruKodu
             // 
@@ -1677,6 +1679,8 @@
             this.colTutar.FieldName = "Tutar";
             this.colTutar.Name = "colTutar";
             this.colTutar.OptionsColumn.AllowEdit = false;
+            this.colTutar.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Tutar", "SUM={0:C2}")});
             this.colTutar.Visible = true;
             this.colTutar.VisibleIndex = 4;
             this.colTutar.Width = 277;
@@ -1693,30 +1697,31 @@
             // colKhSil
             // 
             this.colKhSil.Caption = "Sil";
-            this.colKhSil.ColumnEdit = this.repoOdemeSil;
+            this.colKhSil.ColumnEdit = this.repoKhSil;
             this.colKhSil.Name = "colKhSil";
             this.colKhSil.OptionsColumn.AllowEdit = false;
             this.colKhSil.Visible = true;
             this.colKhSil.VisibleIndex = 0;
             this.colKhSil.Width = 39;
             // 
-            // repoOdemeSil
+            // repoKhSil
             // 
-            this.repoOdemeSil.AutoHeight = false;
+            this.repoKhSil.AutoHeight = false;
             editorButtonImageOptions15.ImageIndex = 0;
             editorButtonImageOptions15.ImageList = this.ımageList2;
-            this.repoOdemeSil.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.repoKhSil.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions15, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject57, serializableAppearanceObject58, serializableAppearanceObject59, serializableAppearanceObject60, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.repoOdemeSil.Name = "repoOdemeSil";
-            this.repoOdemeSil.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repoKhSil.Name = "repoKhSil";
+            this.repoKhSil.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
+            this.repoKhSil.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repoKhSil_ButtonClick);
             // 
-            // flowLayoutPanel1
+            // flowOdemeTurleri
             // 
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1070, 37);
-            this.flowLayoutPanel1.TabIndex = 2;
+            this.flowOdemeTurleri.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flowOdemeTurleri.Location = new System.Drawing.Point(0, 0);
+            this.flowOdemeTurleri.Name = "flowOdemeTurleri";
+            this.flowOdemeTurleri.Size = new System.Drawing.Size(1070, 56);
+            this.flowOdemeTurleri.TabIndex = 2;
             // 
             // radialFiyat
             // 
@@ -1826,8 +1831,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtKdvToplam.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIndirimToplam.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.calcEdit4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.calcEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.calcEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOdenmesiGereken.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOdenenTutar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.navigationPane1)).EndInit();
             this.navigationPane1.ResumeLayout(false);
             this.navFisBilgi.ResumeLayout(false);
@@ -1862,7 +1867,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridcontKasaHareket)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridKasaHareket)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoKasa)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repoOdemeSil)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repoKhSil)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radialFiyat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.ResumeLayout(false);
@@ -1934,12 +1939,12 @@
         private DevExpress.XtraBars.Navigation.NavigationPage NavOdemeEkrani;
         private DevExpress.XtraGrid.GridControl gridcontKasaHareket;
         private DevExpress.XtraGrid.Views.Grid.GridView gridKasaHareket;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowOdemeTurleri;
         private System.Windows.Forms.ImageList ımageList1;
         private DevExpress.XtraEditors.SimpleButton btnStokSec;
         private DevExpress.XtraEditors.CalcEdit txtMiktar;
-        private DevExpress.XtraEditors.CalcEdit calcEdit3;
-        private DevExpress.XtraEditors.CalcEdit calcEdit2;
+        private DevExpress.XtraEditors.CalcEdit txtOdenmesiGereken;
+        private DevExpress.XtraEditors.CalcEdit txtOdenenTutar;
         private DevExpress.XtraEditors.CalcEdit txtIskontoTutar;
         private DevExpress.XtraEditors.CalcEdit txtIskontoOrani;
         private DevExpress.XtraEditors.CalcEdit txtToplam;
@@ -1974,7 +1979,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colTutar;
         private DevExpress.XtraGrid.Columns.GridColumn colAciklama1;
         private DevExpress.XtraGrid.Columns.GridColumn colKhSil;
-        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repoOdemeSil;
+        private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repoKhSil;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraGrid.Columns.GridColumn colToplamTutar;
         private DevExpress.XtraGrid.Columns.GridColumn colIndirimTutar;

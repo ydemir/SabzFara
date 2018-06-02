@@ -15,6 +15,7 @@ using SabzFara.Entities.Tables;
 using SabzFara.BackOffice.Stok;
 using SabzFara.BackOffice.Cari;
 using SabzFara.BackOffice.Depo;
+using SabzFara.BackOffice.Kasa;
 
 namespace SabzFara.BackOffice.Fis
 {
@@ -39,6 +40,48 @@ namespace SabzFara.BackOffice.Fis
             gridcontStokHareket.DataSource = context.StokHareketleri.Local.ToBindingList();
             gridcontKasaHareket.DataSource = context.KasaHareketleri.Local.ToBindingList();
 
+            foreach (var item in context.OdemeTurleri.ToList())
+            {
+                var buton = new SimpleButton
+                {
+                    Name = item.OdemeTuruKodu,
+                    Text = item.OdemeTuruAdi,
+                    Height = 48,
+                    Width = 125
+                };
+
+                buton.Click += OdemeEkle_Click;
+                flowOdemeTurleri.Controls.Add(buton);
+            }
+
+        }
+
+        private void OdemeEkle_Click (object sender,EventArgs e)
+        {
+            var buton = (sender as SimpleButton);
+            Entities.Tables.KasaHareket entityKasaHareket = new KasaHareket
+            {
+                OdemeTuruKodu = buton.Name,
+                OdemeTuruAdi = buton.Text,
+                Tutar = txtOdenmesiGereken.Value
+            };
+            if (txtOdenmesiGereken.Value<=0)
+            {
+                MessageBox.Show("Ödenmesi gereken tutar zaten ödenmiş durumdadır.");
+            }
+            else
+            {
+                kasaHareketDal.AddOrUpdate(context, entityKasaHareket);
+                OdenenTutarGuncelle();
+            }
+           
+        }
+
+        private void OdenenTutarGuncelle()
+        {
+            gridKasaHareket.UpdateSummary();
+            txtOdenenTutar.Value = Convert.ToDecimal(colTutar.SummaryItem.SummaryValue);
+            txtOdenmesiGereken.Value = txtToplam.Value - txtOdenenTutar.Value;
         }
 
         private void FrmFisIslem_Load(object sender, EventArgs e)
@@ -153,6 +196,7 @@ namespace SabzFara.BackOffice.Fis
             txtToplam.Value = Convert.ToDecimal(colToplamTutar.SummaryItem.SummaryValue) - txtIskontoOrani.Value;
             txtKdvToplam.Value = Convert.ToDecimal(colKDVToplam.SummaryItem.SummaryValue);
             txtIndirimToplam.Value = Convert.ToDecimal(colIndirimTutar.SummaryItem.SummaryValue);
+            txtOdenmesiGereken.Value = txtToplam.Value - txtOdenenTutar.Value;
 
         }
 
@@ -210,6 +254,35 @@ namespace SabzFara.BackOffice.Fis
             frm.ShowDialog();
 
             gridStokHareket.SetFocusedRowCellValue(colSeriNo,frm.veriSeriNo);
+        }
+
+        private void repoSil_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            if (MessageBox.Show("Seçili olan veriyi silmek istediğinize emin misiniz?", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                gridStokHareket.DeleteSelectedRows();
+            }
+        }
+
+        private void repoKasa_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            FrmKasaSec frm = new FrmKasaSec();
+            frm.ShowDialog();
+            if (frm.secildi)
+            {
+                gridKasaHareket.SetFocusedRowCellValue(colKasaKodu, frm.entity.KasaKodu);
+                gridKasaHareket.SetFocusedRowCellValue(colKasaAdi, frm.entity.KasaAdi);
+            }
+        }
+
+        private void repoKhSil_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            if (MessageBox.Show("Seçili olan veriyi silmek istediğinize emin misiniz?", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                gridKasaHareket.DeleteSelectedRows();
+            }
+
+            OdenenTutarGuncelle();
         }
     }
 }

@@ -18,6 +18,7 @@ namespace SabzFara.BackOffice.Kasa
         KasaDAL kasaDAL = new KasaDAL();
         SabzFaraContext context = new SabzFaraContext();
         public Entities.Tables.Kasa entity = new Entities.Tables.Kasa();
+        public bool secildi = false;
         public FrmKasaSec()
         {
             InitializeComponent();
@@ -30,9 +31,14 @@ namespace SabzFara.BackOffice.Kasa
 
         private void btnSec_Click(object sender, EventArgs e)
         {
-            string kasaKodu = gridView1.GetFocusedRowCellValue(colKasaKodu).ToString();
-          entity=  context.Kasalar.SingleOrDefault(c => c.KasaKodu == kasaKodu);
-            this.Close();
+            if (gridView1.GetSelectedRows().Length != 0)
+            {
+                string kasaKodu = gridView1.GetFocusedRowCellValue(colKasaKodu).ToString();
+                entity = context.Kasalar.SingleOrDefault(c => c.KasaKodu == kasaKodu);
+                secildi = true;
+                this.Close();
+            }
+
         }
 
         private void btnKapat_Click(object sender, EventArgs e)
