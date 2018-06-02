@@ -30,13 +30,20 @@ namespace SabzFara.BackOffice.Fis
         CariBakiye entityBakiye = new CariBakiye();
         public FrmFisIslem(string fisKodu=null)
         {
+            InitializeComponent();
             if (fisKodu!=null)
             {
                 _fisEntity = context.Fisler.Where(c => c.FisKodu == fisKodu).SingleOrDefault();
                 context.StokHareketleri.Where(c => c.FisKodu == fisKodu).Load();
                 context.KasaHareketleri.Where(c => c.FisKodu == fisKodu).Load();
+
+                entityBakiye = this.cariDAL.CariBakiyesi(context, _fisEntity.CariKodu);
+
+                lblAlacak.Text = entityBakiye.Alacak.ToString("C2");
+                lblBorc.Text = entityBakiye.Borc.ToString("C2");
+                lblBakiye.Text = entityBakiye.Bakiye.ToString("C2");
             }
-            InitializeComponent();
+           
 
             _fisEntity.FisTuru = "Alış Faturası";
 
