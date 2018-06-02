@@ -180,5 +180,26 @@ namespace SabzFara.BackOffice.Fis
 
 
         }
+
+        private void repoBirimFiyat_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            string fiyatSecilen = gridStokHareket.GetFocusedRowCellValue(colStokKodu).ToString();
+            Entities.Tables.Stok fiyatEntity = context.Stoklar.Where(c => c.StokKodu == fiyatSecilen).SingleOrDefault();
+
+            barFiyat1.Tag = fiyatEntity.SatisFiyati1 ?? 0;
+            barFiyat2.Tag = fiyatEntity.SatisFiyati2 ?? 0;
+            barFiyat3.Tag = fiyatEntity.SatisFiyati3 ?? 0;
+
+            barFiyat1.Caption = string.Format("{0:C2}", barFiyat1.Tag);
+            barFiyat2.Caption = string.Format("{0:C2}", barFiyat2.Tag);
+            barFiyat3.Caption = string.Format("{0:C2}", barFiyat3.Tag);
+
+            radialFiyat.ShowPopup(MousePosition);
+        }
+
+        private void FiyatSec(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            gridStokHareket.SetFocusedRowCellValue(colBirimFiyati,Convert.ToDecimal(e.Item.Tag));
+        }
     }
 }
