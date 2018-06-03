@@ -62,11 +62,35 @@ namespace SabzFara.BackOffice.Personel
         private void btnSil_Click(object sender, EventArgs e)
         {
             secilen=gridPersonel.GetFocusedRowCellValue(colPersonelKodu).ToString();
-            if (MessageBox.Show("Seçili olan kaydı silmek istediğinize emin misiniz ?","Uyarı")==DialogResult.Yes)
+            if (MessageBox.Show("Seçili olan kaydı silmek istediğinize emin misiniz ?","Uyarı",MessageBoxButtons.YesNo)==DialogResult.Yes)
             {
                 personelDAL.Delete(context, c => c.PersonelKodu == secilen);
                 personelDAL.Save(context);
+                Listele();
             }
+        }
+
+        private void btnEkle_Click(object sender, EventArgs e)
+        {
+            FrmPersonelIslem frm = new FrmPersonelIslem(new Entities.Tables.Personel());
+            frm.ShowDialog();
+            if (frm.saved)
+            {
+                Listele();
+            }
+        }
+
+        private void btnDuzenle_Click(object sender, EventArgs e)
+        {
+            secilen = gridPersonel.GetFocusedRowCellValue(colPersonelKodu).ToString();
+            FrmPersonelIslem frm = new FrmPersonelIslem(personelDAL.GetByFilter(context, s => s.PersonelKodu == secilen));
+            frm.ShowDialog();
+            Listele();
+        }
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+            Listele();
         }
     }
 }

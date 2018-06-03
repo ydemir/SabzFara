@@ -35,7 +35,9 @@ namespace SabzFara.BackOffice.Tanim
             CariAltGrubu,
             CariOzelKod1,
             CariOzelKod2,
-            CariOzelKod4
+            CariOzelKod3,
+            CariOzelKod4,
+            PersonelUnvan
         }
 
         private void btnEkle_Click(object sender, EventArgs e)
