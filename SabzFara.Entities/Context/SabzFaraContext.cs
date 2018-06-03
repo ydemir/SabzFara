@@ -1,11 +1,6 @@
 ﻿using SabzFara.Entities.Mapping;
 using SabzFara.Entities.Tables;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SabzFara.Entities.Context
 {
@@ -20,6 +15,7 @@ namespace SabzFara.Entities.Context
         public DbSet<Kasa> Kasalar { get; set; }
         public DbSet<OdemeTuru> OdemeTurleri { get; set; }
         public DbSet<Tanim> Tanimlar { get; set; }
+        public DbSet<Personel> Personeller { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -32,6 +28,7 @@ namespace SabzFara.Entities.Context
             modelBuilder.Configurations.Add(new KasaMap());
             modelBuilder.Configurations.Add(new OdemeTuruMap());
             modelBuilder.Configurations.Add(new TanimMap());
+            modelBuilder.Configurations.Add(new PersonelMap());
         }
     }
 }

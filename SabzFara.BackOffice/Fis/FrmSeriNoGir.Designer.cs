@@ -33,15 +33,15 @@
             this.lblBaslik = new DevExpress.XtraEditors.LabelControl();
             this.grpMenu = new DevExpress.XtraEditors.GroupControl();
             this.btnKapat = new DevExpress.XtraEditors.SimpleButton();
-            this.btnVazgec = new DevExpress.XtraEditors.SimpleButton();
-            this.btnYeni = new DevExpress.XtraEditors.SimpleButton();
-            this.btnSil = new DevExpress.XtraEditors.SimpleButton();
+            this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btnKaydet = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSil = new DevExpress.XtraEditors.SimpleButton();
+            this.btnYeni = new DevExpress.XtraEditors.SimpleButton();
+            this.btnVazgec = new DevExpress.XtraEditors.SimpleButton();
             this.grpBilgi = new DevExpress.XtraEditors.GroupControl();
             this.txtSeriNo = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.listSeriNo = new DevExpress.XtraEditors.ListBoxControl();
-            this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grpBilgi)).BeginInit();
@@ -95,42 +95,16 @@
             this.btnKapat.Text = "Kapat";
             this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
             // 
-            // btnVazgec
+            // ımageList1
             // 
-            this.btnVazgec.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnVazgec.Enabled = false;
-            this.btnVazgec.ImageOptions.ImageIndex = 4;
-            this.btnVazgec.ImageOptions.ImageList = this.ımageList1;
-            this.btnVazgec.Location = new System.Drawing.Point(280, 22);
-            this.btnVazgec.Name = "btnVazgec";
-            this.btnVazgec.Size = new System.Drawing.Size(83, 39);
-            this.btnVazgec.TabIndex = 0;
-            this.btnVazgec.Text = "Vazgeç";
-            this.btnVazgec.Click += new System.EventHandler(this.btnVazgec_Click);
-            // 
-            // btnYeni
-            // 
-            this.btnYeni.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnYeni.ImageOptions.ImageIndex = 0;
-            this.btnYeni.ImageOptions.ImageList = this.ımageList1;
-            this.btnYeni.Location = new System.Drawing.Point(13, 22);
-            this.btnYeni.Name = "btnYeni";
-            this.btnYeni.Size = new System.Drawing.Size(83, 39);
-            this.btnYeni.TabIndex = 0;
-            this.btnYeni.Text = "Yeni";
-            this.btnYeni.Click += new System.EventHandler(this.btnYeni_Click);
-            // 
-            // btnSil
-            // 
-            this.btnSil.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSil.ImageOptions.ImageIndex = 2;
-            this.btnSil.ImageOptions.ImageList = this.ımageList1;
-            this.btnSil.Location = new System.Drawing.Point(102, 22);
-            this.btnSil.Name = "btnSil";
-            this.btnSil.Size = new System.Drawing.Size(83, 39);
-            this.btnSil.TabIndex = 0;
-            this.btnSil.Text = "Sil";
-            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
+            this.ımageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ımageList1.ImageStream")));
+            this.ımageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.ımageList1.Images.SetKeyName(0, "add.png");
+            this.ımageList1.Images.SetKeyName(1, "checkbox.png");
+            this.ımageList1.Images.SetKeyName(2, "delete.png");
+            this.ımageList1.Images.SetKeyName(3, "floppy_disk.png");
+            this.ımageList1.Images.SetKeyName(4, "floppy_disk_delete.png");
+            this.ımageList1.Images.SetKeyName(5, "folder_out.png");
             // 
             // btnKaydet
             // 
@@ -144,6 +118,43 @@
             this.btnKaydet.TabIndex = 0;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
+            // 
+            // btnSil
+            // 
+            this.btnSil.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSil.ImageOptions.ImageIndex = 2;
+            this.btnSil.ImageOptions.ImageList = this.ımageList1;
+            this.btnSil.Location = new System.Drawing.Point(102, 22);
+            this.btnSil.Name = "btnSil";
+            this.btnSil.Size = new System.Drawing.Size(83, 39);
+            this.btnSil.TabIndex = 0;
+            this.btnSil.Text = "Sil";
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
+            // 
+            // btnYeni
+            // 
+            this.btnYeni.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnYeni.ImageOptions.ImageIndex = 0;
+            this.btnYeni.ImageOptions.ImageList = this.ımageList1;
+            this.btnYeni.Location = new System.Drawing.Point(13, 22);
+            this.btnYeni.Name = "btnYeni";
+            this.btnYeni.Size = new System.Drawing.Size(83, 39);
+            this.btnYeni.TabIndex = 0;
+            this.btnYeni.Text = "Yeni";
+            this.btnYeni.Click += new System.EventHandler(this.btnYeni_Click);
+            // 
+            // btnVazgec
+            // 
+            this.btnVazgec.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnVazgec.Enabled = false;
+            this.btnVazgec.ImageOptions.ImageIndex = 4;
+            this.btnVazgec.ImageOptions.ImageList = this.ımageList1;
+            this.btnVazgec.Location = new System.Drawing.Point(280, 22);
+            this.btnVazgec.Name = "btnVazgec";
+            this.btnVazgec.Size = new System.Drawing.Size(83, 39);
+            this.btnVazgec.TabIndex = 0;
+            this.btnVazgec.Text = "Vazgeç";
+            this.btnVazgec.Click += new System.EventHandler(this.btnVazgec_Click);
             // 
             // grpBilgi
             // 
@@ -188,17 +199,6 @@
             this.listSeriNo.Size = new System.Drawing.Size(464, 232);
             this.listSeriNo.TabIndex = 17;
             // 
-            // ımageList1
-            // 
-            this.ımageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ımageList1.ImageStream")));
-            this.ımageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.ımageList1.Images.SetKeyName(0, "add.png");
-            this.ımageList1.Images.SetKeyName(1, "checkbox.png");
-            this.ımageList1.Images.SetKeyName(2, "delete.png");
-            this.ımageList1.Images.SetKeyName(3, "floppy_disk.png");
-            this.ımageList1.Images.SetKeyName(4, "floppy_disk_delete.png");
-            this.ımageList1.Images.SetKeyName(5, "folder_out.png");
-            // 
             // FrmSeriNoGir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -209,6 +209,7 @@
             this.Controls.Add(this.grpMenu);
             this.Controls.Add(this.lblBaslik);
             this.Name = "FrmSeriNoGir";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmSeriNoGir";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmSeriNoGir_FormClosing);
             this.Load += new System.EventHandler(this.FrmSeriNoGir_Load);

@@ -3,7 +3,7 @@ namespace SabzFara.Entities.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class PersonelAdd : DbMigration
     {
         public override void Up()
         {
@@ -22,7 +22,7 @@ namespace SabzFara.Entities.Migrations
                         Telefon = c.String(maxLength: 20),
                         Fax = c.String(maxLength: 20),
                         EMail = c.String(maxLength: 50),
-                        Web = c.String(),
+                        Web = c.String(maxLength: 50),
                         Il = c.String(maxLength: 20),
                         Ilce = c.String(maxLength: 20),
                         Semt = c.String(maxLength: 20),
@@ -35,8 +35,8 @@ namespace SabzFara.Entities.Migrations
                         OzelKod4 = c.String(maxLength: 30),
                         VergiDairesi = c.String(maxLength: 30),
                         VergiNo = c.String(maxLength: 15),
-                        IskontoOrani = c.Decimal(nullable: false, precision: 5, scale: 2),
-                        RiskLimiti = c.Decimal(nullable: false, precision: 12, scale: 2),
+                        IskontoOrani = c.Decimal(precision: 5, scale: 2),
+                        RiskLimiti = c.Decimal(precision: 12, scale: 2),
                         AlisOzelFiyati = c.String(maxLength: 15),
                         SatisOzelFiyati = c.String(maxLength: 15),
                         Aciklama = c.String(maxLength: 200),
@@ -70,13 +70,21 @@ namespace SabzFara.Entities.Migrations
                         FisTuru = c.String(maxLength: 30),
                         CariKodu = c.String(maxLength: 12),
                         CariAdi = c.String(maxLength: 50),
+                        FaturaUnvani = c.String(maxLength: 50),
+                        CepTelefonu = c.String(),
+                        Il = c.String(maxLength: 20),
+                        Ilce = c.String(maxLength: 20),
+                        Semt = c.String(maxLength: 20),
+                        Adres = c.String(maxLength: 100),
+                        VergiDairesi = c.String(maxLength: 30),
+                        VergiNo = c.String(maxLength: 15),
                         BelgeNo = c.String(maxLength: 20),
                         Tarih = c.DateTime(nullable: false),
                         PlasiyerKodu = c.String(maxLength: 12),
                         PlasiyerAdi = c.String(maxLength: 12),
-                        IskontoOrani = c.Decimal(nullable: false, precision: 5, scale: 2),
-                        IskontoTutar = c.Decimal(nullable: false, precision: 12, scale: 2),
-                        ToplamTutar = c.Decimal(nullable: false, precision: 12, scale: 2),
+                        IskontoOrani = c.Decimal(precision: 5, scale: 2),
+                        IskontoTutar = c.Decimal(precision: 12, scale: 2),
+                        ToplamTutar = c.Decimal(precision: 12, scale: 2),
                         Aciklama = c.String(maxLength: 200),
                     })
                 .PrimaryKey(t => t.Id);
@@ -94,8 +102,8 @@ namespace SabzFara.Entities.Migrations
                         OdemeTuruAdi = c.String(maxLength: 30),
                         CariKodu = c.String(maxLength: 12),
                         CariAdi = c.String(maxLength: 50),
-                        Tarih = c.DateTime(nullable: false),
-                        Tutar = c.Decimal(nullable: false, precision: 12, scale: 2),
+                        Tarih = c.DateTime(),
+                        Tutar = c.Decimal(precision: 12, scale: 2),
                         Aciklama = c.String(maxLength: 12),
                     })
                 .PrimaryKey(t => t.Id);
@@ -125,6 +133,35 @@ namespace SabzFara.Entities.Migrations
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
+                "dbo.Personeller",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Calisiyor = c.Boolean(nullable: false),
+                        Unvani = c.String(maxLength: 15),
+                        PersonelKodu = c.String(maxLength: 12),
+                        PersonelAdi = c.String(maxLength: 50),
+                        TcKimlikNo = c.String(maxLength: 11),
+                        IseGirisTarihi = c.DateTime(),
+                        IstenCikisTarihi = c.DateTime(),
+                        VergiDairesi = c.String(),
+                        VergiNo = c.String(),
+                        CepTelefonu = c.String(),
+                        Telefon = c.String(maxLength: 20),
+                        Fax = c.String(maxLength: 20),
+                        EMail = c.String(maxLength: 50),
+                        Web = c.String(maxLength: 50),
+                        Il = c.String(maxLength: 20),
+                        Ilce = c.String(maxLength: 20),
+                        Semt = c.String(maxLength: 20),
+                        Adres = c.String(maxLength: 100),
+                        PrimOrani = c.Decimal(precision: 5, scale: 2),
+                        AylikMaasi = c.Decimal(precision: 12, scale: 2),
+                        Aciklama = c.String(maxLength: 20),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
                 "dbo.StokHareketleri",
                 c => new
                     {
@@ -136,12 +173,10 @@ namespace SabzFara.Entities.Migrations
                         BarkodTuru = c.String(maxLength: 15),
                         Barkod = c.String(maxLength: 20),
                         Birimi = c.String(maxLength: 15),
-                        Miktar = c.Decimal(nullable: false, precision: 12, scale: 3),
+                        Miktar = c.Decimal(precision: 12, scale: 3),
                         Kdv = c.Int(nullable: false),
-                        BirimFiyati = c.Decimal(nullable: false, precision: 12, scale: 2),
-                        IndirimOrani = c.Decimal(nullable: false, precision: 5, scale: 2),
-                        IndirimTutari = c.Decimal(nullable: false, precision: 12, scale: 2),
-                        ToplamTutar = c.Decimal(nullable: false, precision: 12, scale: 2),
+                        BirimFiyati = c.Decimal(precision: 12, scale: 2),
+                        IndirimOrani = c.Decimal(precision: 5, scale: 2),
                         DepoKodu = c.String(maxLength: 12),
                         DepoAdi = c.String(maxLength: 30),
                         SeriNo = c.String(maxLength: 200),
@@ -173,14 +208,14 @@ namespace SabzFara.Entities.Migrations
                         UreticiKodu = c.String(maxLength: 20),
                         AlisKdv = c.Int(nullable: false),
                         SatisKdv = c.Int(nullable: false),
-                        AlisFiyati1 = c.Decimal(nullable: false, precision: 12, scale: 2),
-                        AlisFiyati2 = c.Decimal(nullable: false, precision: 12, scale: 2),
-                        AlisFiyati3 = c.Decimal(nullable: false, precision: 12, scale: 2),
-                        SatisFiyati1 = c.Decimal(nullable: false, precision: 12, scale: 2),
-                        SatisFiyati2 = c.Decimal(nullable: false, precision: 12, scale: 2),
-                        SatisFiyati3 = c.Decimal(nullable: false, precision: 12, scale: 2),
-                        MinStokMiktari = c.Decimal(nullable: false, precision: 12, scale: 3),
-                        MaxStokMiktari = c.Decimal(nullable: false, precision: 12, scale: 3),
+                        AlisFiyati1 = c.Decimal(precision: 12, scale: 2),
+                        AlisFiyati2 = c.Decimal(precision: 12, scale: 2),
+                        AlisFiyati3 = c.Decimal(precision: 12, scale: 2),
+                        SatisFiyati1 = c.Decimal(precision: 12, scale: 2),
+                        SatisFiyati2 = c.Decimal(precision: 12, scale: 2),
+                        SatisFiyati3 = c.Decimal(precision: 12, scale: 2),
+                        MinStokMiktari = c.Decimal(precision: 12, scale: 3),
+                        MaxStokMiktari = c.Decimal(precision: 12, scale: 3),
                         Aciklama = c.String(maxLength: 200),
                     })
                 .PrimaryKey(t => t.Id);
@@ -203,6 +238,7 @@ namespace SabzFara.Entities.Migrations
             DropTable("dbo.Tanimlar");
             DropTable("dbo.Stoklar");
             DropTable("dbo.StokHareketleri");
+            DropTable("dbo.Personeller");
             DropTable("dbo.OdemeTurleri");
             DropTable("dbo.Kasalar");
             DropTable("dbo.KasaHareketleri");

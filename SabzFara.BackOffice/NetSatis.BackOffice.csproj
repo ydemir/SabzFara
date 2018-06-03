@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bogus, Version=22.1.2.0, Culture=neutral, PublicKeyToken=fa1bb3f3f218129a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bogus.22.1.2\lib\net40\Bogus.dll</HintPath>
+    </Reference>
     <Reference Include="DevExpress.BonusSkins.v17.2" />
     <Reference Include="DevExpress.Data.v17.2" />
     <Reference Include="DevExpress.Printing.v17.2.Core" />
@@ -67,6 +70,12 @@
     </Compile>
     <Compile Include="AnaMenu\FrmAna.Designer.cs">
       <DependentUpon>FrmAna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AnaMenu\FrmAnaMenuBilgi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnaMenu\FrmAnaMenuBilgi.Designer.cs">
+      <DependentUpon>FrmAnaMenuBilgi.cs</DependentUpon>
     </Compile>
     <Compile Include="Cari\FrmCari.cs">
       <SubType>Form</SubType>
@@ -134,6 +143,12 @@
     <Compile Include="Fis\FrmSeriNoGir.Designer.cs">
       <DependentUpon>FrmSeriNoGir.cs</DependentUpon>
     </Compile>
+    <Compile Include="Kasa Hareketleri\FrmKasaHareketleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kasa Hareketleri\FrmKasaHareketleri.Designer.cs">
+      <DependentUpon>FrmKasaHareketleri.cs</DependentUpon>
+    </Compile>
     <Compile Include="Kasa\FrmKasa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,8 +191,32 @@
     <Compile Include="OdemeTuru\FrmOdemeTuruIslem.Designer.cs">
       <DependentUpon>FrmOdemeTuruIslem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Personel\FrmPersonel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personel\FrmPersonel.Designer.cs">
+      <DependentUpon>FrmPersonel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personel\FrmPersonelHareketleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personel\FrmPersonelHareketleri.Designer.cs">
+      <DependentUpon>FrmPersonelHareketleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personel\FrmPersonelIslem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personel\FrmPersonelIslem.Designer.cs">
+      <DependentUpon>FrmPersonelIslem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StokHareketleri\FrmStokHareketleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StokHareketleri\FrmStokHareketleri.Designer.cs">
+      <DependentUpon>FrmStokHareketleri.cs</DependentUpon>
+    </Compile>
     <Compile Include="Stok\FrmStok.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,6 +249,9 @@
     </Compile>
     <EmbeddedResource Include="AnaMenu\FrmAna.resx">
       <DependentUpon>FrmAna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AnaMenu\FrmAnaMenuBilgi.resx">
+      <DependentUpon>FrmAnaMenuBilgi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cari\FrmCari.resx">
       <DependentUpon>FrmCari.cs</DependentUpon>
@@ -244,6 +286,9 @@
     <EmbeddedResource Include="Fis\FrmSeriNoGir.resx">
       <DependentUpon>FrmSeriNoGir.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Kasa Hareketleri\FrmKasaHareketleri.resx">
+      <DependentUpon>FrmKasaHareketleri.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Kasa\FrmKasa.resx">
       <DependentUpon>FrmKasa.cs</DependentUpon>
     </EmbeddedResource>
@@ -265,6 +310,15 @@
     <EmbeddedResource Include="OdemeTuru\FrmOdemeTuruIslem.resx">
       <DependentUpon>FrmOdemeTuruIslem.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Personel\FrmPersonel.resx">
+      <DependentUpon>FrmPersonel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personel\FrmPersonelHareketleri.resx">
+      <DependentUpon>FrmPersonelHareketleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personel\FrmPersonelIslem.resx">
+      <DependentUpon>FrmPersonelIslem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -276,6 +330,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="StokHareketleri\FrmStokHareketleri.resx">
+      <DependentUpon>FrmStokHareketleri.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Stok\FrmStok.resx">
       <DependentUpon>FrmStok.cs</DependentUpon>
     </EmbeddedResource>
@@ -296,6 +353,7 @@
     <None Include="Properties\DataSources\SabzFara.Entities.Tables.Cari.datasource" />
     <None Include="Properties\DataSources\SabzFara.Entities.Tables.Fis.datasource" />
     <None Include="Properties\DataSources\SabzFara.Entities.Tables.KasaHareket.datasource" />
+    <None Include="Properties\DataSources\SabzFara.Entities.Tables.Personel.datasource" />
     <None Include="Properties\DataSources\SabzFara.Entities.Tables.Stok.datasource" />
     <None Include="Properties\DataSources\SabzFara.Entities.Tables.StokHareket.datasource" />
     <None Include="Properties\Settings.settings">

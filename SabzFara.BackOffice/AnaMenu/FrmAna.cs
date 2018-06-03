@@ -12,6 +12,9 @@ using SabzFara.BackOffice.Stok;
 using SabzFara.BackOffice.Cari;
 using SabzFara.BackOffice.Tanim;
 using SabzFara.BackOffice.Fis;
+using SabzFara.BackOffice.StokHareketleri;
+using SabzFara.BackOffice.Kasa_Hareketleri;
+using SabzFara.BackOffice.Personel;
 
 namespace SabzFara.BackOffice.AnaMenu
 {
@@ -42,6 +45,34 @@ namespace SabzFara.BackOffice.AnaMenu
             frm.MdiParent = this;
             frm.Show();
 
+        }
+
+        private void FrmAna_Load(object sender, EventArgs e)
+        {
+            FrmAnaMenuBilgi frm = new FrmAnaMenuBilgi();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void btnStokHareketleri_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FrmStokHareketleri frm = new FrmStokHareketleri();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void barKasaHareket_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FrmKasaHareketleri frm = new FrmKasaHareketleri();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void btnPersoneller_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FrmPersonel frm = new FrmPersonel();
+            frm.MdiParent = this;
+            frm.Show();
         }
     }
 }

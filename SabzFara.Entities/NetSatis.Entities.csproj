@@ -64,6 +64,7 @@
     <Compile Include="DataAccess\KasaDAL.cs" />
     <Compile Include="DataAccess\KasaHareketDAL.cs" />
     <Compile Include="DataAccess\OdemeTuruDAL.cs" />
+    <Compile Include="DataAccess\PersonelDAL.cs" />
     <Compile Include="DataAccess\StokDAL.cs" />
     <Compile Include="DataAccess\StokHareketDAL.cs" />
     <Compile Include="DataAccess\TanimDAL.cs" />
@@ -75,20 +76,13 @@
     <Compile Include="Mapping\KasaHareketMap.cs" />
     <Compile Include="Mapping\KasaMap.cs" />
     <Compile Include="Mapping\OdemeTuruMap.cs" />
+    <Compile Include="Mapping\PersonelMap.cs" />
     <Compile Include="Mapping\StokHareketMap.cs" />
     <Compile Include="Mapping\StokMap.cs" />
     <Compile Include="Mapping\TanimMap.cs" />
-    <Compile Include="Migrations\201805201103397_InitialCreate.cs" />
-    <Compile Include="Migrations\201805201103397_InitialCreate.Designer.cs">
-      <DependentUpon>201805201103397_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201805261751115_NewContext.cs" />
-    <Compile Include="Migrations\201805261751115_NewContext.Designer.cs">
-      <DependentUpon>201805261751115_NewContext.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201806021742090_yenifisler.cs" />
-    <Compile Include="Migrations\201806021742090_yenifisler.Designer.cs">
-      <DependentUpon>201806021742090_yenifisler.cs</DependentUpon>
+    <Compile Include="Migrations\201806032058209_PersonelAdd.cs" />
+    <Compile Include="Migrations\201806032058209_PersonelAdd.Designer.cs">
+      <DependentUpon>201806032058209_PersonelAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -101,6 +95,7 @@
     <Compile Include="Tables\Kasa.cs" />
     <Compile Include="Tables\KasaHareket.cs" />
     <Compile Include="Tables\OdemeTuru.cs" />
+    <Compile Include="Tables\Personel.cs" />
     <Compile Include="Tables\Stok.cs" />
     <Compile Include="Tables\StokHareket.cs" />
     <Compile Include="Tables\Tanim.cs" />
@@ -111,6 +106,7 @@
     <Compile Include="Validations\KasaHareketValidator.cs" />
     <Compile Include="Validations\KasaValidator.cs" />
     <Compile Include="Validations\OdemeTuruValidator.cs" />
+    <Compile Include="Validations\PersonelValidator.cs" />
     <Compile Include="Validations\StokHareketValidator.cs" />
     <Compile Include="Validations\StokValidator.cs" />
     <Compile Include="Validations\TanimValidator.cs" />
@@ -119,18 +115,12 @@
     <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\SabzFara.Entities.Tables.Fis.datasource" />
+    <None Include="Properties\DataSources\SabzFara.Entities.Tables.Personel.datasource" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201805201103397_InitialCreate.resx">
-      <DependentUpon>201805201103397_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201805261751115_NewContext.resx">
-      <DependentUpon>201805261751115_NewContext.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201806021742090_yenifisler.resx">
-      <DependentUpon>201806021742090_yenifisler.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201806032058209_PersonelAdd.resx">
+      <DependentUpon>201806032058209_PersonelAdd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -14,6 +14,7 @@ namespace SabzFara.BackOffice.Fis
     public partial class FrmSeriNoGir : DevExpress.XtraEditors.XtraForm
     {
         public string veriSeriNo;
+        public bool kilitli = true;
         public FrmSeriNoGir(string veri)
         {
             InitializeComponent();
@@ -24,6 +25,10 @@ namespace SabzFara.BackOffice.Fis
                 {
                     listSeriNo.Items.Add(item);
                 }
+            }
+            if (kilitli)
+            {
+                grpMenu.Enabled = false;
             }
 
         }
