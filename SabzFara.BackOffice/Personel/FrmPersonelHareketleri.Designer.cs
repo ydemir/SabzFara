@@ -47,8 +47,8 @@
             this.btnGuncelle = new DevExpress.XtraEditors.SimpleButton();
             this.colOdenen = new DevExpress.XtraGrid.Columns.GridColumn();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
-            this.gridContCariHareket = new DevExpress.XtraGrid.GridControl();
-            this.gridCariHareket = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridContPersonelHareket = new DevExpress.XtraGrid.GridControl();
+            this.gridPersonelHareket = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFisKodu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFisTuru = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -61,16 +61,18 @@
             this.colFisTuruKayitSayisi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFisturuToplamTutar = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.gridContBakiye = new DevExpress.XtraGrid.GridControl();
-            this.gridBakiye = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridContExtra = new DevExpress.XtraGrid.GridControl();
+            this.gridExtra = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colGenelBilgi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colGenelToplam = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCariAdi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCariKodu = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridContCariHareket)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridCariHareket)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridContPersonelHareket)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridPersonelHareket)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).BeginInit();
             this.splitContainerControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -79,8 +81,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridFisToplam)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridContBakiye)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridBakiye)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridContExtra)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridExtra)).BeginInit();
             this.SuspendLayout();
             // 
             // lblBaslik
@@ -111,7 +113,7 @@
             this.colSaat.Name = "colSaat";
             this.colSaat.OptionsColumn.AllowEdit = false;
             this.colSaat.Visible = true;
-            this.colSaat.VisibleIndex = 8;
+            this.colSaat.VisibleIndex = 10;
             this.colSaat.Width = 84;
             // 
             // colPlasiyerKodu
@@ -137,7 +139,7 @@
             this.colIskontoOrani.Name = "colIskontoOrani";
             this.colIskontoOrani.OptionsColumn.AllowEdit = false;
             this.colIskontoOrani.Visible = true;
-            this.colIskontoOrani.VisibleIndex = 4;
+            this.colIskontoOrani.VisibleIndex = 6;
             this.colIskontoOrani.Width = 63;
             // 
             // colIskontoTutar
@@ -149,7 +151,7 @@
             this.colIskontoTutar.Name = "colIskontoTutar";
             this.colIskontoTutar.OptionsColumn.AllowEdit = false;
             this.colIskontoTutar.Visible = true;
-            this.colIskontoTutar.VisibleIndex = 5;
+            this.colIskontoTutar.VisibleIndex = 7;
             this.colIskontoTutar.Width = 62;
             // 
             // colToplamTutar
@@ -161,7 +163,7 @@
             this.colToplamTutar.Name = "colToplamTutar";
             this.colToplamTutar.OptionsColumn.AllowEdit = false;
             this.colToplamTutar.Visible = true;
-            this.colToplamTutar.VisibleIndex = 7;
+            this.colToplamTutar.VisibleIndex = 9;
             this.colToplamTutar.Width = 84;
             // 
             // colTarih
@@ -172,7 +174,7 @@
             this.colTarih.Name = "colTarih";
             this.colTarih.OptionsColumn.AllowEdit = false;
             this.colTarih.Visible = true;
-            this.colTarih.VisibleIndex = 3;
+            this.colTarih.VisibleIndex = 5;
             this.colTarih.Width = 93;
             // 
             // colAciklama
@@ -182,7 +184,7 @@
             this.colAciklama.Name = "colAciklama";
             this.colAciklama.OptionsColumn.AllowEdit = false;
             this.colAciklama.Visible = true;
-            this.colAciklama.VisibleIndex = 6;
+            this.colAciklama.VisibleIndex = 8;
             this.colAciklama.Width = 182;
             // 
             // colKalanTutar
@@ -194,7 +196,7 @@
             this.colKalanTutar.Name = "colKalanTutar";
             this.colKalanTutar.OptionsColumn.AllowEdit = false;
             this.colKalanTutar.Visible = true;
-            this.colKalanTutar.VisibleIndex = 10;
+            this.colKalanTutar.VisibleIndex = 12;
             this.colKalanTutar.Width = 119;
             // 
             // grpMenu
@@ -219,6 +221,7 @@
             this.btnKapat.Size = new System.Drawing.Size(83, 52);
             this.btnKapat.TabIndex = 0;
             this.btnKapat.Text = "Kapat";
+            this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
             // 
             // ımageList1
             // 
@@ -237,6 +240,7 @@
             this.btnAra.Size = new System.Drawing.Size(83, 44);
             this.btnAra.TabIndex = 0;
             this.btnAra.Text = "Ara";
+            this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
             // 
             // btnGuncelle
             // 
@@ -247,6 +251,7 @@
             this.btnGuncelle.Size = new System.Drawing.Size(83, 44);
             this.btnGuncelle.TabIndex = 0;
             this.btnGuncelle.Text = "Güncelle";
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
             // 
             // colOdenen
             // 
@@ -257,40 +262,42 @@
             this.colOdenen.Name = "colOdenen";
             this.colOdenen.OptionsColumn.AllowEdit = false;
             this.colOdenen.Visible = true;
-            this.colOdenen.VisibleIndex = 9;
+            this.colOdenen.VisibleIndex = 11;
             this.colOdenen.Width = 84;
             // 
             // splitContainerControl1
             // 
             this.splitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerControl1.Horizontal = false;
-            this.splitContainerControl1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerControl1.Location = new System.Drawing.Point(0, 47);
             this.splitContainerControl1.Name = "splitContainerControl1";
-            this.splitContainerControl1.Panel1.Controls.Add(this.gridContCariHareket);
+            this.splitContainerControl1.Panel1.Controls.Add(this.gridContPersonelHareket);
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.splitContainerControl2);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1314, 611);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1314, 490);
             this.splitContainerControl1.SplitterPosition = 324;
             this.splitContainerControl1.TabIndex = 9;
             this.splitContainerControl1.Text = "splitContainerControl1";
             // 
-            // gridContCariHareket
+            // gridContPersonelHareket
             // 
-            this.gridContCariHareket.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridContCariHareket.Location = new System.Drawing.Point(0, 0);
-            this.gridContCariHareket.MainView = this.gridCariHareket;
-            this.gridContCariHareket.Name = "gridContCariHareket";
-            this.gridContCariHareket.Size = new System.Drawing.Size(1314, 324);
-            this.gridContCariHareket.TabIndex = 1;
-            this.gridContCariHareket.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridCariHareket});
+            this.gridContPersonelHareket.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridContPersonelHareket.Location = new System.Drawing.Point(0, 0);
+            this.gridContPersonelHareket.MainView = this.gridPersonelHareket;
+            this.gridContPersonelHareket.Name = "gridContPersonelHareket";
+            this.gridContPersonelHareket.Size = new System.Drawing.Size(1314, 324);
+            this.gridContPersonelHareket.TabIndex = 1;
+            this.gridContPersonelHareket.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridPersonelHareket});
             // 
-            // gridCariHareket
+            // gridPersonelHareket
             // 
-            this.gridCariHareket.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridPersonelHareket.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colId,
             this.colFisKodu,
+            this.colCariKodu,
+            this.colCariAdi,
             this.colFisTuru,
             this.colBelgeNo,
             this.colTarih,
@@ -303,8 +310,8 @@
             this.colAciklama,
             this.colOdenen,
             this.colKalanTutar});
-            this.gridCariHareket.GridControl = this.gridContCariHareket;
-            this.gridCariHareket.Name = "gridCariHareket";
+            this.gridPersonelHareket.GridControl = this.gridContPersonelHareket;
+            this.gridPersonelHareket.Name = "gridPersonelHareket";
             // 
             // colId
             // 
@@ -340,7 +347,7 @@
             this.colBelgeNo.Name = "colBelgeNo";
             this.colBelgeNo.OptionsColumn.AllowEdit = false;
             this.colBelgeNo.Visible = true;
-            this.colBelgeNo.VisibleIndex = 2;
+            this.colBelgeNo.VisibleIndex = 4;
             this.colBelgeNo.Width = 59;
             // 
             // splitContainerControl2
@@ -352,7 +359,7 @@
             this.splitContainerControl2.Panel1.Text = "Panel1";
             this.splitContainerControl2.Panel2.Controls.Add(this.groupControl2);
             this.splitContainerControl2.Panel2.Text = "Panel2";
-            this.splitContainerControl2.Size = new System.Drawing.Size(1314, 282);
+            this.splitContainerControl2.Size = new System.Drawing.Size(1314, 161);
             this.splitContainerControl2.SplitterPosition = 655;
             this.splitContainerControl2.TabIndex = 0;
             this.splitContainerControl2.Text = "splitContainerControl2";
@@ -363,7 +370,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(655, 282);
+            this.groupControl1.Size = new System.Drawing.Size(655, 161);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Fiş türlerine göre toplamlar";
             // 
@@ -373,7 +380,7 @@
             this.gridContFisToplam.Location = new System.Drawing.Point(2, 20);
             this.gridContFisToplam.MainView = this.gridFisToplam;
             this.gridContFisToplam.Name = "gridContFisToplam";
-            this.gridContFisToplam.Size = new System.Drawing.Size(651, 260);
+            this.gridContFisToplam.Size = new System.Drawing.Size(651, 139);
             this.gridContFisToplam.TabIndex = 2;
             this.gridContFisToplam.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridFisToplam});
@@ -413,7 +420,7 @@
             this.colFisturuToplamTutar.Caption = "Toplam Tutar";
             this.colFisturuToplamTutar.DisplayFormat.FormatString = "C2";
             this.colFisturuToplamTutar.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colFisturuToplamTutar.FieldName = "Tutar";
+            this.colFisturuToplamTutar.FieldName = "ToplamTutar";
             this.colFisturuToplamTutar.Name = "colFisturuToplamTutar";
             this.colFisturuToplamTutar.OptionsColumn.AllowEdit = false;
             this.colFisturuToplamTutar.Visible = true;
@@ -422,33 +429,33 @@
             // 
             // groupControl2
             // 
-            this.groupControl2.Controls.Add(this.gridContBakiye);
+            this.groupControl2.Controls.Add(this.gridContExtra);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(0, 0);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(654, 282);
+            this.groupControl2.Size = new System.Drawing.Size(654, 161);
             this.groupControl2.TabIndex = 1;
-            this.groupControl2.Text = "Cari Extrası";
+            this.groupControl2.Text = "Son 1 Aylık Extre Bilgisi";
             // 
-            // gridContBakiye
+            // gridContExtra
             // 
-            this.gridContBakiye.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridContBakiye.Location = new System.Drawing.Point(2, 20);
-            this.gridContBakiye.MainView = this.gridBakiye;
-            this.gridContBakiye.Name = "gridContBakiye";
-            this.gridContBakiye.Size = new System.Drawing.Size(650, 260);
-            this.gridContBakiye.TabIndex = 2;
-            this.gridContBakiye.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridBakiye});
+            this.gridContExtra.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridContExtra.Location = new System.Drawing.Point(2, 20);
+            this.gridContExtra.MainView = this.gridExtra;
+            this.gridContExtra.Name = "gridContExtra";
+            this.gridContExtra.Size = new System.Drawing.Size(650, 139);
+            this.gridContExtra.TabIndex = 2;
+            this.gridContExtra.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridExtra});
             // 
-            // gridBakiye
+            // gridExtra
             // 
-            this.gridBakiye.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridExtra.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colGenelBilgi,
             this.colGenelToplam});
-            this.gridBakiye.GridControl = this.gridContBakiye;
-            this.gridBakiye.Name = "gridBakiye";
-            this.gridBakiye.OptionsView.ShowGroupPanel = false;
+            this.gridExtra.GridControl = this.gridContExtra;
+            this.gridExtra.Name = "gridExtra";
+            this.gridExtra.OptionsView.ShowGroupPanel = false;
             // 
             // colGenelBilgi
             // 
@@ -472,22 +479,39 @@
             this.colGenelToplam.VisibleIndex = 1;
             this.colGenelToplam.Width = 188;
             // 
+            // colCariAdi
+            // 
+            this.colCariAdi.Caption = "Cari Adı";
+            this.colCariAdi.FieldName = "CariAdi";
+            this.colCariAdi.Name = "colCariAdi";
+            this.colCariAdi.Visible = true;
+            this.colCariAdi.VisibleIndex = 3;
+            // 
+            // colCariKodu
+            // 
+            this.colCariKodu.Caption = "Cari Kodu";
+            this.colCariKodu.FieldName = "CariKodu";
+            this.colCariKodu.Name = "colCariKodu";
+            this.colCariKodu.Visible = true;
+            this.colCariKodu.VisibleIndex = 2;
+            // 
             // FrmPersonelHareketleri
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1314, 611);
+            this.Controls.Add(this.splitContainerControl1);
             this.Controls.Add(this.lblBaslik);
             this.Controls.Add(this.grpMenu);
-            this.Controls.Add(this.splitContainerControl1);
             this.Name = "FrmPersonelHareketleri";
             this.Text = "FrmPersonelHareketleri";
+            this.Load += new System.EventHandler(this.FrmPersonelHareketleri_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).EndInit();
             this.grpMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).EndInit();
             this.splitContainerControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridContCariHareket)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridCariHareket)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridContPersonelHareket)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridPersonelHareket)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).EndInit();
             this.splitContainerControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
@@ -496,8 +520,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridFisToplam)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridContBakiye)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridBakiye)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridContExtra)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridExtra)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -521,8 +545,8 @@
         private DevExpress.XtraEditors.SimpleButton btnGuncelle;
         private DevExpress.XtraGrid.Columns.GridColumn colOdenen;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl1;
-        private DevExpress.XtraGrid.GridControl gridContCariHareket;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridCariHareket;
+        private DevExpress.XtraGrid.GridControl gridContPersonelHareket;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridPersonelHareket;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
         private DevExpress.XtraGrid.Columns.GridColumn colFisKodu;
         private DevExpress.XtraGrid.Columns.GridColumn colFisTuru;
@@ -535,9 +559,11 @@
         private DevExpress.XtraGrid.Columns.GridColumn colFisTuruKayitSayisi;
         private DevExpress.XtraGrid.Columns.GridColumn colFisturuToplamTutar;
         private DevExpress.XtraEditors.GroupControl groupControl2;
-        private DevExpress.XtraGrid.GridControl gridContBakiye;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridBakiye;
+        private DevExpress.XtraGrid.GridControl gridContExtra;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridExtra;
         private DevExpress.XtraGrid.Columns.GridColumn colGenelBilgi;
         private DevExpress.XtraGrid.Columns.GridColumn colGenelToplam;
+        private DevExpress.XtraGrid.Columns.GridColumn colCariKodu;
+        private DevExpress.XtraGrid.Columns.GridColumn colCariAdi;
     }
 }

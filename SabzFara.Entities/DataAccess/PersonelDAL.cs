@@ -44,5 +44,18 @@ namespace SabzFara.Entities.DataAccess
 
             return result;
         }
+
+        public object PersonelFisToplam(NetSatisContext context,string personelKodu)
+        {
+            var result = (from c in context.Fisler.Where(c => c.PlasiyerKodu == personelKodu)
+                          group c by new { c.FisTuru } into grp
+                          select new
+                          {
+                              Bilgi = grp.Key.FisTuru,
+                              KayitSayisi = grp.Count(),
+                              ToplamTutar = grp.Sum(c => c.ToplamTutar)
+                          }).ToList();
+            return result;
+        }
     }
 }

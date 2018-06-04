@@ -147,6 +147,7 @@
             this.btnCariHareket.Size = new System.Drawing.Size(83, 44);
             this.btnCariHareket.TabIndex = 0;
             this.btnCariHareket.Text = "Personel\r\nHareket";
+            this.btnCariHareket.Click += new System.EventHandler(this.btnCariHareket_Click);
             // 
             // btnGuncelle
             // 

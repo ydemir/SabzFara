@@ -17,7 +17,8 @@ namespace SabzFara.BackOffice.Personel
     {
         NetSatisContext context = new NetSatisContext();
         PersonelDAL personelDAL = new PersonelDAL();
-       private string secilen=null;
+
+        private string secilen = null;
         public FrmPersonel()
         {
             InitializeComponent();
@@ -61,8 +62,8 @@ namespace SabzFara.BackOffice.Personel
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            secilen=gridPersonel.GetFocusedRowCellValue(colPersonelKodu).ToString();
-            if (MessageBox.Show("Seçili olan kaydı silmek istediğinize emin misiniz ?","Uyarı",MessageBoxButtons.YesNo)==DialogResult.Yes)
+            secilen = gridPersonel.GetFocusedRowCellValue(colPersonelKodu).ToString();
+            if (MessageBox.Show("Seçili olan kaydı silmek istediğinize emin misiniz ?", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 personelDAL.Delete(context, c => c.PersonelKodu == secilen);
                 personelDAL.Save(context);
@@ -85,12 +86,23 @@ namespace SabzFara.BackOffice.Personel
             secilen = gridPersonel.GetFocusedRowCellValue(colPersonelKodu).ToString();
             FrmPersonelIslem frm = new FrmPersonelIslem(personelDAL.GetByFilter(context, s => s.PersonelKodu == secilen));
             frm.ShowDialog();
-            Listele();
+            if (frm.saved)
+            {
+                Listele();
+            }
+
         }
 
         private void btnGuncelle_Click(object sender, EventArgs e)
         {
             Listele();
+        }
+
+        private void btnCariHareket_Click(object sender, EventArgs e)
+        {
+            secilen = gridPersonel.GetFocusedRowCellValue(colPersonelKodu).ToString();
+            FrmPersonelHareketleri frm = new FrmPersonelHareketleri(secilen, gridPersonel.GetFocusedRowCellValue(colPersonelAdi).ToString());
+            frm.ShowDialog();
         }
     }
 }
