@@ -28,7 +28,7 @@ namespace SabzFara.BackOffice.Fis
         CariDAL cariDAL = new CariDAL();
         Entities.Tables.Fis _fisEntity = new Entities.Tables.Fis();
         CariBakiye entityBakiye = new CariBakiye();
-        public FrmFisIslem(string fisKodu=null)
+        public FrmFisIslem(string fisKodu=null,string fisTuru=null)
         {
             InitializeComponent();
             if (fisKodu!=null)
@@ -43,9 +43,13 @@ namespace SabzFara.BackOffice.Fis
                 lblBorc.Text = entityBakiye.Borc.ToString("C2");
                 lblBakiye.Text = entityBakiye.Bakiye.ToString("C2");
             }
+            else
+            {
+                _fisEntity.FisTuru = fisTuru;
+            }
            
 
-            _fisEntity.FisTuru = "Alış Faturası";
+          
 
             txtFisKodu.DataBindings.Add("Text", _fisEntity, "FisKodu",false,DataSourceUpdateMode.OnPropertyChanged);
             txtFisTuru.DataBindings.Add("Text", _fisEntity, "FisTuru", false, DataSourceUpdateMode.OnPropertyChanged);
@@ -345,6 +349,11 @@ namespace SabzFara.BackOffice.Fis
             }
             
             
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
