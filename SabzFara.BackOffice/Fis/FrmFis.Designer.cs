@@ -40,8 +40,21 @@
             this.grpMenu = new DevExpress.XtraEditors.GroupControl();
             this.dropDownButton1 = new DevExpress.XtraEditors.DropDownButton();
             this.popupMenu1 = new DevExpress.XtraBars.PopupMenu(this.components);
+            this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
             this.barAlisFisi = new DevExpress.XtraBars.BarButtonItem();
             this.barPerakendeSatisFatura = new DevExpress.XtraBars.BarButtonItem();
+            this.barToptanSatisFaturasi = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
+            this.barAlisIadeFaturasi = new DevExpress.XtraBars.BarButtonItem();
+            this.barSatisIadeFatura = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem3 = new DevExpress.XtraBars.BarSubItem();
+            this.barTahsilatFisi = new DevExpress.XtraBars.BarButtonItem();
+            this.barOdemeFisi = new DevExpress.XtraBars.BarButtonItem();
+            this.barCariDevirFisi = new DevExpress.XtraBars.BarButtonItem();
+            this.barSubItem4 = new DevExpress.XtraBars.BarSubItem();
+            this.barSayimFazlasiFisi = new DevExpress.XtraBars.BarButtonItem();
+            this.barSayimEksigiFisi = new DevExpress.XtraBars.BarButtonItem();
+            this.barStokDevirFisi = new DevExpress.XtraBars.BarButtonItem();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -67,19 +80,6 @@
             this.btnFiltreIptal = new DevExpress.XtraEditors.SimpleButton();
             this.btnFiltrele = new DevExpress.XtraEditors.SimpleButton();
             this.filterControl1 = new DevExpress.XtraEditors.FilterControl();
-            this.barToptanSatisFaturasi = new DevExpress.XtraBars.BarButtonItem();
-            this.barAlisIadeFaturasi = new DevExpress.XtraBars.BarButtonItem();
-            this.barSatisIadeFatura = new DevExpress.XtraBars.BarButtonItem();
-            this.barTahsilatFisi = new DevExpress.XtraBars.BarButtonItem();
-            this.barOdemeFisi = new DevExpress.XtraBars.BarButtonItem();
-            this.barCariDevirFisi = new DevExpress.XtraBars.BarButtonItem();
-            this.barSayimFazlasiFisi = new DevExpress.XtraBars.BarButtonItem();
-            this.barSayimEksigiFisi = new DevExpress.XtraBars.BarButtonItem();
-            this.barStokDevirFisi = new DevExpress.XtraBars.BarButtonItem();
-            this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
-            this.barSubItem2 = new DevExpress.XtraBars.BarSubItem();
-            this.barSubItem3 = new DevExpress.XtraBars.BarSubItem();
-            this.barSubItem4 = new DevExpress.XtraBars.BarSubItem();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.popupMenu1)).BeginInit();
@@ -198,6 +198,17 @@
             this.popupMenu1.Manager = this.barManager1;
             this.popupMenu1.Name = "popupMenu1";
             // 
+            // barSubItem1
+            // 
+            this.barSubItem1.Caption = "Faturalar";
+            this.barSubItem1.Id = 11;
+            this.barSubItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barSubItem1.ImageOptions.Image")));
+            this.barSubItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barAlisFisi),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barPerakendeSatisFatura, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barToptanSatisFaturasi, true)});
+            this.barSubItem1.Name = "barSubItem1";
+            // 
             // barAlisFisi
             // 
             this.barAlisFisi.Caption = "Alış Faturası";
@@ -210,9 +221,110 @@
             // 
             this.barPerakendeSatisFatura.Caption = "Perakende Satış Faturası";
             this.barPerakendeSatisFatura.Id = 1;
-            this.barPerakendeSatisFatura.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barSatisFaturasi.ImageOptions.Image")));
+            this.barPerakendeSatisFatura.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barPerakendeSatisFatura.ImageOptions.Image")));
             this.barPerakendeSatisFatura.Name = "barPerakendeSatisFatura";
             this.barPerakendeSatisFatura.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
+            // 
+            // barToptanSatisFaturasi
+            // 
+            this.barToptanSatisFaturasi.Caption = "Toptan Satış Faturası";
+            this.barToptanSatisFaturasi.Id = 2;
+            this.barToptanSatisFaturasi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barToptanSatisFaturasi.ImageOptions.Image")));
+            this.barToptanSatisFaturasi.Name = "barToptanSatisFaturasi";
+            this.barToptanSatisFaturasi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
+            // 
+            // barSubItem2
+            // 
+            this.barSubItem2.Caption = "İade Faturaları";
+            this.barSubItem2.Id = 12;
+            this.barSubItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barSubItem2.ImageOptions.Image")));
+            this.barSubItem2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barAlisIadeFaturasi),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSatisIadeFatura, true)});
+            this.barSubItem2.Name = "barSubItem2";
+            // 
+            // barAlisIadeFaturasi
+            // 
+            this.barAlisIadeFaturasi.Caption = "Alış İade Faturası";
+            this.barAlisIadeFaturasi.Id = 3;
+            this.barAlisIadeFaturasi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barAlisIadeFaturasi.ImageOptions.Image")));
+            this.barAlisIadeFaturasi.Name = "barAlisIadeFaturasi";
+            this.barAlisIadeFaturasi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
+            // 
+            // barSatisIadeFatura
+            // 
+            this.barSatisIadeFatura.Caption = "Satış İade Faturası";
+            this.barSatisIadeFatura.Id = 4;
+            this.barSatisIadeFatura.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barSatisIadeFatura.ImageOptions.Image")));
+            this.barSatisIadeFatura.Name = "barSatisIadeFatura";
+            this.barSatisIadeFatura.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
+            // 
+            // barSubItem3
+            // 
+            this.barSubItem3.Caption = "Kasa Fişleri";
+            this.barSubItem3.Id = 13;
+            this.barSubItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barSubItem3.ImageOptions.Image")));
+            this.barSubItem3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barTahsilatFisi),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barOdemeFisi, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barCariDevirFisi, true)});
+            this.barSubItem3.Name = "barSubItem3";
+            // 
+            // barTahsilatFisi
+            // 
+            this.barTahsilatFisi.Caption = "Tahsilat Fişi";
+            this.barTahsilatFisi.Id = 5;
+            this.barTahsilatFisi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barTahsilatFisi.ImageOptions.Image")));
+            this.barTahsilatFisi.Name = "barTahsilatFisi";
+            // 
+            // barOdemeFisi
+            // 
+            this.barOdemeFisi.Caption = "Ödeme Fişi";
+            this.barOdemeFisi.Id = 6;
+            this.barOdemeFisi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barOdemeFisi.ImageOptions.Image")));
+            this.barOdemeFisi.Name = "barOdemeFisi";
+            // 
+            // barCariDevirFisi
+            // 
+            this.barCariDevirFisi.Caption = "Cari Devir Fişi";
+            this.barCariDevirFisi.Id = 7;
+            this.barCariDevirFisi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barCariDevirFisi.ImageOptions.Image")));
+            this.barCariDevirFisi.Name = "barCariDevirFisi";
+            // 
+            // barSubItem4
+            // 
+            this.barSubItem4.Caption = "Stok Fişleri";
+            this.barSubItem4.Id = 14;
+            this.barSubItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barSubItem4.ImageOptions.Image")));
+            this.barSubItem4.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSayimFazlasiFisi),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barSayimEksigiFisi, true),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barStokDevirFisi, true)});
+            this.barSubItem4.Name = "barSubItem4";
+            // 
+            // barSayimFazlasiFisi
+            // 
+            this.barSayimFazlasiFisi.Caption = "Sayım Fazlası Fişi";
+            this.barSayimFazlasiFisi.Id = 8;
+            this.barSayimFazlasiFisi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barSayimFazlasiFisi.ImageOptions.Image")));
+            this.barSayimFazlasiFisi.Name = "barSayimFazlasiFisi";
+            this.barSayimFazlasiFisi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
+            // 
+            // barSayimEksigiFisi
+            // 
+            this.barSayimEksigiFisi.Caption = "Sayım Eksiği Fişi";
+            this.barSayimEksigiFisi.Id = 9;
+            this.barSayimEksigiFisi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barSayimEksigiFisi.ImageOptions.Image")));
+            this.barSayimEksigiFisi.Name = "barSayimEksigiFisi";
+            this.barSayimEksigiFisi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
+            // 
+            // barStokDevirFisi
+            // 
+            this.barStokDevirFisi.Caption = "Stok Devir Fişi";
+            this.barStokDevirFisi.Id = 10;
+            this.barStokDevirFisi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barStokDevirFisi.ImageOptions.Image")));
+            this.barStokDevirFisi.Name = "barStokDevirFisi";
+            this.barStokDevirFisi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
             // 
             // barManager1
             // 
@@ -341,6 +453,7 @@
             this.btnDuzenle.Size = new System.Drawing.Size(83, 44);
             this.btnDuzenle.TabIndex = 0;
             this.btnDuzenle.Text = "Düzenle";
+            this.btnDuzenle.Click += new System.EventHandler(this.btnDuzenle_Click);
             // 
             // lblBaslik
             // 
@@ -513,118 +626,6 @@
             this.filterControl1.SourceControl = this.gridControl1;
             this.filterControl1.TabIndex = 0;
             this.filterControl1.Text = "filterControl1";
-            // 
-            // barToptanSatisFaturasi
-            // 
-            this.barToptanSatisFaturasi.Caption = "Toptan Satış Faturası";
-            this.barToptanSatisFaturasi.Id = 2;
-            this.barToptanSatisFaturasi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barToptanSatisFaturasi.ImageOptions.Image")));
-            this.barToptanSatisFaturasi.Name = "barToptanSatisFaturasi";
-            this.barToptanSatisFaturasi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
-            // 
-            // barAlisIadeFaturasi
-            // 
-            this.barAlisIadeFaturasi.Caption = "Alış İade Faturası";
-            this.barAlisIadeFaturasi.Id = 3;
-            this.barAlisIadeFaturasi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barAlisIadeFaturasi.ImageOptions.Image")));
-            this.barAlisIadeFaturasi.Name = "barAlisIadeFaturasi";
-            this.barAlisIadeFaturasi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
-            // 
-            // barSatisIadeFatura
-            // 
-            this.barSatisIadeFatura.Caption = "Satış İade Faturası";
-            this.barSatisIadeFatura.Id = 4;
-            this.barSatisIadeFatura.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barSatisIadeFatura.ImageOptions.Image")));
-            this.barSatisIadeFatura.Name = "barSatisIadeFatura";
-            this.barSatisIadeFatura.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
-            // 
-            // barTahsilatFisi
-            // 
-            this.barTahsilatFisi.Caption = "Tahsilat Fişi";
-            this.barTahsilatFisi.Id = 5;
-            this.barTahsilatFisi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barTahsilatFisi.ImageOptions.Image")));
-            this.barTahsilatFisi.Name = "barTahsilatFisi";
-            // 
-            // barOdemeFisi
-            // 
-            this.barOdemeFisi.Caption = "Ödeme Fişi";
-            this.barOdemeFisi.Id = 6;
-            this.barOdemeFisi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barOdemeFisi.ImageOptions.Image")));
-            this.barOdemeFisi.Name = "barOdemeFisi";
-            // 
-            // barCariDevirFisi
-            // 
-            this.barCariDevirFisi.Caption = "Cari Devir Fişi";
-            this.barCariDevirFisi.Id = 7;
-            this.barCariDevirFisi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barCariDevirFisi.ImageOptions.Image")));
-            this.barCariDevirFisi.Name = "barCariDevirFisi";
-            // 
-            // barSayimFazlasiFisi
-            // 
-            this.barSayimFazlasiFisi.Caption = "Sayım Fazlası Fişi";
-            this.barSayimFazlasiFisi.Id = 8;
-            this.barSayimFazlasiFisi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barSayimFazlasiFisi.ImageOptions.Image")));
-            this.barSayimFazlasiFisi.Name = "barSayimFazlasiFisi";
-            this.barSayimFazlasiFisi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
-            // 
-            // barSayimEksigiFisi
-            // 
-            this.barSayimEksigiFisi.Caption = "Sayım Eksiği Fişi";
-            this.barSayimEksigiFisi.Id = 9;
-            this.barSayimEksigiFisi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barSayimEksigiFisi.ImageOptions.Image")));
-            this.barSayimEksigiFisi.Name = "barSayimEksigiFisi";
-            this.barSayimEksigiFisi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
-            // 
-            // barStokDevirFisi
-            // 
-            this.barStokDevirFisi.Caption = "Stok Devir Fişi";
-            this.barStokDevirFisi.Id = 10;
-            this.barStokDevirFisi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barStokDevirFisi.ImageOptions.Image")));
-            this.barStokDevirFisi.Name = "barStokDevirFisi";
-            this.barStokDevirFisi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
-            // 
-            // barSubItem1
-            // 
-            this.barSubItem1.Caption = "Faturalar";
-            this.barSubItem1.Id = 11;
-            this.barSubItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barSubItem1.ImageOptions.Image")));
-            this.barSubItem1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barAlisFisi),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barPerakendeSatisFatura, true),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barToptanSatisFaturasi, true)});
-            this.barSubItem1.Name = "barSubItem1";
-            // 
-            // barSubItem2
-            // 
-            this.barSubItem2.Caption = "İade Faturaları";
-            this.barSubItem2.Id = 12;
-            this.barSubItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barSubItem2.ImageOptions.Image")));
-            this.barSubItem2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barAlisIadeFaturasi),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barSatisIadeFatura, true)});
-            this.barSubItem2.Name = "barSubItem2";
-            // 
-            // barSubItem3
-            // 
-            this.barSubItem3.Caption = "Kasa Fişleri";
-            this.barSubItem3.Id = 13;
-            this.barSubItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barSubItem3.ImageOptions.Image")));
-            this.barSubItem3.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barTahsilatFisi),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barOdemeFisi, true),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barCariDevirFisi, true)});
-            this.barSubItem3.Name = "barSubItem3";
-            // 
-            // barSubItem4
-            // 
-            this.barSubItem4.Caption = "Stok Fişleri";
-            this.barSubItem4.Id = 14;
-            this.barSubItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barSubItem4.ImageOptions.Image")));
-            this.barSubItem4.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barSayimFazlasiFisi),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barSayimEksigiFisi, true),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barStokDevirFisi, true)});
-            this.barSubItem4.Name = "barSubItem4";
             // 
             // FrmFis
             // 

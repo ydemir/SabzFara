@@ -25,6 +25,7 @@ namespace SabzFara.BackOffice.Fis
         NetSatisContext context = new NetSatisContext();
         FisDAL fisDAL = new FisDAL();
         StokHareketDAL stokHareketDal = new StokHareketDAL();
+        FisAyarlari ayarlar = new FisAyarlari();
         KasaHareketDAL kasaHareketDal = new KasaHareketDAL();
         CariDAL cariDAL = new CariDAL();
         Entities.Tables.Fis _fisEntity = new Entities.Tables.Fis();
@@ -37,12 +38,16 @@ namespace SabzFara.BackOffice.Fis
                 _fisEntity = context.Fisler.Where(c => c.FisKodu == fisKodu).SingleOrDefault();
                 context.StokHareketleri.Where(c => c.FisKodu == fisKodu).Load();
                 context.KasaHareketleri.Where(c => c.FisKodu == fisKodu).Load();
+                if (_fisEntity.CariKodu!=null)
+                {
+ entityBakiye = this.cariDAL.CariBakiyesi(context, _fisEntity.CariKodu);
+                    lblAlacak.Text = entityBakiye.Alacak.ToString("C2");
+                    lblBorc.Text = entityBakiye.Borc.ToString("C2");
+                    lblBakiye.Text = entityBakiye.Bakiye.ToString("C2");
+                }
+               
 
-                entityBakiye = this.cariDAL.CariBakiyesi(context, _fisEntity.CariKodu);
-
-                lblAlacak.Text = entityBakiye.Alacak.ToString("C2");
-                lblBorc.Text = entityBakiye.Borc.ToString("C2");
-                lblBakiye.Text = entityBakiye.Bakiye.ToString("C2");
+               
             }
             else
             {
@@ -92,50 +97,58 @@ namespace SabzFara.BackOffice.Fis
         }
         private void FisAyar()
         {
-            FisAyarlari ayarlar = new FisAyarlari();
+            
             switch (_fisEntity.FisTuru)
             {
                 case "Alış Faturası":
                     ayarlar.StokHareketi = "Stok Giriş";
                     ayarlar.KasaHareketi = "Kasa Çıkış";
+                    ayarlar.OdemeEkrani = true;
                     lblBaslik.Appearance.ImageIndex = 0;
                     break;
 
                 case "Perakende Satış Faturası":
                     ayarlar.StokHareketi = "Stok Çıkış";
                     ayarlar.KasaHareketi = "Kasa Giriş";
+                    ayarlar.OdemeEkrani = true;
                     lblBaslik.Appearance.ImageIndex = 1;
                     break;
                 case "Toptan Satış Faturası":
                     ayarlar.StokHareketi = "Stok Çıkış";
                     ayarlar.KasaHareketi = "Kasa Giriş";
+                    ayarlar.OdemeEkrani = true;
                     lblBaslik.Appearance.ImageIndex = 2;
                     break;
                 case "Alış İade Faturası":
                     ayarlar.StokHareketi = "Stok Çıkış";
                     ayarlar.KasaHareketi = "Kasa Giriş";
+                    ayarlar.OdemeEkrani = true;
                     lblBaslik.Appearance.ImageIndex = 3;
                     break;
                 case "Satış İade Satış Faturası":
                     ayarlar.StokHareketi = "Stok Giriş";
                     ayarlar.KasaHareketi = "Kasa Çıkış";
+                    ayarlar.OdemeEkrani = true;
                     lblBaslik.Appearance.ImageIndex = 4;
                     break;
                 case "Sayım Fazlası Fişi":
                     ayarlar.StokHareketi = "Stok Giriş";
                     lblBaslik.Appearance.ImageIndex = 5;
+                    ayarlar.OdemeEkrani = false;
                     panelOdeme.Visible = false;
                     NavOdemeEkrani.Dispose();
                     break;
                 case "Sayım Eksiği Fişi":
                     ayarlar.StokHareketi = "Stok Çıkış";
                     panelOdeme.Visible = false;
+                    ayarlar.OdemeEkrani = false;
                     NavOdemeEkrani.Dispose();
                     lblBaslik.Appearance.ImageIndex = 6;
                     break;
                 case "Stok Devir Fişi":
                     ayarlar.StokHareketi = "Stok Giriş";
                     panelOdeme.Visible = false;
+                    ayarlar.OdemeEkrani = false;
                     NavOdemeEkrani.Dispose();
                     lblBaslik.Appearance.ImageIndex = 7;
                     break;
@@ -378,22 +391,31 @@ namespace SabzFara.BackOffice.Fis
             int StokHata = context.StokHareketleri.Local.Where(c => c.DepoKodu == null).Count();
             int KasaHata = context.StokHareketleri.Local.Where(c => c.DepoKodu == null).Count();
 
+            if (txtOdenmesiGereken.Value!=0 && ayarlar.OdemeEkrani)
+            {
+                MessageBox.Show("Ödenmesi gereken tutar ödenmemiş gözüküyor.");
+                return;
+            }
+
             if (StokHata==0 && KasaHata==0)
             {
                 foreach (var stokVeri in context.StokHareketleri.Local.ToList())
                 {
                     stokVeri.Tarih = cmbTarih.DateTime;
                     stokVeri.FisKodu = txtFisKodu.Text;
-                    stokVeri.Hareket = _fisEntity.FisTuru == "Alış Faturası" ? "Stok Giriş" : "Stok Çıkış";
+                    stokVeri.Hareket = ayarlar.StokHareketi;
                 }
 
-                foreach (var kasaVeri in context.KasaHareketleri.Local.ToList())
+                if (ayarlar.OdemeEkrani)
                 {
-                    kasaVeri.Tarih = kasaVeri.Tarih == null ? cmbTarih.DateTime : kasaVeri.Tarih;
-                    kasaVeri.FisKodu = txtFisKodu.Text;
-                    kasaVeri.Hareket = _fisEntity.FisTuru == "Alış Faturası" ? "Kasa Çıkış" : "Kasa Giriş";
-                    kasaVeri.CariKodu = lblCariKodu.Text;
-                    kasaVeri.CariAdi = lblCariAdi.Text;
+                    foreach (var kasaVeri in context.KasaHareketleri.Local.ToList())
+                    {
+                        kasaVeri.Tarih = kasaVeri.Tarih == null ? cmbTarih.DateTime : kasaVeri.Tarih;
+                        kasaVeri.FisKodu = txtFisKodu.Text;
+                        kasaVeri.Hareket = ayarlar.KasaHareketi;
+                        kasaVeri.CariKodu = lblCariKodu.Text;
+                        kasaVeri.CariAdi = lblCariAdi.Text;
+                    }
                 }
 
                 _fisEntity.ToplamTutar = txtToplam.Value;

@@ -26,7 +26,7 @@ namespace SabzFara.BackOffice.Fis
 
         private void FrmFis_Load(object sender, EventArgs e)
         {
-
+            Listele();
         }
        void Listele()
         {
@@ -78,6 +78,20 @@ namespace SabzFara.BackOffice.Fis
         {
             FrmFisIslem frm = new FrmFisIslem(null, e.Item.Caption);
             frm.ShowDialog();
+        }
+
+        private void btnDuzenle_Click(object sender, EventArgs e)
+        {
+           string secilen = gridView1.GetFocusedRowCellValue(colFisKodu).ToString();
+            Entities.Tables.Fis __fisEntity = new Entities.Tables.Fis();
+
+            __fisEntity = fisDAL.GetByFilter(context, s => s.FisKodu == secilen);
+            __fisEntity.Id = -1;
+
+            __fisEntity.CariKodu = null;
+            FrmFisIslem frm = new FrmFisIslem(__fisEntity.FisKodu);
+            frm.ShowDialog();
+            Listele();
         }
     }
 }

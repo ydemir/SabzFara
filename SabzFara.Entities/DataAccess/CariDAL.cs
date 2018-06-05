@@ -162,6 +162,7 @@ namespace SabzFara.Entities.DataAccess
             decimal borc = (_context.Fisler.Where(f => f.CariKodu == cariKodu && f.FisTuru == "Perakende Satış Faturası").Sum(f => f.ToplamTutar) ?? 0) +
                (_context.KasaHareketleri.Where(f => f.CariKodu == cariKodu && f.Hareket == "Kasa Çıkış").Sum(f => f.Tutar) ?? 0);
 
+
             CariBakiye entity = new CariBakiye
             {
                 CariKodu = cariKodu,
