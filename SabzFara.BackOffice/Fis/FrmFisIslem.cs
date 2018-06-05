@@ -16,6 +16,7 @@ using SabzFara.BackOffice.Stok;
 using SabzFara.BackOffice.Cari;
 using SabzFara.BackOffice.Depo;
 using SabzFara.BackOffice.Kasa;
+using SabzFara.Entities.Tables.OtherTables;
 
 namespace SabzFara.BackOffice.Fis
 {
@@ -67,6 +68,9 @@ namespace SabzFara.BackOffice.Fis
             gridcontStokHareket.DataSource = context.StokHareketleri.Local.ToBindingList();
             gridcontKasaHareket.DataSource = context.KasaHareketleri.Local.ToBindingList();
 
+
+            FisAyar();
+
             Toplamlar();
             OdenenTutarGuncelle();
 
@@ -85,6 +89,57 @@ namespace SabzFara.BackOffice.Fis
                 flowOdemeTurleri.Controls.Add(buton);
             }
 
+        }
+        private void FisAyar()
+        {
+            FisAyarlari ayarlar = new FisAyarlari();
+            switch (_fisEntity.FisTuru)
+            {
+                case "Alış Faturası":
+                    ayarlar.StokHareketi = "Stok Giriş";
+                    ayarlar.KasaHareketi = "Kasa Çıkış";
+                    lblBaslik.Appearance.ImageIndex = 0;
+                    break;
+
+                case "Perakende Satış Faturası":
+                    ayarlar.StokHareketi = "Stok Çıkış";
+                    ayarlar.KasaHareketi = "Kasa Giriş";
+                    lblBaslik.Appearance.ImageIndex = 1;
+                    break;
+                case "Toptan Satış Faturası":
+                    ayarlar.StokHareketi = "Stok Çıkış";
+                    ayarlar.KasaHareketi = "Kasa Giriş";
+                    lblBaslik.Appearance.ImageIndex = 2;
+                    break;
+                case "Alış İade Faturası":
+                    ayarlar.StokHareketi = "Stok Çıkış";
+                    ayarlar.KasaHareketi = "Kasa Giriş";
+                    lblBaslik.Appearance.ImageIndex = 3;
+                    break;
+                case "Satış İade Satış Faturası":
+                    ayarlar.StokHareketi = "Stok Giriş";
+                    ayarlar.KasaHareketi = "Kasa Çıkış";
+                    lblBaslik.Appearance.ImageIndex = 4;
+                    break;
+                case "Sayım Fazlası Fişi":
+                    ayarlar.StokHareketi = "Stok Giriş";
+                    lblBaslik.Appearance.ImageIndex = 5;
+                    panelOdeme.Visible = false;
+                    NavOdemeEkrani.Dispose();
+                    break;
+                case "Sayım Eksiği Fişi":
+                    ayarlar.StokHareketi = "Stok Çıkış";
+                    panelOdeme.Visible = false;
+                    NavOdemeEkrani.Dispose();
+                    lblBaslik.Appearance.ImageIndex = 6;
+                    break;
+                case "Stok Devir Fişi":
+                    ayarlar.StokHareketi = "Stok Giriş";
+                    panelOdeme.Visible = false;
+                    NavOdemeEkrani.Dispose();
+                    lblBaslik.Appearance.ImageIndex = 7;
+                    break;
+            }
         }
 
         private void OdemeEkle_Click (object sender,EventArgs e)
