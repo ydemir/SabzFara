@@ -52,6 +52,7 @@ namespace SabzFara.BackOffice.Fis
             else
             {
                 _fisEntity.FisTuru = fisTuru;
+                _fisEntity.Tarih = DateTime.Now;
             }
            
 
@@ -362,6 +363,7 @@ namespace SabzFara.BackOffice.Fis
             {
                 gridStokHareket.DeleteSelectedRows();
             }
+            Toplamlar();
         }
 
         private void repoKasa_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
@@ -383,22 +385,53 @@ namespace SabzFara.BackOffice.Fis
             }
 
             OdenenTutarGuncelle();
+           
         }
 
         private void btnSatisBitir_Click(object sender, EventArgs e)
         {
-
             int StokHata = context.StokHareketleri.Local.Where(c => c.DepoKodu == null).Count();
             int KasaHata = context.StokHareketleri.Local.Where(c => c.DepoKodu == null).Count();
 
-            if (txtOdenmesiGereken.Value!=0 && ayarlar.OdemeEkrani)
+            string message = null;
+            int hata = 0;
+
+            if (gridStokHareket.RowCount==0)
             {
-                MessageBox.Show("Ödenmesi gereken tutar ödenmemiş gözüküyor.");
+                message += "Satış Ekranında eklenmiş ürün bulunamadı." + System.Environment.NewLine;
+                hata++;
+            }
+            if (txtFisKodu==null)
+            {
+                message += "Fiş kodu alanı boş geçilemez" + System.Environment.NewLine;
+                hata++;
+            }
+            if (txtOdenmesiGereken.Value != 0 && ayarlar.OdemeEkrani)
+            {
+                message += "Ödenmesi gereken tutar ödenmemiş gözüküyor." + System.Environment.NewLine;
+                hata++;
+            }
+
+            if (StokHata!=0)
+            {
+                message += "Satış ekranındaki ürünlerin depo seçimlerinde eksiklikler var" + System.Environment.NewLine;
+                hata++;
+            }
+            if (KasaHata != 0)
+            {
+                message += "Ödeme ekranındaki ürünlerin Kasa seçimlerinde eksiklikler var" ;
+                hata++;
+            }
+
+            if (hata!=0)
+            {
+                MessageBox.Show(message);
                 return;
             }
 
-            if (StokHata==0 && KasaHata==0)
-            {
+
+
+
                 foreach (var stokVeri in context.StokHareketleri.Local.ToList())
                 {
                     stokVeri.Tarih = cmbTarih.DateTime;
@@ -423,14 +456,26 @@ namespace SabzFara.BackOffice.Fis
                 _fisEntity.IskontoTutar = txtIskontoTutar.Value;
                 fisDAL.AddOrUpdate(context, _fisEntity);
                 context.SaveChanges();
-            }
-            
+
+            this.Close();
             
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (gridStokHareket.RowCount!=0)
+            {
+                if (MessageBox.Show("Satış Ekranına eklenmiş ürünler var Bu işlemi iptal edip formu kapatmak istediğinize emin misiniz?", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    this.Close();
+                }
+                
+            }
+            else
+            {
+                this.Close();
+            }
+         
         }
     }
 }
