@@ -156,6 +156,45 @@ namespace SabzFara.BackOffice.Fis
                     NavOdemeEkrani.Dispose();
                     lblBaslik.Appearance.ImageIndex = 7;
                     break;
+
+                case "Tahsilat Fişi":
+                    ayarlar.KasaHareketi = "Kasa Giriş";
+                    ayarlar.OdemeEkrani = true;
+                    ayarlar.SatisEkrani = false;
+                    NavSatisEkrani.Dispose();
+                    panelOdeme.Visible = false;
+                    PanelIskonto.Visible = false;
+                    grpToplamlar.Height = 60;
+                    panelToplam.Top = 20;
+                    panelKDV.Visible = false;
+                    navigationPane2.SelectedPage = NavOdemeEkrani;
+                    break;
+                case "Ödeme Fişi":
+                    ayarlar.KasaHareketi = "Kasa Çıkış";
+                    ayarlar.OdemeEkrani = true;
+                    ayarlar.SatisEkrani = false;
+                    panelOdeme.Visible = false;
+                    PanelIskonto.Visible = false;
+                    panelKDV.Visible = false;
+                    grpToplamlar.Height = 60;
+                    panelToplam.Top = 20;
+                    NavSatisEkrani.Dispose();
+                    navigationPane2.SelectedPage = NavOdemeEkrani;
+                    break;
+
+                    //Bu bölüme daha sonra bakılacak
+                case "Cari Devir Fişi":
+                    ayarlar.KasaHareketi = "Kasa Giriş";
+                    ayarlar.OdemeEkrani = true;
+                    ayarlar.SatisEkrani = false;
+                    panelOdeme.Visible = false;
+                    PanelIskonto.Visible = false;
+                    panelKDV.Visible = false;
+                    grpToplamlar.Height = 60;
+                    panelToplam.Top = 20;
+                    NavSatisEkrani.Dispose();
+                    break;
+
             }
         }
 
