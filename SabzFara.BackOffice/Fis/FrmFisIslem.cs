@@ -30,35 +30,35 @@ namespace SabzFara.BackOffice.Fis
         CariDAL cariDAL = new CariDAL();
         Entities.Tables.Fis _fisEntity = new Entities.Tables.Fis();
         CariBakiye entityBakiye = new CariBakiye();
-        public FrmFisIslem(string fisKodu=null,string fisTuru=null)
+        public FrmFisIslem(string fisKodu = null, string fisTuru = null)
         {
             InitializeComponent();
-            if (fisKodu!=null)
+            if (fisKodu != null)
             {
                 _fisEntity = context.Fisler.Where(c => c.FisKodu == fisKodu).SingleOrDefault();
                 context.StokHareketleri.Where(c => c.FisKodu == fisKodu).Load();
                 context.KasaHareketleri.Where(c => c.FisKodu == fisKodu).Load();
-                if (_fisEntity.CariKodu!=null)
+                if (_fisEntity.CariKodu != null)
                 {
- entityBakiye = this.cariDAL.CariBakiyesi(context, _fisEntity.CariKodu);
+                    entityBakiye = this.cariDAL.CariBakiyesi(context, _fisEntity.CariKodu);
                     lblAlacak.Text = entityBakiye.Alacak.ToString("C2");
                     lblBorc.Text = entityBakiye.Borc.ToString("C2");
                     lblBakiye.Text = entityBakiye.Bakiye.ToString("C2");
                 }
-               
 
-               
+
+
             }
             else
             {
                 _fisEntity.FisTuru = fisTuru;
                 _fisEntity.Tarih = DateTime.Now;
             }
-           
 
-          
 
-            txtFisKodu.DataBindings.Add("Text", _fisEntity, "FisKodu",false,DataSourceUpdateMode.OnPropertyChanged);
+
+
+            txtFisKodu.DataBindings.Add("Text", _fisEntity, "FisKodu", false, DataSourceUpdateMode.OnPropertyChanged);
             txtFisTuru.DataBindings.Add("Text", _fisEntity, "FisTuru", false, DataSourceUpdateMode.OnPropertyChanged);
             cmbTarih.DataBindings.Add("EditValue", _fisEntity, "Tarih", false, DataSourceUpdateMode.OnPropertyChanged);
             txtBelgeNo.DataBindings.Add("Text", _fisEntity, "BelgeNo", false, DataSourceUpdateMode.OnPropertyChanged);
@@ -98,13 +98,14 @@ namespace SabzFara.BackOffice.Fis
         }
         private void FisAyar()
         {
-            
+
             switch (_fisEntity.FisTuru)
             {
                 case "Alış Faturası":
                     ayarlar.StokHareketi = "Stok Giriş";
                     ayarlar.KasaHareketi = "Kasa Çıkış";
                     ayarlar.OdemeEkrani = true;
+                    ayarlar.SatisEkrani = true;
                     lblBaslik.Appearance.ImageIndex = 0;
                     break;
 
@@ -112,24 +113,28 @@ namespace SabzFara.BackOffice.Fis
                     ayarlar.StokHareketi = "Stok Çıkış";
                     ayarlar.KasaHareketi = "Kasa Giriş";
                     ayarlar.OdemeEkrani = true;
+                    ayarlar.SatisEkrani = true;
                     lblBaslik.Appearance.ImageIndex = 1;
                     break;
                 case "Toptan Satış Faturası":
                     ayarlar.StokHareketi = "Stok Çıkış";
                     ayarlar.KasaHareketi = "Kasa Giriş";
                     ayarlar.OdemeEkrani = true;
+                    ayarlar.SatisEkrani = true;
                     lblBaslik.Appearance.ImageIndex = 2;
                     break;
                 case "Alış İade Faturası":
                     ayarlar.StokHareketi = "Stok Çıkış";
                     ayarlar.KasaHareketi = "Kasa Giriş";
                     ayarlar.OdemeEkrani = true;
+                    ayarlar.SatisEkrani = true;
                     lblBaslik.Appearance.ImageIndex = 3;
                     break;
                 case "Satış İade Satış Faturası":
                     ayarlar.StokHareketi = "Stok Giriş";
                     ayarlar.KasaHareketi = "Kasa Çıkış";
                     ayarlar.OdemeEkrani = true;
+                    ayarlar.SatisEkrani = true;
                     lblBaslik.Appearance.ImageIndex = 4;
                     break;
                 case "Sayım Fazlası Fişi":
@@ -137,6 +142,7 @@ namespace SabzFara.BackOffice.Fis
                     lblBaslik.Appearance.ImageIndex = 5;
                     ayarlar.OdemeEkrani = false;
                     panelOdeme.Visible = false;
+                    ayarlar.SatisEkrani = true;
                     navCariBilgi.Dispose();
                     NavOdemeEkrani.Dispose();
                     break;
@@ -144,6 +150,7 @@ namespace SabzFara.BackOffice.Fis
                     ayarlar.StokHareketi = "Stok Çıkış";
                     panelOdeme.Visible = false;
                     ayarlar.OdemeEkrani = false;
+                    ayarlar.SatisEkrani = true;
                     navCariBilgi.Dispose();
                     NavOdemeEkrani.Dispose();
                     lblBaslik.Appearance.ImageIndex = 6;
@@ -152,6 +159,7 @@ namespace SabzFara.BackOffice.Fis
                     ayarlar.StokHareketi = "Stok Giriş";
                     panelOdeme.Visible = false;
                     ayarlar.OdemeEkrani = false;
+                    ayarlar.SatisEkrani = true;
                     navCariBilgi.Dispose();
                     NavOdemeEkrani.Dispose();
                     lblBaslik.Appearance.ImageIndex = 7;
@@ -182,7 +190,7 @@ namespace SabzFara.BackOffice.Fis
                     navigationPane2.SelectedPage = NavOdemeEkrani;
                     break;
 
-                    //Bu bölüme daha sonra bakılacak
+                //Bu bölüme daha sonra bakılacak
                 case "Cari Devir Fişi":
                     ayarlar.KasaHareketi = "Kasa Giriş";
                     ayarlar.OdemeEkrani = true;
@@ -198,33 +206,60 @@ namespace SabzFara.BackOffice.Fis
             }
         }
 
-        private void OdemeEkle_Click (object sender,EventArgs e)
+         
+
+        private void OdemeEkle_Click(object sender, EventArgs e)
         {
             var buton = (sender as SimpleButton);
-            Entities.Tables.KasaHareket entityKasaHareket = new KasaHareket
+            if (ayarlar.SatisEkrani == false)
             {
-                OdemeTuruKodu = buton.Name,
-                OdemeTuruAdi = buton.Text,
-                Tutar = txtOdenmesiGereken.Value
-            };
-            if (txtOdenmesiGereken.Value<=0)
-            {
-                MessageBox.Show("Ödenmesi gereken tutar zaten ödenmiş durumdadır.");
+                FrmOdemeEkrani frm = new FrmOdemeEkrani(buton.Text, buton.Name);
+                frm.ShowDialog();
+                if (frm.entity!=null)
+                {
+                    kasaHareketDal.AddOrUpdate(context, frm.entity);
+                    OdenenTutarGuncelle();
+                }
+              
             }
             else
             {
-                kasaHareketDal.AddOrUpdate(context, entityKasaHareket);
-                OdenenTutarGuncelle();
+                if (txtOdenmesiGereken.Value <= 0)
+                {
+                    MessageBox.Show("Ödenmesi gereken tutar zaten ödenmiş durumdadır.");
+                }
+                else
+                {
+
+                    Entities.Tables.KasaHareket entityKasaHareket = new KasaHareket
+                    {
+                        OdemeTuruKodu = buton.Name,
+                        OdemeTuruAdi = buton.Text,
+                        Tutar = txtOdenmesiGereken.Value
+                    };
+                    kasaHareketDal.AddOrUpdate(context, entityKasaHareket);
+                    OdenenTutarGuncelle();
+                }
             }
-           
+
+
+
         }
 
         private void OdenenTutarGuncelle()
         {
             gridKasaHareket.UpdateSummary();
-            txtOdenenTutar.Value = Convert.ToDecimal(colTutar.SummaryItem.SummaryValue);
-            txtOdenmesiGereken.Value = txtToplam.Value - txtOdenenTutar.Value;
+            if (ayarlar.SatisEkrani)
+            {
+                txtOdenenTutar.Value = Convert.ToDecimal(colTutar.SummaryItem.SummaryValue);
+                txtOdenmesiGereken.Value = txtToplam.Value - txtOdenenTutar.Value;
+            }
+            else
+            {
+                txtToplam.Value= Convert.ToDecimal(colTutar.SummaryItem.SummaryValue);
+            }
         }
+           
 
         private void FrmFisIslem_Load(object sender, EventArgs e)
         {
@@ -373,7 +408,7 @@ namespace SabzFara.BackOffice.Fis
             string fiyatSecilen = gridStokHareket.GetFocusedRowCellValue(colStokKodu).ToString();
             Entities.Tables.Stok fiyatEntity = context.Stoklar.Where(c => c.StokKodu == fiyatSecilen).SingleOrDefault();
 
-            barFiyat1.Tag = txtFisTuru.Text=="Alış Faturası" ? fiyatEntity.AlisFiyati1 ?? 0: fiyatEntity.SatisFiyati1 ?? 0;
+            barFiyat1.Tag = txtFisTuru.Text == "Alış Faturası" ? fiyatEntity.AlisFiyati1 ?? 0 : fiyatEntity.SatisFiyati1 ?? 0;
             barFiyat2.Tag = txtFisTuru.Text == "Alış Faturası" ? fiyatEntity.AlisFiyati2 ?? 0 : fiyatEntity.SatisFiyati2 ?? 0;
             barFiyat3.Tag = txtFisTuru.Text == "Alış Faturası" ? fiyatEntity.AlisFiyati3 ?? 0 : fiyatEntity.SatisFiyati3 ?? 0;
 
@@ -386,17 +421,17 @@ namespace SabzFara.BackOffice.Fis
 
         private void FiyatSec(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            gridStokHareket.SetFocusedRowCellValue(colBirimFiyati,Convert.ToDecimal(e.Item.Tag));
+            gridStokHareket.SetFocusedRowCellValue(colBirimFiyati, Convert.ToDecimal(e.Item.Tag));
         }
 
-       
+
         private void repoSeriNo_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             string veri = Convert.ToString(gridStokHareket.GetFocusedRowCellValue(colSeriNo));
             FrmSeriNoGir frm = new FrmSeriNoGir(veri);
             frm.ShowDialog();
 
-            gridStokHareket.SetFocusedRowCellValue(colSeriNo,frm.veriSeriNo);
+            gridStokHareket.SetFocusedRowCellValue(colSeriNo, frm.veriSeriNo);
         }
 
         private void repoSil_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
@@ -427,7 +462,7 @@ namespace SabzFara.BackOffice.Fis
             }
 
             OdenenTutarGuncelle();
-           
+
         }
 
         private void btnSatisBitir_Click(object sender, EventArgs e)
@@ -438,12 +473,12 @@ namespace SabzFara.BackOffice.Fis
             string message = null;
             int hata = 0;
 
-            if (gridStokHareket.RowCount==0)
+            if (gridStokHareket.RowCount == 0)
             {
                 message += "Satış Ekranında eklenmiş ürün bulunamadı." + System.Environment.NewLine;
                 hata++;
             }
-            if (txtFisKodu==null)
+            if (txtFisKodu == null)
             {
                 message += "Fiş kodu alanı boş geçilemez" + System.Environment.NewLine;
                 hata++;
@@ -454,18 +489,18 @@ namespace SabzFara.BackOffice.Fis
                 hata++;
             }
 
-            if (StokHata!=0)
+            if (StokHata != 0)
             {
                 message += "Satış ekranındaki ürünlerin depo seçimlerinde eksiklikler var" + System.Environment.NewLine;
                 hata++;
             }
             if (KasaHata != 0)
             {
-                message += "Ödeme ekranındaki ürünlerin Kasa seçimlerinde eksiklikler var" ;
+                message += "Ödeme ekranındaki ürünlerin Kasa seçimlerinde eksiklikler var";
                 hata++;
             }
 
-            if (hata!=0)
+            if (hata != 0)
             {
                 MessageBox.Show(message);
                 return;
@@ -474,50 +509,50 @@ namespace SabzFara.BackOffice.Fis
 
 
 
-                foreach (var stokVeri in context.StokHareketleri.Local.ToList())
-                {
-                    stokVeri.Tarih = cmbTarih.DateTime;
-                    stokVeri.FisKodu = txtFisKodu.Text;
-                    stokVeri.Hareket = ayarlar.StokHareketi;
-                }
+            foreach (var stokVeri in context.StokHareketleri.Local.ToList())
+            {
+                stokVeri.Tarih = cmbTarih.DateTime;
+                stokVeri.FisKodu = txtFisKodu.Text;
+                stokVeri.Hareket = ayarlar.StokHareketi;
+            }
 
-                if (ayarlar.OdemeEkrani)
+            if (ayarlar.OdemeEkrani)
+            {
+                foreach (var kasaVeri in context.KasaHareketleri.Local.ToList())
                 {
-                    foreach (var kasaVeri in context.KasaHareketleri.Local.ToList())
-                    {
-                        kasaVeri.Tarih = kasaVeri.Tarih == null ? cmbTarih.DateTime : kasaVeri.Tarih;
-                        kasaVeri.FisKodu = txtFisKodu.Text;
-                        kasaVeri.Hareket = ayarlar.KasaHareketi;
-                        kasaVeri.CariKodu = lblCariKodu.Text;
-                        kasaVeri.CariAdi = lblCariAdi.Text;
-                    }
+                    kasaVeri.Tarih = kasaVeri.Tarih == null ? cmbTarih.DateTime : kasaVeri.Tarih;
+                    kasaVeri.FisKodu = txtFisKodu.Text;
+                    kasaVeri.Hareket = ayarlar.KasaHareketi;
+                    kasaVeri.CariKodu = lblCariKodu.Text;
+                    kasaVeri.CariAdi = lblCariAdi.Text;
                 }
+            }
 
-                _fisEntity.ToplamTutar = txtToplam.Value;
-                _fisEntity.IskontoOrani = txtIskontoOrani.Value;
-                _fisEntity.IskontoTutar = txtIskontoTutar.Value;
-                fisDAL.AddOrUpdate(context, _fisEntity);
-                context.SaveChanges();
+            _fisEntity.ToplamTutar = txtToplam.Value;
+            _fisEntity.IskontoOrani = txtIskontoOrani.Value;
+            _fisEntity.IskontoTutar = txtIskontoTutar.Value;
+            fisDAL.AddOrUpdate(context, _fisEntity);
+            context.SaveChanges();
 
             this.Close();
-            
+
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            if (gridStokHareket.RowCount!=0)
+            if (gridStokHareket.RowCount != 0)
             {
                 if (MessageBox.Show("Satış Ekranına eklenmiş ürünler var Bu işlemi iptal edip formu kapatmak istediğinize emin misiniz?", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     this.Close();
                 }
-                
+
             }
             else
             {
                 this.Close();
             }
-         
+
         }
     }
 }

@@ -137,6 +137,12 @@
     <Compile Include="Fis\FrmFisIslem.Designer.cs">
       <DependentUpon>FrmFisIslem.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fis\FrmOdemeEkrani.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fis\FrmOdemeEkrani.Designer.cs">
+      <DependentUpon>FrmOdemeEkrani.cs</DependentUpon>
+    </Compile>
     <Compile Include="Fis\FrmSeriNoGir.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -282,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Fis\FrmFisIslem.resx">
       <DependentUpon>FrmFisIslem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fis\FrmOdemeEkrani.resx">
+      <DependentUpon>FrmOdemeEkrani.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Fis\FrmSeriNoGir.resx">
       <DependentUpon>FrmSeriNoGir.cs</DependentUpon>
