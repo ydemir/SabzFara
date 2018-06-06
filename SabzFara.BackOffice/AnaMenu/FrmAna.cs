@@ -74,5 +74,11 @@ namespace SabzFara.BackOffice.AnaMenu
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void FisIslem_Click(object sender, ItemClickEventArgs e)
+        {
+            FrmFisIslem frm = new FrmFisIslem(null, e.Item.Caption);
+            frm.ShowDialog();
+        }
     }
 }

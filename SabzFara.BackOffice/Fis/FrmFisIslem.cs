@@ -137,12 +137,14 @@ namespace SabzFara.BackOffice.Fis
                     lblBaslik.Appearance.ImageIndex = 5;
                     ayarlar.OdemeEkrani = false;
                     panelOdeme.Visible = false;
+                    navCariBilgi.Dispose();
                     NavOdemeEkrani.Dispose();
                     break;
                 case "Sayım Eksiği Fişi":
                     ayarlar.StokHareketi = "Stok Çıkış";
                     panelOdeme.Visible = false;
                     ayarlar.OdemeEkrani = false;
+                    navCariBilgi.Dispose();
                     NavOdemeEkrani.Dispose();
                     lblBaslik.Appearance.ImageIndex = 6;
                     break;
@@ -150,6 +152,7 @@ namespace SabzFara.BackOffice.Fis
                     ayarlar.StokHareketi = "Stok Giriş";
                     panelOdeme.Visible = false;
                     ayarlar.OdemeEkrani = false;
+                    navCariBilgi.Dispose();
                     NavOdemeEkrani.Dispose();
                     lblBaslik.Appearance.ImageIndex = 7;
                     break;

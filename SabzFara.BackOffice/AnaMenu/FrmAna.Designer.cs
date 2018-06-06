@@ -140,7 +140,7 @@
             this.barButtonItem36,
             this.barButtonItem37});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
-            this.ribbon.MaxItemId = 40;
+            this.ribbon.MaxItemId = 41;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage1,
@@ -221,7 +221,7 @@
             // 
             this.btnPersoneller.Caption = "Personeller";
             this.btnPersoneller.Id = 10;
-            this.btnPersoneller.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem9.ImageOptions.LargeImage")));
+            this.btnPersoneller.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPersoneller.ImageOptions.LargeImage")));
             this.btnPersoneller.Name = "btnPersoneller";
             this.btnPersoneller.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPersoneller_ItemClick);
             // 
@@ -291,9 +291,10 @@
             // barButtonItem19
             // 
             this.barButtonItem19.Caption = "Alış Faturası";
-            this.barButtonItem19.Id = 20;
+            this.barButtonItem19.Id = 40;
             this.barButtonItem19.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem19.ImageOptions.LargeImage")));
             this.barButtonItem19.Name = "barButtonItem19";
+            this.barButtonItem19.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
             // 
             // barButtonItem20
             // 
@@ -301,6 +302,7 @@
             this.barButtonItem20.Id = 21;
             this.barButtonItem20.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem20.ImageOptions.LargeImage")));
             this.barButtonItem20.Name = "barButtonItem20";
+            this.barButtonItem20.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
             // 
             // barButtonItem21
             // 
@@ -308,6 +310,7 @@
             this.barButtonItem21.Id = 22;
             this.barButtonItem21.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem21.ImageOptions.LargeImage")));
             this.barButtonItem21.Name = "barButtonItem21";
+            this.barButtonItem21.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
             // 
             // barButtonItem22
             // 
@@ -350,6 +353,7 @@
             this.barButtonItem27.Id = 28;
             this.barButtonItem27.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem27.ImageOptions.LargeImage")));
             this.barButtonItem27.Name = "barButtonItem27";
+            this.barButtonItem27.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
             // 
             // barButtonItem28
             // 
@@ -357,6 +361,7 @@
             this.barButtonItem28.Id = 29;
             this.barButtonItem28.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem28.ImageOptions.LargeImage")));
             this.barButtonItem28.Name = "barButtonItem28";
+            this.barButtonItem28.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
             // 
             // barButtonItem29
             // 
@@ -364,6 +369,7 @@
             this.barButtonItem29.Id = 30;
             this.barButtonItem29.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem29.ImageOptions.LargeImage")));
             this.barButtonItem29.Name = "barButtonItem29";
+            this.barButtonItem29.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.FisIslem_Click);
             // 
             // skinRibbonGalleryBarItem1
             // 
