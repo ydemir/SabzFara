@@ -38,6 +38,9 @@ namespace SabzFara.BackOffice.Fis
                 _fisEntity = context.Fisler.Where(c => c.FisKodu == fisKodu).SingleOrDefault();
                 context.StokHareketleri.Where(c => c.FisKodu == fisKodu).Load();
                 context.KasaHareketleri.Where(c => c.FisKodu == fisKodu).Load();
+
+                toggleBakiyeTuru.IsOn = context.KasaHareketleri.Count(c => c.FisKodu == fisKodu && c.Hareket == "Kasa Giriş") == 0;
+
                 if (_fisEntity.CariKodu != null)
                 {
                     entityBakiye = this.cariDAL.CariBakiyesi(context, _fisEntity.CariKodu);
@@ -71,6 +74,8 @@ namespace SabzFara.BackOffice.Fis
             txtIlce.DataBindings.Add("Text", _fisEntity, "Ilce", false, DataSourceUpdateMode.OnPropertyChanged);
             txtVergiDairesi.DataBindings.Add("Text", _fisEntity, "VergiDairesi", false, DataSourceUpdateMode.OnPropertyChanged);
             txtVergiNo.DataBindings.Add("Text", _fisEntity, "VergiNo", false, DataSourceUpdateMode.OnPropertyChanged);
+
+
             gridcontStokHareket.DataSource = context.StokHareketleri.Local.ToBindingList();
             gridcontKasaHareket.DataSource = context.KasaHareketleri.Local.ToBindingList();
 
@@ -80,7 +85,11 @@ namespace SabzFara.BackOffice.Fis
             Toplamlar();
             OdenenTutarGuncelle();
 
-
+            ButonlariYukle();
+            
+        }
+        private void ButonlariYukle()
+        {
             foreach (var item in context.OdemeTurleri.ToList())
             {
                 var buton = new SimpleButton
@@ -94,6 +103,51 @@ namespace SabzFara.BackOffice.Fis
                 buton.Click += OdemeEkle_Click;
                 flowOdemeTurleri.Controls.Add(buton);
             }
+
+            var PersonelSecimIptal = new CheckButton
+            {
+                Name = "Yok",
+                Text = "Yok",
+                GroupIndex = 1,
+                Height = 48,
+                Width = 125,
+                Checked = _fisEntity.PlasiyerKodu==null
+            };
+
+            PersonelSecimIptal.Click += PersonelYukle_Click;
+            flowPersonel.Controls.Add(PersonelSecimIptal);
+            foreach (var item in context.Personeller.ToList())
+            {
+                var buton = new CheckButton
+                {
+                    Name = item.PersonelKodu,
+                    Text = item.PersonelAdi,
+                    GroupIndex = 1,
+                    Height = 48,
+                    Width = 125,
+                    Checked=item.PersonelKodu==_fisEntity.PlasiyerKodu
+                };
+
+                buton.Click += PersonelYukle_Click;
+                flowPersonel.Controls.Add(buton);
+            }
+        }
+
+        private void PersonelYukle_Click(object sender, EventArgs e)
+        {
+
+            var buton = sender as SimpleButton;
+            if (buton.Name == "Yok")
+            {
+                _fisEntity.PlasiyerKodu = buton.Name;
+                _fisEntity.PlasiyerAdi = buton.Text;
+            }
+            else
+            {
+                _fisEntity.PlasiyerKodu = null;
+                _fisEntity.PlasiyerAdi = null;
+            }
+
 
         }
         private void FisAyar()
@@ -200,13 +254,15 @@ namespace SabzFara.BackOffice.Fis
                     panelKDV.Visible = false;
                     grpToplamlar.Height = 60;
                     panelToplam.Top = 20;
+                    panelCariDevir.Visible = true;
+                    txtFisKodu.Width = 175;
                     NavSatisEkrani.Dispose();
                     break;
 
             }
         }
 
-         
+
 
         private void OdemeEkle_Click(object sender, EventArgs e)
         {
@@ -215,12 +271,12 @@ namespace SabzFara.BackOffice.Fis
             {
                 FrmOdemeEkrani frm = new FrmOdemeEkrani(buton.Text, buton.Name);
                 frm.ShowDialog();
-                if (frm.entity!=null)
+                if (frm.entity != null)
                 {
                     kasaHareketDal.AddOrUpdate(context, frm.entity);
                     OdenenTutarGuncelle();
                 }
-              
+
             }
             else
             {
@@ -256,10 +312,10 @@ namespace SabzFara.BackOffice.Fis
             }
             else
             {
-                txtToplam.Value= Convert.ToDecimal(colTutar.SummaryItem.SummaryValue);
+                txtToplam.Value = Convert.ToDecimal(colTutar.SummaryItem.SummaryValue);
             }
         }
-           
+
 
         private void FrmFisIslem_Load(object sender, EventArgs e)
         {
@@ -467,18 +523,38 @@ namespace SabzFara.BackOffice.Fis
 
         private void btnSatisBitir_Click(object sender, EventArgs e)
         {
+            if (toggleBakiyeTuru.IsOn)
+            {
+                ayarlar.KasaHareketi = "Kasa Çıkış";
+
+            }
+            else
+            {
+                ayarlar.KasaHareketi = "Kasa Giriş";
+            }
+
             int StokHata = context.StokHareketleri.Local.Where(c => c.DepoKodu == null).Count();
             int KasaHata = context.StokHareketleri.Local.Where(c => c.DepoKodu == null).Count();
 
             string message = null;
             int hata = 0;
 
-            if (gridStokHareket.RowCount == 0)
+            if (gridStokHareket.RowCount == 0 && ayarlar.SatisEkrani)
             {
                 message += "Satış Ekranında eklenmiş ürün bulunamadı." + System.Environment.NewLine;
                 hata++;
             }
-            if (txtFisKodu == null)
+            if (string.IsNullOrEmpty(_fisEntity.CariKodu) && ayarlar.SatisEkrani == false)
+            {
+                message += txtFisTuru.Text + " türünde cari seçimi zorunludur.  " + System.Environment.NewLine;
+                hata++;
+            }
+            if (gridKasaHareket.RowCount == 0 && ayarlar.SatisEkrani == false)
+            {
+                message += txtFisTuru.Text + " herhangi bir ödeme bulunamadı.  " + System.Environment.NewLine;
+                hata++;
+            }
+            if (txtFisKodu.Text == string.Empty)
             {
                 message += "Fiş kodu alanı boş geçilemez" + System.Environment.NewLine;
                 hata++;
@@ -515,6 +591,7 @@ namespace SabzFara.BackOffice.Fis
                 stokVeri.FisKodu = txtFisKodu.Text;
                 stokVeri.Hareket = ayarlar.StokHareketi;
             }
+
 
             if (ayarlar.OdemeEkrani)
             {
@@ -554,5 +631,7 @@ namespace SabzFara.BackOffice.Fis
             }
 
         }
+
+     
     }
 }

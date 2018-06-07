@@ -30,6 +30,7 @@ namespace SabzFara.BackOffice.Fis
         }
        void Listele()
         {
+            context = new NetSatisContext();
             gridControl1.DataSource = fisDAL.GetAll(context);
         }
 
