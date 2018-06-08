@@ -69,5 +69,11 @@ namespace SabzFara.BackOffice.Fiyat_Degistir
         {
             gridView1.OptionsView.ShowAutoFilterRow = true ? gridView1.OptionsView.ShowAutoFilterRow == false : gridView1.OptionsView.ShowAutoFilterRow == true;
         }
+
+        private void btnFiyatDegistir_Click(object sender, EventArgs e)
+        {
+            FrmFiyatDegistir frm = new FrmFiyatDegistir();
+            frm.ShowDialog();
+        }
     }
 }

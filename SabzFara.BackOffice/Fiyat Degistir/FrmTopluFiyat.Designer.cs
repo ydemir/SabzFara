@@ -34,6 +34,7 @@
             this.btnKapat = new DevExpress.XtraEditors.SimpleButton();
             this.imgMenu = new System.Windows.Forms.ImageList(this.components);
             this.btnAra = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDegisiklikKaydet = new DevExpress.XtraEditors.SimpleButton();
             this.btnGuncelle = new DevExpress.XtraEditors.SimpleButton();
             this.btnCikar = new DevExpress.XtraEditors.SimpleButton();
             this.btnEkle = new DevExpress.XtraEditors.SimpleButton();
@@ -68,7 +69,7 @@
             this.colMinStokMiktari = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMaxStokMiktari = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAciklama = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnDegisiklikKaydet = new DevExpress.XtraEditors.SimpleButton();
+            this.btnFiyatDegistir = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -80,6 +81,7 @@
             this.grpMenu.Controls.Add(this.btnKapat);
             this.grpMenu.Controls.Add(this.btnAra);
             this.grpMenu.Controls.Add(this.btnDegisiklikKaydet);
+            this.grpMenu.Controls.Add(this.btnFiyatDegistir);
             this.grpMenu.Controls.Add(this.btnGuncelle);
             this.grpMenu.Controls.Add(this.btnCikar);
             this.grpMenu.Controls.Add(this.btnEkle);
@@ -120,18 +122,29 @@
             // 
             this.btnAra.ImageOptions.ImageIndex = 8;
             this.btnAra.ImageOptions.ImageList = this.imgMenu;
-            this.btnAra.Location = new System.Drawing.Point(279, 26);
+            this.btnAra.Location = new System.Drawing.Point(527, 26);
             this.btnAra.Name = "btnAra";
             this.btnAra.Size = new System.Drawing.Size(83, 44);
             this.btnAra.TabIndex = 0;
             this.btnAra.Text = "Ara";
             this.btnAra.Click += new System.EventHandler(this.btnAra_Click);
             // 
+            // btnDegisiklikKaydet
+            // 
+            this.btnDegisiklikKaydet.ImageOptions.ImageIndex = 0;
+            this.btnDegisiklikKaydet.ImageOptions.ImageList = this.imgMenu;
+            this.btnDegisiklikKaydet.Location = new System.Drawing.Point(302, 26);
+            this.btnDegisiklikKaydet.Name = "btnDegisiklikKaydet";
+            this.btnDegisiklikKaydet.Size = new System.Drawing.Size(130, 44);
+            this.btnDegisiklikKaydet.TabIndex = 0;
+            this.btnDegisiklikKaydet.Text = "Değişiklikleri \r\nKaydet";
+            this.btnDegisiklikKaydet.Click += new System.EventHandler(this.btnDegisiklikKaydet_Click);
+            // 
             // btnGuncelle
             // 
             this.btnGuncelle.ImageOptions.ImageIndex = 5;
             this.btnGuncelle.ImageOptions.ImageList = this.imgMenu;
-            this.btnGuncelle.Location = new System.Drawing.Point(190, 26);
+            this.btnGuncelle.Location = new System.Drawing.Point(438, 25);
             this.btnGuncelle.Name = "btnGuncelle";
             this.btnGuncelle.Size = new System.Drawing.Size(83, 44);
             this.btnGuncelle.TabIndex = 0;
@@ -468,16 +481,16 @@
             this.colAciklama.OptionsColumn.AllowEdit = false;
             this.colAciklama.Width = 170;
             // 
-            // btnDegisiklikKaydet
+            // btnFiyatDegistir
             // 
-            this.btnDegisiklikKaydet.ImageOptions.ImageIndex = 0;
-            this.btnDegisiklikKaydet.ImageOptions.ImageList = this.imgMenu;
-            this.btnDegisiklikKaydet.Location = new System.Drawing.Point(368, 26);
-            this.btnDegisiklikKaydet.Name = "btnDegisiklikKaydet";
-            this.btnDegisiklikKaydet.Size = new System.Drawing.Size(130, 44);
-            this.btnDegisiklikKaydet.TabIndex = 0;
-            this.btnDegisiklikKaydet.Text = "Değişiklikleri \r\nKaydet";
-            this.btnDegisiklikKaydet.Click += new System.EventHandler(this.btnDegisiklikKaydet_Click);
+            this.btnFiyatDegistir.ImageOptions.ImageIndex = 2;
+            this.btnFiyatDegistir.ImageOptions.ImageList = this.imgMenu;
+            this.btnFiyatDegistir.Location = new System.Drawing.Point(190, 25);
+            this.btnFiyatDegistir.Name = "btnFiyatDegistir";
+            this.btnFiyatDegistir.Size = new System.Drawing.Size(106, 44);
+            this.btnFiyatDegistir.TabIndex = 0;
+            this.btnFiyatDegistir.Text = "Fiyat Değiştir";
+            this.btnFiyatDegistir.Click += new System.EventHandler(this.btnFiyatDegistir_Click);
             // 
             // FrmTopluFiyat
             // 
@@ -538,5 +551,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colMinStokMiktari;
         private DevExpress.XtraGrid.Columns.GridColumn colMaxStokMiktari;
         private DevExpress.XtraGrid.Columns.GridColumn colAciklama;
+        private DevExpress.XtraEditors.SimpleButton btnFiyatDegistir;
     }
 }
