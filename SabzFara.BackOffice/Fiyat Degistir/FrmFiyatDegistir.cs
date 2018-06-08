@@ -15,6 +15,7 @@ namespace SabzFara.BackOffice.Fiyat_Degistir
     public partial class FrmFiyatDegistir : DevExpress.XtraEditors.XtraForm
     {
         public List<FiyatDegistir> list;
+        public bool secildi = false;
         public FrmFiyatDegistir()
         {
             InitializeComponent();
@@ -82,6 +83,17 @@ namespace SabzFara.BackOffice.Fiyat_Degistir
         private void FrmFiyatDegistir_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnKaydet_Click(object sender, EventArgs e)
+        {
+            secildi = true;
+            this.Close();
+        }
+
+        private void btnKapat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

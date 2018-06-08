@@ -72,8 +72,41 @@ namespace SabzFara.BackOffice.Fiyat_Degistir
 
         private void btnFiyatDegistir_Click(object sender, EventArgs e)
         {
+            if (gridView1.RowCount==0)
+            {
+                MessageBox.Show("Seçilen bir stok bulunamadı");
+                return;
+            }
             FrmFiyatDegistir frm = new FrmFiyatDegistir();
             frm.ShowDialog();
+            if (frm.secildi)
+            {
+                foreach (var itemDegistir in frm.list)
+                {
+                    if (itemDegistir.Degistir)
+                    {
+                        for (int i = 0; i < gridView1.RowCount; i++)
+                        {
+                            decimal kolonDeger = 0;
+                            decimal degisen = 0;
+                            kolonDeger = Convert.ToDecimal(gridView1.GetRowCellValue(i, itemDegistir.KolonAdi));
+                            if (itemDegistir.DegisimTuru=="Yüzde")
+                            {
+                                degisen =itemDegistir.DegisimYonu=="Arttır" 
+                                    ? kolonDeger + kolonDeger / 100 * itemDegistir.Degeri
+                                    : kolonDeger - kolonDeger / 100 * itemDegistir.Degeri;
+                            }
+                            else
+                            {
+                                degisen = itemDegistir.DegisimYonu == "Arttır"
+                                    ? kolonDeger +itemDegistir.Degeri
+                                    : kolonDeger -  itemDegistir.Degeri;
+                            }
+                            gridView1.SetRowCellValue(i, itemDegistir.KolonAdi, degisen);
+                        }
+                    }
+                }
+            }
         }
     }
 }

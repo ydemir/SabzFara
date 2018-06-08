@@ -46,6 +46,7 @@
             this.colDegisimYonu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repoDegisimYonu = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.colDegeri = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repoDegisimMiktari = new DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -53,6 +54,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repoDegistir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoDegisimTuru)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoDegisimYonu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repoDegisimMiktari)).BeginInit();
             this.SuspendLayout();
             // 
             // lblBaslik
@@ -97,6 +99,7 @@
             this.btnKapat.Size = new System.Drawing.Size(83, 44);
             this.btnKapat.TabIndex = 0;
             this.btnKapat.Text = "Kapat";
+            this.btnKapat.Click += new System.EventHandler(this.btnKapat_Click);
             // 
             // ımageList1
             // 
@@ -116,6 +119,7 @@
             this.btnKaydet.Size = new System.Drawing.Size(83, 44);
             this.btnKaydet.TabIndex = 0;
             this.btnKaydet.Text = "Kaydet";
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
             // gridControl1
             // 
@@ -126,7 +130,8 @@
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repoDegistir,
             this.repoDegisimTuru,
-            this.repoDegisimYonu});
+            this.repoDegisimYonu,
+            this.repoDegisimMiktari});
             this.gridControl1.Size = new System.Drawing.Size(588, 330);
             this.gridControl1.TabIndex = 6;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -143,6 +148,7 @@
             this.colDegeri});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // colFiyatTuru
             // 
@@ -150,6 +156,7 @@
             this.colFiyatTuru.FieldName = "FiyatTuru";
             this.colFiyatTuru.Name = "colFiyatTuru";
             this.colFiyatTuru.OptionsColumn.AllowEdit = false;
+            this.colFiyatTuru.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.colFiyatTuru.Visible = true;
             this.colFiyatTuru.VisibleIndex = 0;
             // 
@@ -158,6 +165,7 @@
             this.colKolonAdi.Caption = "Kolon Adı";
             this.colKolonAdi.FieldName = "KolonAdi";
             this.colKolonAdi.Name = "colKolonAdi";
+            this.colKolonAdi.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.colKolonAdi.OptionsColumn.ShowInCustomizationForm = false;
             // 
             // colDegistir
@@ -166,6 +174,7 @@
             this.colDegistir.ColumnEdit = this.repoDegistir;
             this.colDegistir.FieldName = "Degistir";
             this.colDegistir.Name = "colDegistir";
+            this.colDegistir.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.colDegistir.Visible = true;
             this.colDegistir.VisibleIndex = 1;
             // 
@@ -182,6 +191,7 @@
             this.colDegisimTuru.ColumnEdit = this.repoDegisimTuru;
             this.colDegisimTuru.FieldName = "DegisimTuru";
             this.colDegisimTuru.Name = "colDegisimTuru";
+            this.colDegisimTuru.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.colDegisimTuru.Visible = true;
             this.colDegisimTuru.VisibleIndex = 4;
             // 
@@ -202,6 +212,7 @@
             this.colDegisimYonu.ColumnEdit = this.repoDegisimYonu;
             this.colDegisimYonu.FieldName = "DegisimYonu";
             this.colDegisimYonu.Name = "colDegisimYonu";
+            this.colDegisimYonu.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.colDegisimYonu.Visible = true;
             this.colDegisimYonu.VisibleIndex = 2;
             // 
@@ -219,10 +230,21 @@
             // colDegeri
             // 
             this.colDegeri.Caption = "Değişim Miktarı";
+            this.colDegeri.ColumnEdit = this.repoDegisimMiktari;
             this.colDegeri.FieldName = "Degeri";
             this.colDegeri.Name = "colDegeri";
+            this.colDegeri.OptionsColumn.AllowSort = DevExpress.Utils.DefaultBoolean.False;
             this.colDegeri.Visible = true;
             this.colDegeri.VisibleIndex = 3;
+            // 
+            // repoDegisimMiktari
+            // 
+            this.repoDegisimMiktari.AutoHeight = false;
+            this.repoDegisimMiktari.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repoDegisimMiktari.DisplayFormat.FormatString = "N2";
+            this.repoDegisimMiktari.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.repoDegisimMiktari.Name = "repoDegisimMiktari";
             // 
             // FrmFiyatDegistir
             // 
@@ -242,6 +264,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repoDegistir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoDegisimTuru)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoDegisimYonu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repoDegisimMiktari)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -264,5 +287,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemToggleSwitch repoDegistir;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repoDegisimTuru;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repoDegisimYonu;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCalcEdit repoDegisimMiktari;
     }
 }
