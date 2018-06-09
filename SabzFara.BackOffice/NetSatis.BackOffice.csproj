@@ -46,6 +46,7 @@
     <Reference Include="DevExpress.XtraGrid.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraWizard.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -265,6 +266,18 @@
     <Compile Include="Tanim\FrmTanim.Designer.cs">
       <DependentUpon>FrmTanim.cs</DependentUpon>
     </Compile>
+    <Compile Include="İndirim\FrmIndirim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="İndirim\FrmIndirim.Designer.cs">
+      <DependentUpon>FrmIndirim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="İndirim\FrmIndirimIslem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="İndirim\FrmIndirimIslem.Designer.cs">
+      <DependentUpon>FrmIndirimIslem.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AnaMenu\FrmAna.resx">
       <DependentUpon>FrmAna.cs</DependentUpon>
     </EmbeddedResource>
@@ -375,10 +388,17 @@
     <EmbeddedResource Include="Tanim\FrmTanim.resx">
       <DependentUpon>FrmTanim.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="İndirim\FrmIndirim.resx">
+      <DependentUpon>FrmIndirim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="İndirim\FrmIndirimIslem.resx">
+      <DependentUpon>FrmIndirimIslem.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\SabzFara.Entities.Tables.Cari.datasource" />
     <None Include="Properties\DataSources\SabzFara.Entities.Tables.Fis.datasource" />
+    <None Include="Properties\DataSources\SabzFara.Entities.Tables.Indirim.datasource" />
     <None Include="Properties\DataSources\SabzFara.Entities.Tables.KasaHareket.datasource" />
     <None Include="Properties\DataSources\SabzFara.Entities.Tables.Personel.datasource" />
     <None Include="Properties\DataSources\SabzFara.Entities.Tables.Stok.datasource" />
