@@ -356,7 +356,6 @@
             // 
             this.colIndirimOrani.FieldName = "IndirimOrani";
             this.colIndirimOrani.Name = "colIndirimOrani";
-            this.colIndirimOrani.OptionsColumn.AllowEdit = false;
             this.colIndirimOrani.Visible = true;
             this.colIndirimOrani.VisibleIndex = 3;
             this.colIndirimOrani.Width = 171;

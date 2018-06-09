@@ -17,7 +17,7 @@ namespace SabzFara.Entities.Mapping
             this.Property(p => p.StokKodu).HasMaxLength(12);
             this.Property(p => p.StokAdi).HasMaxLength(50);
             this.Property(p => p.Barkod).HasMaxLength(20);
-            this.Property(p => p.IndirimTuru).HasMaxLength(15);
+            this.Property(p => p.IndirimTuru).HasMaxLength(30);
             this.Property(p => p.IndirimOrani).HasPrecision(5,2);
             this.Property(p => p.Aciklama).HasMaxLength(200);
 

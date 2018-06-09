@@ -72,14 +72,19 @@ namespace SabzFara.BackOffice.İndirim
             foreach (var itemIndirim in context.Indirimler.Local.ToList())
             {
                 itemIndirim.Durumu = true;
+                itemIndirim.Aciklama = txtAciklama.Text;
                 if (btnSuresiz.Checked)
                 {
                     itemIndirim.IndirimTuru = "Süresiz";
                 }
-                itemIndirim.BaslangicTarihi = dateBaslangic.DateTime;
-                itemIndirim.BitisTarihi = dateBitis.DateTime;
-                itemIndirim.IndirimTuru = "Belirli Tarihler Arasında";
-
+                else
+                {
+                    itemIndirim.BaslangicTarihi = dateBaslangic.DateTime;
+                    itemIndirim.BitisTarihi = dateBitis.DateTime;
+                    itemIndirim.IndirimTuru = "Belirli Tarihler Arasında";
+                  
+                }
+                
 
             }
             indirimDAL.Save(context);
@@ -87,13 +92,13 @@ namespace SabzFara.BackOffice.İndirim
 
         private void btnCikar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Seçili olan veriyi listeden çıkartmak istediğinize emin misiniz?","Uyarı",MessageBoxButtons.YesNo)==DialogResult.Yes)
+            if (MessageBox.Show("Seçili olan veriyi listeden çıkartmak istediğinize emin misiniz?", "Uyarı", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
- var secilenStokKodu = gridIndirim.GetFocusedRowCellValue(colStokKodu).ToString();
-            var secilen = indirimDAL.GetByFilter(context, c => c.StokKodu == secilenStokKodu);
-            context.Entry(secilen).State = EntityState.Detached;
+                var secilenStokKodu = gridIndirim.GetFocusedRowCellValue(colStokKodu).ToString();
+                var secilen = indirimDAL.GetByFilter(context, c => c.StokKodu == secilenStokKodu);
+                context.Entry(secilen).State = EntityState.Detached;
             }
-           
+
         }
     }
 }

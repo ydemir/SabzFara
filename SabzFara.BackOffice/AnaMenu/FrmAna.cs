@@ -16,6 +16,7 @@ using SabzFara.BackOffice.StokHareketleri;
 using SabzFara.BackOffice.Kasa_Hareketleri;
 using SabzFara.BackOffice.Personel;
 using SabzFara.BackOffice.Fiyat_Degistir;
+using SabzFara.BackOffice.İndirim;
 
 namespace SabzFara.BackOffice.AnaMenu
 {
@@ -85,6 +86,13 @@ namespace SabzFara.BackOffice.AnaMenu
         private void barTopluFiyatDegisikligi_ItemClick(object sender, ItemClickEventArgs e)
         {
             FrmTopluFiyat frm = new FrmTopluFiyat();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void barIndirimler_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FrmIndirim frm = new FrmIndirim();
             frm.MdiParent = this;
             frm.Show();
         }

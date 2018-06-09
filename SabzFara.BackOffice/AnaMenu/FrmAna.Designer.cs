@@ -37,7 +37,7 @@
             this.btnStokHareketleri = new DevExpress.XtraBars.BarButtonItem();
             this.barKasaHareket = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
+            this.barIndirimler = new DevExpress.XtraBars.BarButtonItem();
             this.barTopluFiyatDegisikligi = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.btnPersoneller = new DevExpress.XtraBars.BarButtonItem();
@@ -106,7 +106,7 @@
             this.btnStokHareketleri,
             this.barKasaHareket,
             this.barButtonItem5,
-            this.barButtonItem6,
+            this.barIndirimler,
             this.barTopluFiyatDegisikligi,
             this.barButtonItem8,
             this.btnPersoneller,
@@ -196,18 +196,19 @@
             this.barButtonItem5.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.LargeImage")));
             this.barButtonItem5.Name = "barButtonItem5";
             // 
-            // barButtonItem6
+            // barIndirimler
             // 
-            this.barButtonItem6.Caption = "İndirimler";
-            this.barButtonItem6.Id = 7;
-            this.barButtonItem6.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.LargeImage")));
-            this.barButtonItem6.Name = "barButtonItem6";
+            this.barIndirimler.Caption = "İndirimler";
+            this.barIndirimler.Id = 7;
+            this.barIndirimler.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem6.ImageOptions.LargeImage")));
+            this.barIndirimler.Name = "barIndirimler";
+            this.barIndirimler.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barIndirimler_ItemClick);
             // 
             // barTopluFiyatDegisikligi
             // 
             this.barTopluFiyatDegisikligi.Caption = "Toplu Fiyat Değişikliği";
             this.barTopluFiyatDegisikligi.Id = 8;
-            this.barTopluFiyatDegisikligi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.LargeImage")));
+            this.barTopluFiyatDegisikligi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barTopluFiyatDegisikligi.ImageOptions.LargeImage")));
             this.barTopluFiyatDegisikligi.Name = "barTopluFiyatDegisikligi";
             this.barTopluFiyatDegisikligi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barTopluFiyatDegisikligi_ItemClick);
             // 
@@ -467,7 +468,7 @@
             // ribbonPageGroup3
             // 
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem5);
-            this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem6);
+            this.ribbonPageGroup3.ItemLinks.Add(this.barIndirimler);
             this.ribbonPageGroup3.ItemLinks.Add(this.barTopluFiyatDegisikligi);
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem8);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
@@ -635,7 +636,7 @@
         private DevExpress.XtraBars.BarButtonItem barKasaHareket;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem5;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem6;
+        private DevExpress.XtraBars.BarButtonItem barIndirimler;
         private DevExpress.XtraBars.BarButtonItem barTopluFiyatDegisikligi;
         private DevExpress.XtraBars.BarButtonItem barButtonItem8;
         private DevExpress.XtraBars.BarButtonItem btnPersoneller;
