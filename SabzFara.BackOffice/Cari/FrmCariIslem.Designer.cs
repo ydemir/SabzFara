@@ -70,16 +70,6 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject30 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject31 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject32 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions9 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject33 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject34 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject35 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject36 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions10 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject37 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject38 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject39 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject40 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions11 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject41 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject42 = new DevExpress.Utils.SerializableAppearanceObject();
@@ -90,6 +80,16 @@
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject46 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject47 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject48 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions9 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject33 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject34 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject35 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject36 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions10 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject37 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject38 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject39 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject40 = new DevExpress.Utils.SerializableAppearanceObject();
             this.ımageList2 = new System.Windows.Forms.ImageList(this.components);
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -113,7 +113,6 @@
             this.btnOzelKod4 = new DevExpress.XtraEditors.ButtonEdit();
             this.btnOzelKod2 = new DevExpress.XtraEditors.ButtonEdit();
             this.btnCariAltGrubu = new DevExpress.XtraEditors.ButtonEdit();
-            this.btnCariGrubu = new DevExpress.XtraEditors.ButtonEdit();
             this.btnOzelKod1 = new DevExpress.XtraEditors.ButtonEdit();
             this.labelControl28 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
@@ -157,6 +156,7 @@
             this.grpMenu = new DevExpress.XtraEditors.GroupControl();
             this.btnKaydet = new DevExpress.XtraEditors.SimpleButton();
             this.lblBaslik = new DevExpress.XtraEditors.LabelControl();
+            this.btnCariGrubu = new DevExpress.XtraEditors.ButtonEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupFiyat)).BeginInit();
             this.groupFiyat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtRiskLimiti.Properties)).BeginInit();
@@ -169,7 +169,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnOzelKod4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnOzelKod2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCariAltGrubu.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCariGrubu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnOzelKod1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupGrup)).BeginInit();
             this.groupGrup.SuspendLayout();
@@ -196,6 +195,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.toggleDurumu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).BeginInit();
             this.grpMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCariGrubu.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // ımageList2
@@ -504,22 +504,6 @@
             this.btnCariAltGrubu.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.btnCariAltGrubu.Size = new System.Drawing.Size(250, 22);
             this.btnCariAltGrubu.TabIndex = 6;
-            // 
-            // btnCariGrubu
-            // 
-            this.btnCariGrubu.Location = new System.Drawing.Point(103, 23);
-            this.btnCariGrubu.Name = "btnCariGrubu";
-            editorButtonImageOptions9.ImageIndex = 0;
-            editorButtonImageOptions9.ImageList = this.ımageList2;
-            editorButtonImageOptions10.ImageIndex = 1;
-            editorButtonImageOptions10.ImageList = this.ımageList2;
-            this.btnCariGrubu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions9, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject33, serializableAppearanceObject34, serializableAppearanceObject35, serializableAppearanceObject36, "", null, null, DevExpress.Utils.ToolTipAnchor.Default),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions10, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject37, serializableAppearanceObject38, serializableAppearanceObject39, serializableAppearanceObject40, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
-            this.btnCariGrubu.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.btnCariGrubu.Size = new System.Drawing.Size(250, 22);
-            this.btnCariGrubu.TabIndex = 6;
-            this.btnCariGrubu.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnCariGrubu_ButtonClick);
             // 
             // btnOzelKod1
             // 
@@ -1015,6 +999,22 @@
             this.lblBaslik.TabIndex = 7;
             this.lblBaslik.Text = "Cari Kartı İşlemleri";
             // 
+            // btnCariGrubu
+            // 
+            this.btnCariGrubu.Location = new System.Drawing.Point(103, 23);
+            this.btnCariGrubu.Name = "btnCariGrubu";
+            editorButtonImageOptions9.ImageIndex = 0;
+            editorButtonImageOptions9.ImageList = this.ımageList2;
+            editorButtonImageOptions10.ImageIndex = 1;
+            editorButtonImageOptions10.ImageList = this.ımageList2;
+            this.btnCariGrubu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions9, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject33, serializableAppearanceObject34, serializableAppearanceObject35, serializableAppearanceObject36, "", null, null, DevExpress.Utils.ToolTipAnchor.Default),
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions10, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject37, serializableAppearanceObject38, serializableAppearanceObject39, serializableAppearanceObject40, "", null, null, DevExpress.Utils.ToolTipAnchor.Default)});
+            this.btnCariGrubu.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.btnCariGrubu.Size = new System.Drawing.Size(250, 22);
+            this.btnCariGrubu.TabIndex = 6;
+            this.btnCariGrubu.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.btnCariGrubu_ButtonClick);
+            // 
             // FrmCariIslem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1041,7 +1041,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnOzelKod4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnOzelKod2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCariAltGrubu.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCariGrubu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnOzelKod1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupGrup)).EndInit();
             this.groupGrup.ResumeLayout(false);
@@ -1068,6 +1067,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.toggleDurumu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grpMenu)).EndInit();
             this.grpMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnCariGrubu.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1118,7 +1118,6 @@
         private DevExpress.XtraEditors.ButtonEdit btnOzelKod4;
         private DevExpress.XtraEditors.ButtonEdit btnOzelKod2;
         private DevExpress.XtraEditors.ButtonEdit btnCariAltGrubu;
-        private DevExpress.XtraEditors.ButtonEdit btnCariGrubu;
         private DevExpress.XtraEditors.ButtonEdit btnOzelKod1;
         private DevExpress.XtraEditors.LabelControl labelControl28;
         private DevExpress.XtraEditors.LabelControl labelControl19;
@@ -1141,5 +1140,6 @@
         private DevExpress.XtraEditors.ComboBoxEdit cmbAlisOzelFiyati;
         private DevExpress.XtraEditors.TextEdit txtIskontoOrani;
         private DevExpress.XtraEditors.TextEdit txtRiskLimiti;
+        private DevExpress.XtraEditors.ButtonEdit btnCariGrubu;
     }
 }
